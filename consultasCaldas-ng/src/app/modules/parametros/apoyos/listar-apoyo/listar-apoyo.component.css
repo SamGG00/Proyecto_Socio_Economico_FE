@@ -1,0 +1,38 @@
+/* estilos.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 4px; /* Agrega un pequeño espacio entre botones */
+}
+.btn:hover {
+    background-color: #45a049;
+}
+.btn-edit {
+    background-color: #008CBA;
+}
+.btn-edit:hover {
+    background-color: #007B9E;
+}

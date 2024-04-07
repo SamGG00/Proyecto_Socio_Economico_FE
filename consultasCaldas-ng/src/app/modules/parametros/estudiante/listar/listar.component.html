@@ -1,1 +1,36 @@
-<p>listar works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Estudiantes</title>
+
+</head>
+<body>
+
+<h1>Lista de Estudiantes</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre del Estudiante</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Juan Pérez</td>
+            <td>
+                <a href="detalle-estudiante.html?studentId=123" class="btn">Ver Detalles</a>
+                <a href="formulario-estudiante.html?studentId=123" class="btn btn-edit">Editar</a>
+            </td>
+        </tr>
+        <!-- Más entradas pueden ser agregadas aquí -->
+    </tbody>
+</table>
+
+<br>
+<a href="formulario-estudiante.html" class="btn">Agregar Nuevo Estudiante</a>
+
+</body>
+</html>

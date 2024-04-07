@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-listar',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar.component.css']
 })
 export class ListarComponent implements OnInit {
+  dataFrom: FormGroup = new FormGroup({});
 
-  constructor() { }
+  constructor(
+    private fb:FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    // TODO document why this method 'ngOnInit' is empty
+  
+  }
+
+  FormBuilding(){
+    this.dataFrom = this.fb.group({
+      
+    })
   }
 
 }

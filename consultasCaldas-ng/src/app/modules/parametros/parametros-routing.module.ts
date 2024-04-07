@@ -42,6 +42,10 @@ const routes: Routes = [
     component:ListarApoyoComponent
   },
   {
+    path: 'remover-apoyo',
+    component:RemoverComponent
+  },
+  {
     path: 'crear-convacatoria',
     component: CrearConvacatoriaComponent
   },

@@ -1,1 +1,36 @@
-<p>listar-convacatoria works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Convocatorias</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+<h1>Lista de Convocatorias</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre de la Convocatoria</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Convocatoria de Innovación</td>
+            <td>
+                <a href="detalle-convocatoria.html?convocatoriaId=789" class="btn">Ver Detalles</a>
+                <a href="formulario-convocatoria.html?convocatoriaId=789" class="btn btn-edit">Editar</a>
+            </td>
+        </tr>
+        <!-- Más convocatorias pueden ser agregadas aquí -->
+    </tbody>
+</table>
+
+<br>
+<a href="formulario-convocatoria.html" class="btn">Agregar Nueva Convocatoria</a>
+
+</body>
+</html>

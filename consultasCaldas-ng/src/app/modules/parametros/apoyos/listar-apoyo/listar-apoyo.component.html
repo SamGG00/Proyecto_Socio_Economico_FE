@@ -1,1 +1,36 @@
-<p>listar-apoyo works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Apoyos</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+<h1>Lista de Apoyos</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre del Apoyo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Beca de Estudio</td>
+            <td>
+                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Ver Detalles</a>
+                <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+            </td>
+        </tr>
+        <!-- Más apoyos pueden ser agregados aquí -->
+    </tbody>
+</table>
+
+<br>
+<a href="formulario-apoyo.html" class="btn">Agregar Nuevo Apoyo</a>
+
+</body>
+</html>

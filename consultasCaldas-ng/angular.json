@@ -32,7 +32,9 @@
             ],
             "scripts": [
               "node_modules/materialize-css/dist/js/materialize.min.js",
-              "src/assets/js/M-init.js"
+              "src/assets/js/M-init.js",
+              "src/assets/js/functions.js"
+
             ]
           },
           "configurations": {
