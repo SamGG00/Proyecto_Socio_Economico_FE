@@ -11,7 +11,7 @@ export class ConvacatoriasService {
   url: string = ConfigurationData.BUSSINESS_MS_URL;
 
   constructor(private http: HttpClient) {
-
+    
   }
 
   GetRecordList(): Observable<ConvacatoriaModel[]> {

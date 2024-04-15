@@ -10,36 +10,27 @@
 
 <h1>Lista de Convocatorias</h1>
 
-<table>
+<table class="styled-table">
     <thead>
         <tr>
             <th>Tipo de Apoyo</th>
             <th>Semestre</th>
             <th>cantidadEstudiantesPresentados</th>
-            <th>Acciones</th>
+            
         </tr>
     </thead>
     <tbody>
-        <tr >
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <!-- <td>
-                <a href="detalle-convocatoria.html?convocatoriaId=789" class="btn">Ver Detalles</a>
-                <a href="formulario-convocatoria.html?convocatoriaId=789" class="btn btn-edit">Editar</a>
-            </td>-->
+        <tr *ngFor="let convocatoria of recordList">
+            <td>{{ convocatoria.tipoApoyo }}</td>
+            <td>{{ convocatoria.semester }}</td>
+            <td>{{ convocatoria.cantidadEstudiantesPresentados }}</td>
+            
         </tr>
-        <!-- Más convocatorias pueden ser agregadas aquí -->
     </tbody>
 </table>
 
 <br>
-<a href="formulario-convocatoria.html" class="btn">Agregar Nueva Convocatoria</a>
+<!--<a href="formulario-convocatoria.html" class="btn">Agregar Nueva Convocatoria</a>-->
 
 </body>
 </html>

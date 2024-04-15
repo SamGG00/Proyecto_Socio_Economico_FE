@@ -9,12 +9,14 @@ import { ConvacatoriasService } from 'src/app/services/parametros/convacatorias.
 })
 export class ListarConvacatoriaComponent implements OnInit {
   recordList: ConvacatoriaModel[] = []
+convocatorias: any;
 
   constructor(
     private service: ConvacatoriasService
   ) { }
 
   ngOnInit(): void {
+    this.ShowRecordList();
   }
 
   ShowRecordList(){
