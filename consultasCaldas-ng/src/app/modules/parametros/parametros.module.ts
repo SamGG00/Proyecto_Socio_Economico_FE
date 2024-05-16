@@ -30,7 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CrearConvacatoriaComponent,
     EditarConvacatoriaComponent,
     ListarConvacatoriaComponent,
-    RemoverConvacatoriaComponent
+    RemoverConvacatoriaComponent,
   ],
   imports: [
     CommonModule,

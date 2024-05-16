@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConvacatoriaModel } from 'src/app/models/parametros/convacatorias.model';
+import { ConvacatoriaModel } from 'src/app/models/parametros/convacatoria.model';
 import { ConvacatoriasService } from 'src/app/services/parametros/convacatorias.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ConvacatoriasService } from 'src/app/services/parametros/convacatorias.
 })
 export class ListarConvacatoriaComponent implements OnInit {
   recordList: ConvacatoriaModel[] = []
-convocatorias: any;
+  convocatorias: any;
 
   constructor(
     private service: ConvacatoriasService

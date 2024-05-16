@@ -11,6 +11,10 @@ import { CrearConvacatoriaComponent } from './convacatorias/crear-convacatoria/c
 import { EditarConvacatoriaComponent } from './convacatorias/editar-convacatoria/editar-convacatoria.component';
 import { ListarConvacatoriaComponent } from './convacatorias/listar-convacatoria/listar-convacatoria.component';
 import { RemoverConvacatoriaComponent } from './convacatorias/remover-convacatoria/remover-convacatoria.component';
+import { CrearFacultadComponent } from './facultad/crear-facultad/crear-facultad.component';
+import { EditarFacultadComponent } from './facultad/editar-facultad/editar-facultad.component';
+import { ListarFacultadComponent } from './facultad/listar-facultad/listar-facultad.component';
+import { RemoverFacultadComponent } from './facultad/remover-facultad/remover-facultad.component';
 
 const routes: Routes = [
   {
@@ -60,7 +64,24 @@ const routes: Routes = [
   {
     path: 'remover-convacatoria',
     component:RemoverConvacatoriaComponent
-  }
+  },
+  
+  {
+    path: 'crear-facultad',
+    component: CrearFacultadComponent
+  },
+  {
+    path: 'editar-facultad',
+    component:EditarFacultadComponent
+  },
+  {
+    path: 'listar-facultad',
+    component:ListarFacultadComponent
+  },
+  {
+    path: 'remover-facultad',
+    component:RemoverFacultadComponent
+  },
 ];
 
 @NgModule({

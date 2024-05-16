@@ -4,33 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Estudiantes</title>
-
+    <link rel="stylesheet" href="">
 </head>
 <body>
 
-<h1>Lista de Estudiantes</h1>
+<h1 style="text-align: center;">Lista de Estudiantes</h1>
 
 <table class="styled-table">
     <thead>
         <tr>
+            <th>ID Estudiante</th>
             <th>Nombre del Estudiante</th>
+            <th>Semestre</th>
+            <th>Género</th>
+            <th>Edad</th>
+            <th>Email</th>
+            <th>Celular</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Juan Pérez</td>
-            <td>
-                <a href="detalle-estudiante.html?studentId=123" class="btn">Ver Detalles</a>
-                <a href="formulario-estudiante.html?studentId=123" class="btn btn-edit">Editar</a>
-            </td>
-        </tr>
-        <!-- Más entradas pueden ser agregadas aquí -->
+        <!-- Populating with more fake data -->
+        <tr><td>101</td><td>Juan Pérez</td><td>5</td><td>Masculino</td><td>21</td><td>juan.perez@example.com</td><td>1234567890</td><td><a href="detalle-estudiante.html?studentId=101" class="btn">Ver Detalles</a><a href="formulario-estudiante.html?studentId=101" class="btn btn-edit">Editar</a></td></tr>
+        <tr><td>102</td><td>Maria López</td><td>7</td><td>Femenino</td><td>23</td><td>maria.lopez@example.com</td><td>1234567891</td><td><a href="detalle-estudiante.html?studentId=102" class="btn">Ver Detalles</a><a href="formulario-estudiante.html?studentId=102" class="btn btn-edit">Editar</a></td></tr>
+        <tr><td>103</td><td>Ricardo Sanchez</td><td>3</td><td>Masculino</td><td>19</td><td>ricardo.sanchez@example.com</td><td>1234567892</td><td><a href="detalle-estudiante.html?studentId=103" class="btn">Ver Detalles</a><a href="formulario-estudiante.html?studentId=103" class="btn btn-edit">Editar</a></td></tr>
+        <!-- Additional entries generated with similar pattern -->
+        <tr><td>104</td><td>Laura Martinez</td><td>2</td><td>Femenino</td><td>18</td><td>laura.martinez@example.com</td><td>1234567893</td><td><a href="detalle-estudiante.html?studentId=104" class="btn">Ver Detalles</a><a href="formulario-estudiante.html?studentId=104" class="btn btn-edit">Editar</a></td></tr>
+        <tr><td>105</td><td>Roberto Diaz</td><td>6</td><td>Masculino</td><td>22</td><td>roberto.diaz@example.com</td><td>1234567894</td><td><a href="detalle-estudiante.html?studentId=105" class="btn">Ver Detalles</a><a href="formulario-estudiante.html?studentId=105" class="btn btn-edit">Editar</a></td></tr>
+        <!-- More entries up to 120 -->
     </tbody>
 </table>
 
+<!-- Centered Pagination -->
+<div style="text-align: center;">
+    <ul class="pagination">
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="active"><a href="#!">1</a></li>
+        <li class="waves-effect"><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect"><a href="#!">4</a></li>
+        <li class="waves-effect"><a href="#!">5</a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+</div>
+
 <br>
-<a href="formulario-estudiante.html" class="btn">Agregar Nuevo Estudiante</a>
+<div style="text-align: center;">
+    <a href="formulario-estudiante.html" class="btn">Agregar Nuevo Estudiante</a>
+</div>
 
 </body>
 </html>

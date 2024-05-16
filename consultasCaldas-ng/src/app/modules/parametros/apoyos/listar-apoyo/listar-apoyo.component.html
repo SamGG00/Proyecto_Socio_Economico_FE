@@ -9,25 +9,29 @@
 <body>
 
 <h1>Lista de Apoyos</h1>
-
-<table class="styled-table">
+<table class="styled-table responsive-table">
     <thead>
         <tr>
-            <th>Nombre del Apoyo</th>
-            <th>Acciones</th>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Interno</th>
+            <th>Organización ID</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Beca de Estudio</td>
+        <tr *ngFor="let item of recordList">
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.interno }}</td>
+            <td>{{ item.organizacionId }}</td>
             <td>
                 <a href="detalle-apoyo.html?apoyoId=456" class="btn">Ver Detalles</a>
                 <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
             </td>
         </tr>
-        <!-- Más apoyos pueden ser agregados aquí -->
     </tbody>
 </table>
+
 
 <br>
 <a href="formulario-apoyo.html" class="btn">Agregar Nuevo Apoyo</a>

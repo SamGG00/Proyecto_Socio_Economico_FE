@@ -10,24 +10,33 @@
 
 <h1>Lista de Convocatorias</h1>
 
-<table class="styled-table">
+<table class="styled-table responsive-table">
     <thead>
         <tr>
-            <th>Tipo de Apoyo</th>
+            <th>ID</th>
+           <!-- <th>Año</th>
             <th>Semestre</th>
-            <th>cantidadEstudiantesPresentados</th>
-            
+            <th>Cantidad de Estudiantes</th>
+            <th>Autor</th>
+            <th>Inicio</th>
+            <th>Fin</th>
+            <th>ID de Apoyo</th>-->
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let convocatoria of recordList">
-            <td>{{ convocatoria.tipoApoyo }}</td>
-            <td>{{ convocatoria.semester }}</td>
-            <td>{{ convocatoria.cantidadEstudiantesPresentados }}</td>
-            
+            <td>{{ convocatoria.id }}</td>
+            <!--<td>{{ convocatoria.ano }}</td>
+            <td>{{ convocatoria.semestre }}</td>
+            <td>{{ convocatoria.cantidadestudiantes }}</td>
+            <td>{{ convocatoria.autor }}</td>
+            <td>{{ convocatoria.inicio }}</td>
+            <td>{{ convocatoria.fin }}</td>
+            <td>{{ convocatoria.apoyoId }}</td>-->
         </tr>
     </tbody>
 </table>
+
 
 <br>
 <!--<a href="formulario-convocatoria.html" class="btn">Agregar Nueva Convocatoria</a>-->

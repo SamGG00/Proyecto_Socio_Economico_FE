@@ -1,0 +1,34 @@
+/* Custom styles for the navigation bar */
+.nav-wrapper.blue {
+    background-color: #1565c0; /* Custom shade of blue */
+  }
+  
+  /* Ensuring the logo has sufficient space and visibility */
+  .brand-logo {
+    margin-left: 20px;
+  }
+  
+  /* Custom colors for the navigation links for better visibility and design coherence */
+  .nav-wrapper .right li a {
+    color: #fff; /* White color for text */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for navigation links */
+  .nav-wrapper .right li a:hover {
+    background-color: #0d47a1; /* A darker shade of blue on hover */
+  }
+  
+  /* Styles for the mobile side navigation */
+  .sidenav {
+    background-color: #e3f2fd; /* Lighter blue for the mobile sidenav */
+  }
+  
+  .sidenav a {
+    color: #0277bd; /* Darker text color for contrast */
+  }
+  
+  .sidenav a:hover {
+    background-color: #b3e5fc; /* Slight highlight on hover */
+  }
+  

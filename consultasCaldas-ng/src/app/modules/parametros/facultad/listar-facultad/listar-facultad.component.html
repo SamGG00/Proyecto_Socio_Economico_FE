@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Facultades</title>
+    <link rel="stylesheet">
+</head>
+<body>
+
+<h1>Lista de Facultades</h1>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let facultad of recordList">
+            <td>{{ facultad.id }}</td>
+            <td>{{ facultad.nombre }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<!--<a href="agregar-facultad.html" class="btn">Agregar Nueva Facultad</a>-->
+
+</body>
+</html>
