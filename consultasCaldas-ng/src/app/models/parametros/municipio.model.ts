@@ -1,4 +1,4 @@
-export class FacultadModel {
+export class MunicipioModel {
     id?: number;
     nombre?: string;
   }

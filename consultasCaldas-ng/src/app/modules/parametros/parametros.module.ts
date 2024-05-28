@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParametrosRoutingModule } from './parametros-routing.module';
 import { CrearComponent } from './estudiante/crear/crear.component';
 import { EditarComponent } from './estudiante/editar/editar.component';
@@ -14,7 +15,30 @@ import { CrearConvacatoriaComponent } from './convacatorias/crear-convacatoria/c
 import { EditarConvacatoriaComponent } from './convacatorias/editar-convacatoria/editar-convacatoria.component';
 import { ListarConvacatoriaComponent } from './convacatorias/listar-convacatoria/listar-convacatoria.component';
 import { RemoverConvacatoriaComponent } from './convacatorias/remover-convacatoria/remover-convacatoria.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CrearApoyoSocioeconomicoComponent } from './apoyo-socioeconomico/crear-apoyo-socioeconomico/crear-apoyo-socioeconomico.component';
+import { EditarApoyoSocioeconomicoComponent } from './apoyo-socioeconomico/editar-apoyo-socioeconomico/editar-apoyo-socioeconomico.component';
+import { ListarApoyoSocioeconomicoComponent } from './apoyo-socioeconomico/listar-apoyo-socioeconomico/listar-apoyo-socioeconomico.component';
+import { RemoverApoyoSocioeconomicoComponent } from './apoyo-socioeconomico/remover-apoyo-socioeconomico/remover-apoyo-socioeconomico.component';
+import { CrearContactoComponent } from './contacto/crear-contacto/crear-contacto.component';
+import { ListarContactoComponent } from './contacto/listar-contacto/listar-contacto.component';
+import { EditarContactoComponent } from './contacto/editar-contacto/editar-contacto.component';
+import { RemoverContactoComponent } from './contacto/remover-contacto/remover-contacto.component';
+import { CrearMunicipioComponent } from './municipio/crear-municipio/crear-municipio.component';
+import { ListarMunicipioComponent } from './municipio/listar-municipio/listar-municipio.component';
+import { EditarMunicipioComponent } from './municipio/editar-municipio/editar-municipio.component';
+import { RemoverMunicipioComponent } from './municipio/remover-municipio/remover-municipio.component';
+import { CrearOrganizacionComponent } from './organizacion/crear-organizacion/crear-organizacion.component';
+import { ListarOrganizacionComponent } from './organizacion/listar-organizacion/listar-organizacion.component';
+import { EditarOrganizacionComponent } from './organizacion/editar-organizacion/editar-organizacion.component';
+import { RemoverOrganizacionComponent } from './organizacion/remover-organizacion/remover-organizacion.component';
+import { CrearProcesoConvocatoriaComponent } from './proceso-convocatoria/crear-proceso-convocatoria/crear-proceso-convocatoria.component';
+import { EditarProcesoConvocatoriaComponent } from './proceso-convocatoria/editar-proceso-convocatoria/editar-proceso-convocatoria.component';
+import { ListarProcesoConvocatoriaComponent } from './proceso-convocatoria/listar-proceso-convocatoria/listar-proceso-convocatoria.component';
+import { RemoverProcesoConvocatoriaComponent } from './proceso-convocatoria/remover-proceso-convocatoria/remover-proceso-convocatoria.component';
+import { CrearProgramaComponent } from './programa/crear-programa/crear-programa.component';
+import { EditarProgramaComponent } from './programa/editar-programa/editar-programa.component';
+import { ListarProgramaComponent } from './programa/listar-programa/listar-programa.component';
+import { RemoverProgramaComponent } from './programa/remover-programa/remover-programa.component';
 
 
 @NgModule({
@@ -31,6 +55,30 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditarConvacatoriaComponent,
     ListarConvacatoriaComponent,
     RemoverConvacatoriaComponent,
+    CrearApoyoSocioeconomicoComponent,
+    EditarApoyoSocioeconomicoComponent,
+    ListarApoyoSocioeconomicoComponent,
+    RemoverApoyoSocioeconomicoComponent,
+    CrearContactoComponent,
+    ListarContactoComponent,
+    EditarContactoComponent,
+    RemoverContactoComponent,
+    CrearMunicipioComponent,
+    ListarMunicipioComponent,
+    EditarMunicipioComponent,
+    RemoverMunicipioComponent,
+    CrearOrganizacionComponent,
+    ListarOrganizacionComponent,
+    EditarOrganizacionComponent,
+    RemoverOrganizacionComponent,
+    CrearProcesoConvocatoriaComponent,
+    EditarProcesoConvocatoriaComponent,
+    ListarProcesoConvocatoriaComponent,
+    RemoverProcesoConvocatoriaComponent,
+    CrearProgramaComponent,
+    EditarProgramaComponent,
+    ListarProgramaComponent,
+    RemoverProgramaComponent
   ],
   imports: [
     CommonModule,

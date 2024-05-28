@@ -15,9 +15,33 @@ import { CrearFacultadComponent } from './facultad/crear-facultad/crear-facultad
 import { EditarFacultadComponent } from './facultad/editar-facultad/editar-facultad.component';
 import { ListarFacultadComponent } from './facultad/listar-facultad/listar-facultad.component';
 import { RemoverFacultadComponent } from './facultad/remover-facultad/remover-facultad.component';
+import { CrearApoyoSocioeconomicoComponent } from './apoyo-socioeconomico/crear-apoyo-socioeconomico/crear-apoyo-socioeconomico.component';
+import { ListarApoyoSocioeconomicoComponent } from './apoyo-socioeconomico/listar-apoyo-socioeconomico/listar-apoyo-socioeconomico.component';
+import { EditarApoyoSocioeconomicoComponent } from './apoyo-socioeconomico/editar-apoyo-socioeconomico/editar-apoyo-socioeconomico.component';
+import { RemoverApoyoSocioeconomicoComponent } from './apoyo-socioeconomico/remover-apoyo-socioeconomico/remover-apoyo-socioeconomico.component';
+import { CrearContactoComponent } from './contacto/crear-contacto/crear-contacto.component';
+import { ListarContactoComponent } from './contacto/listar-contacto/listar-contacto.component';
+import { EditarContactoComponent } from './contacto/editar-contacto/editar-contacto.component';
+import { RemoverContactoComponent } from './contacto/remover-contacto/remover-contacto.component';
+import { CrearMunicipioComponent } from './municipio/crear-municipio/crear-municipio.component';
+import { EditarMunicipioComponent } from './municipio/editar-municipio/editar-municipio.component';
+import { ListarMunicipioComponent } from './municipio/listar-municipio/listar-municipio.component';
+import { RemoverMunicipioComponent } from './municipio/remover-municipio/remover-municipio.component';
+import { CrearOrganizacionComponent } from './organizacion/crear-organizacion/crear-organizacion.component';
+import { EditarOrganizacionComponent } from './organizacion/editar-organizacion/editar-organizacion.component';
+import { ListarOrganizacionComponent } from './organizacion/listar-organizacion/listar-organizacion.component';
+import { RemoverOrganizacionComponent } from './organizacion/remover-organizacion/remover-organizacion.component';
+import { CrearProcesoConvocatoriaComponent } from './proceso-convocatoria/crear-proceso-convocatoria/crear-proceso-convocatoria.component';
+import { EditarProcesoConvocatoriaComponent } from './proceso-convocatoria/editar-proceso-convocatoria/editar-proceso-convocatoria.component';
+import { ListarProcesoConvocatoriaComponent } from './proceso-convocatoria/listar-proceso-convocatoria/listar-proceso-convocatoria.component';
+import { RemoverProcesoConvocatoriaComponent } from './proceso-convocatoria/remover-proceso-convocatoria/remover-proceso-convocatoria.component';
+import { CrearProgramaComponent } from './programa/crear-programa/crear-programa.component';
+import { EditarProgramaComponent } from './programa/editar-programa/editar-programa.component';
+import { ListarProgramaComponent } from './programa/listar-programa/listar-programa.component';
+import { RemoverProgramaComponent } from './programa/remover-programa/remover-programa.component';
 
 const routes: Routes = [
-  {
+  { //estudiantes
     path: 'crear',
     component: CrearComponent
   },
@@ -82,6 +106,109 @@ const routes: Routes = [
     path: 'remover-facultad',
     component:RemoverFacultadComponent
   },
+
+  {
+    path: 'crear-apoyo-socioeconomico',
+    component: CrearApoyoSocioeconomicoComponent
+  },
+  {
+    path: 'editar-apoyo-socioeconomico',
+    component: EditarApoyoSocioeconomicoComponent
+  },
+  {
+    path: 'listar-apoyo-socioeconomico',
+    component: ListarApoyoSocioeconomicoComponent
+  },
+  {
+    path: 'remover-apoyo-socioeconomico',
+    component: RemoverApoyoSocioeconomicoComponent
+  },
+
+  {
+    path: 'crear-contacto',
+    component: CrearContactoComponent
+  },
+  {
+    path: 'editar-contacto',
+    component: EditarContactoComponent
+  },
+  {
+    path: 'listar-contacto',
+    component: ListarContactoComponent
+  },
+  {
+    path: 'remover-contacto',
+    component: RemoverContactoComponent
+  },
+
+  {
+    path: 'crear-municipio',
+    component: CrearMunicipioComponent
+  },
+  {
+    path: 'editar-municipio',
+    component: EditarMunicipioComponent
+  },
+  {
+    path: 'listar-municipio',
+    component: ListarMunicipioComponent
+  },
+  {
+    path: 'remover-municipio',
+    component: RemoverMunicipioComponent
+  },
+
+  {
+    path: 'crear-organizacion',
+    component: CrearOrganizacionComponent
+  },
+  {
+    path: 'editar-organizacion',
+    component: EditarOrganizacionComponent
+  },
+  {
+    path: 'listar-organizacion',
+    component: ListarOrganizacionComponent
+  },
+  {
+    path: 'remover-organizacion',
+    component: RemoverOrganizacionComponent
+  },
+
+  {
+    path: 'crear-proceso-convocatoria',
+    component: CrearProcesoConvocatoriaComponent
+  },
+  {
+    path: 'editar-proceso-convocatoria',
+    component: EditarProcesoConvocatoriaComponent
+  },
+  {
+    path: 'listar-proceso-convocatoria',
+    component: ListarProcesoConvocatoriaComponent
+  },
+  {
+    path: 'remover-proceso-convocatoria',
+    component: RemoverProcesoConvocatoriaComponent
+  },
+
+  {
+    path: 'crear-programa',
+    component: CrearProgramaComponent
+  },
+  {
+    path: 'editar-programa',
+    component: EditarProgramaComponent
+  },
+  {
+    path: 'listar-programa',
+    component: ListarProgramaComponent
+  },
+  {
+    path: 'remover-programa',
+    component: RemoverProgramaComponent
+  },
+
 ];
 
 @NgModule({

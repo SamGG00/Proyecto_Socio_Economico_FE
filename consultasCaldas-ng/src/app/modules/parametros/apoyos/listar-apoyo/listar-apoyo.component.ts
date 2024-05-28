@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-apoyo.component.css']
 })
 export class ListarApoyoComponent implements OnInit {
+recordList: any;
 
   constructor() { }
 
