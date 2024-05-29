@@ -13,6 +13,6 @@ export class MunicipioService {
   constructor(private http: HttpClient) { 
   }
   GetRecordList(): Observable<MunicipioModel[]> {
-    return this.http.get<MunicipioModel[]>(`${this.url}/contacto`)
+    return this.http.get<MunicipioModel[]>(`${this.url}/municipios`)
   }
 }
