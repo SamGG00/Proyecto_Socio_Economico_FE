@@ -1,1 +1,40 @@
-<p>listar-proceso-convocatoria works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Proceso Convocatoria</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+<h1>Lista de Proceso Convocatoria</h1>
+
+<table class="styled-table responsive-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>aprobado</th>
+            <th>Año</th>
+            <th>Semestre</th>
+            <th>Codigo Estudiante</th>
+            <th>Id Convocatoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of recordList">
+            <td>{{ item.id }}</td>
+            <td>{{ item.ano }}</td>
+            <td>{{ item.semestre }}</td>
+            <td>{{ item.codigo_estudiante }}</td>
+            <td>{{ item.id_convocatoria }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<br>
+<!--<a href="formulario-convocatoria.html" class="btn">Agregar Nueva Convocatoria</a>-->
+
+</body>
+</html>

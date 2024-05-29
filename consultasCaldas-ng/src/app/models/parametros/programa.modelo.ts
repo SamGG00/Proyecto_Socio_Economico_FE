@@ -1,8 +1,8 @@
 export class ProgramaModel {
     id?: number;
     nombre?: string;
-    codigoSnies?: string;
-    duracion?: number;
-    facultadId?: number;
+    codigo_snies?: string;
+    duracion_semestre?: number;
+    id_facultad?: number;
   }
   

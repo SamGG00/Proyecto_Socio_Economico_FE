@@ -2,9 +2,9 @@ export class ConvacatoriaModel{
     id?: number;
     ano?: number;
     semestre?: string;
-    cantidadestudiantes?: number;
+    total_estudiantes_presentados?: number;
     autor?: string;
-    inicio?: string;
-    fin?: string;
-    apoyoId?: number;
+    fecha_inicio?: string;
+    fecha_fin?: string;
+    id_apoyo_socio_economico?: number;
 }

@@ -1,1 +1,39 @@
-<p>listar-programa works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Programas</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+<h1>Lista de Programas</h1>
+
+<table class="styled-table responsive-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Codigo SNIES</th>
+            <th>Duración Semestre</th>
+            <th>Id Facultad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of recordList">
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.codigo_snies }}</td>
+            <td>{{ item.duracion_semestre }}</td>
+            <td>{{ item.id_facultad }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<br>
+<!--<a href="formulario-convocatoria.html" class="btn">Agregar Nueva Convocatoria</a>-->
+
+</body>
+</html>

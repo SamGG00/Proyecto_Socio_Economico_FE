@@ -1,1 +1,46 @@
-<p>listar-apoyo-socioeconomico works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Apoyos Socio Economicos</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+<h1>Lista de Apoyos Socio Economicos</h1>
+<table class="styled-table responsive-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Semestre</th>
+            <th>Año</th>
+            <th>Estudiantes Aprobados</th>
+            <th>Cede de Apoyo</th>
+            <th>Autor</th>
+            <th>Id Apoyo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of recordList">
+            <td>{{ item.id }}</td>
+            <td>{{ item.semestre }}</td>
+            <td>{{ item.ano }}</td>
+            <td>{{ item.estudiantes_aprobados }}</td>
+            <td>{{ item.cede_apoyo }}</td>
+            <td>{{ item.autor }}</td>
+            <td>{{ item.id_apoyo }}</td>
+            <td>
+                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Ver Detalles</a>
+                <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<br>
+<a href="formulario-apoyo.html" class="btn">Agregar Nuevo Apoyo</a>
+
+</body>
+</html>

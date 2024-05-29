@@ -2,9 +2,8 @@ export class ApoyoSocioeconomicoModel{
   id?: number;
   semestre?: number;
   ano?: Date;
-  cantidadEstudiantesTotalAdmitidos?: number;
-  lugarApoyo?: string;
-  apoyo?: string;
+  estudiantes_aprobados?: number;
+  cede_apoyo?: string;
   autor?: string;
-  apoyoId?: number;
+  id_apoyo?: number;
 }

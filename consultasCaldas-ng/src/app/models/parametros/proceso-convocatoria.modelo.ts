@@ -1,9 +1,9 @@
 export class ProcesoConvocatoriaModel {
     id?: number;
     aprobado?: boolean;
-    año?: number;
+    ano?: number;
     semestre?: number;
-    estudianteId?: string;
-    convocatoriaId?: number;
+    codigo_estudiante?: string;
+    id_convocatoria?: number;
   }
   
