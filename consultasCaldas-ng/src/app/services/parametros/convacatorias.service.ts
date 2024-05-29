@@ -15,6 +15,6 @@ export class ConvacatoriasService {
   }
 
   GetRecordList(): Observable<ConvacatoriaModel[]> {
-    return this.http.get<ConvacatoriaModel[]>(`${this.url}/convocatorias`)
+    return this.http.get<ConvacatoriaModel[]>(`${this.url}/convocatoria`)
   }
 }

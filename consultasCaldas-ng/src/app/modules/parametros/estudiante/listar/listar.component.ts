@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { EstudianteModel } from 'src/app/models/parametros/estudiante.model';
+import { EstudianteService } from 'src/app/services/parametros/estudiante.service';
 
 @Component({
   selector: 'app-listar',
@@ -7,21 +9,23 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./listar.component.css']
 })
 export class ListarComponent implements OnInit {
-  dataFrom: FormGroup = new FormGroup({});
+  recordList: EstudianteModel[] = []
+  convocatorias: any;
 
   constructor(
-    private fb:FormBuilder
+    private service: EstudianteService
   ) { }
 
   ngOnInit(): void {
-    // TODO document why this method 'ngOnInit' is empty
-  
+    this.ShowRecordList();
   }
 
-  FormBuilding(){
-    this.dataFrom = this.fb.group({
-      
-    })
+  ShowRecordList(){
+    this.service.GetRecordList().subscribe({
+      next: (data: EstudianteModel[]) => {
+        this.recordList = data;
+      },
+    });
   }
 
 }
