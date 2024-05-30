@@ -16,6 +16,6 @@ export class ContactoService {
   }
 
   GetRecordList(): Observable<ContactoModel[]> {
-    return this.http.get<ContactoModel[]>(`${this.url}/contacto`)
+    return this.http.get<ContactoModel[]>(`${this.url}/contactos`)
   }
 }

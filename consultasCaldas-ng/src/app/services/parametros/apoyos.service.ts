@@ -13,7 +13,7 @@ export class ApoyosService {
   constructor(private http: HttpClient) { 
   }
   GetRecordList(): Observable<ApoyoModel[]> {
-    return this.http.get<ApoyoModel[]>(`${this.url}/contacto`)
+    return this.http.get<ApoyoModel[]>(`${this.url}/apoyos`)
   }
   
 }

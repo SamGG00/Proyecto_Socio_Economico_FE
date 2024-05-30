@@ -22,6 +22,7 @@ export class ListarOrganizacionComponent implements OnInit {
   ShowRecordList(){
     this.service.GetRecordList().subscribe({
       next: (data: OrganizacionModel[]) => {
+        console.log(data);
         this.recordList = data;
       },
     });
