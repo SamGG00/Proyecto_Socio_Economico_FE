@@ -22,6 +22,7 @@ export class ListarProcesoConvocatoriaComponent implements OnInit {
   ShowRecordList(){
     this.service.GetRecordList().subscribe({
       next: (data: ProcesoConvocatoriaModel[]) => {
+        console.log(data);
         this.recordList = data;
       },
     });

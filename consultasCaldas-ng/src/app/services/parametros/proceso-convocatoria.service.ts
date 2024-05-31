@@ -13,6 +13,6 @@ export class ProcesoConvocatoriaService {
   constructor(private http: HttpClient) { 
   }
   GetRecordList(): Observable<ProcesoConvocatoriaModel[]> {
-    return this.http.get<ProcesoConvocatoriaModel[]>(`${this.url}/contacto`)
+    return this.http.get<ProcesoConvocatoriaModel[]>(`${this.url}/proceso-convocatorias`)
   }
 }

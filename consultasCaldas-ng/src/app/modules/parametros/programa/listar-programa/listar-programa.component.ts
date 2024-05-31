@@ -22,6 +22,7 @@ export class ListarProgramaComponent implements OnInit {
   ShowRecordList(){
     this.service.GetRecordList().subscribe({
       next: (data: ProgramaModel[]) => {
+        console.log(data);
         this.recordList = data;
       },
     });

@@ -17,17 +17,16 @@
             <th>aprobado</th>
             <th>Año</th>
             <th>Semestre</th>
-            <th>Codigo Estudiante</th>
             <th>Id Convocatoria</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let item of recordList">
             <td>{{ item.id }}</td>
-            <td>{{ item.ano }}</td>
-            <td>{{ item.semestre }}</td>
-            <td>{{ item.codigo_estudiante }}</td>
-            <td>{{ item.id_convocatoria }}</td>
+            <td>{{ item.Aprobado }}</td>
+            <td>{{ item.Ano }}</td>
+            <td>{{ item.Semestre }}</td>
+            <td>{{ item.Id_Convocatoria }}</td>
         </tr>
     </tbody>
 </table>

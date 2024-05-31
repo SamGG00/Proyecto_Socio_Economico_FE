@@ -13,6 +13,6 @@ export class ProgramaService {
   constructor(private http: HttpClient) { 
   }
   GetRecordList(): Observable<ProgramaModel[]> {
-    return this.http.get<ProgramaModel[]>(`${this.url}/contacto`)
+    return this.http.get<ProgramaModel[]>(`${this.url}/programas`)
   }
 }
