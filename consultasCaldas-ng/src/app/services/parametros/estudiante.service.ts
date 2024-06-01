@@ -13,6 +13,6 @@ export class EstudianteService {
   constructor(private http: HttpClient) { 
   }
   GetRecordList(): Observable<EstudianteModel[]> {
-    return this.http.get<EstudianteModel[]>(`${this.url}/contacto`)
+    return this.http.get<EstudianteModel[]>(`${this.url}/estudiantes`)
   }
 }

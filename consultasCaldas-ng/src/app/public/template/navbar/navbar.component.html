@@ -1,25 +1,38 @@
+<ul id="dropdown1" class="dropdown-content">
+  <li><a routerLink="parametros/listar-apoyo">Apoyo</a></li>
+  <li><a routerLink="parametros/listar-apoyo-socioeconomico">Apoyo Socioeconomico</a></li>
+  <li><a routerLink="parametros/listar-contacto">Contacto</a></li>
+  <li><a routerLink="parametros/listar-convacatoria">Convocatoria</a></li>
+  <li><a routerLink="parametros/listar">Estudiante</a></li>
+  <li><a routerLink="parametros/listar-facultad">Facultad</a></li>
+  <li><a routerLink="parametros/listar-municipio">Municipio</a></li>
+  <li><a routerLink="parametros/listar-organizacion">Organizacion</a></li>
+  <li><a routerLink="parametros/listar-proceso-convocatoria">Proceso Convocatoria</a></li>
+  <li><a routerLink="parametros/listar-programa">Programa</a></li>
+</ul>
+
 <nav>
-  <div class="nav-wrapper blue">
-    <a routerLink="/home" class="brand-logo">Inicio</a>
+  <div class="nav-wrapper dark-blue">
+    <a routerLink="/home" class="brand-logo left">
+      <img src="assets/logo/Logo_80_anos_Universidad_de_Caldas_Azul.png" alt="Logo" class="logo">
+    </a>
+    <a routerLink="/home" class="brand-logo center">Bienestar Universitario</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a routerLink="parametros/listar-apoyo">Apoyo</a></li>
-      <li><a routerLink="parametros/listar-apoyo-socioeconomico">Apoyo Socioeconomico</a></li>
-      <li><a routerLink="parametros/listar-contacto">Contacto</a></li>
-      <li><a routerLink="parametros/listar-convacatoria">Convocatoria</a></li>
-      <li><a routerLink="parametros/listar">Estudiante</a></li>
-      <li><a routerLink="parametros/listar-facultad">Facultad</a></li>
-      <li><a routerLink="parametros/listar-municipio">Municipio</a></li>
-      <li><a routerLink="parametros/listar-organizacion">Organizacion</a></li>
-      <li><a routerLink="parametros/listar-proceso-convocatoria">Proceso Convocatoria</a></li>
-      <li><a routerLink="parametros/listar-programa">Programa</a></li>
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
   </div>
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-  <li><a routerLink="sass">Sass</a></li>
-  <li><a routerLink="apollossocioeconomico">Components</a></li>
-  <li><a routerLink="collapsible">Javascript</a></li>
-  <li><a routerLink="mobile">Mobile</a></li>
+  <li><a routerLink="parametros/listar-apoyo">Apoyo</a></li>
+  <li><a routerLink="parametros/listar-apoyo-socioeconomico">Apoyo Socioeconomico</a></li>
+  <li><a routerLink="parametros/listar-contacto">Contacto</a></li>
+  <li><a routerLink="parametros/listar-convacatoria">Convocatoria</a></li>
+  <li><a routerLink="parametros/listar">Estudiante</a></li>
+  <li><a routerLink="parametros/listar-facultad">Facultad</a></li>
+  <li><a routerLink="parametros/listar-municipio">Municipio</a></li>
+  <li><a routerLink="parametros/listar-organizacion">Organizacion</a></li>
+  <li><a routerLink="parametros/listar-proceso-convocatoria">Proceso Convocatoria</a></li>
+  <li><a routerLink="parametros/listar-programa">Programa</a></li>
 </ul>

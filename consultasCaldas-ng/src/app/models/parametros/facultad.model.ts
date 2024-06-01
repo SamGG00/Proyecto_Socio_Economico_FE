@@ -1,5 +1,5 @@
 export class FacultadModel {
     id?: number;
-    nombre?: string;
+    Nombre?: string;
   }
   

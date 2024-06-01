@@ -13,6 +13,6 @@ export class FacultadService {
   constructor(private http: HttpClient) { 
   }
   GetRecordList(): Observable<FacultadModel[]> {
-    return this.http.get<FacultadModel[]>(`${this.url}/contacto`)
+    return this.http.get<FacultadModel[]>(`${this.url}/facultades`)
   }
 }

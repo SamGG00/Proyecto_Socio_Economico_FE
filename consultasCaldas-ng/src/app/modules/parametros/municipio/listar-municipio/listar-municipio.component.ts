@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { MunicipioModel } from 'src/app/models/parametros/municipio.model';
 import { MunicipioService } from 'src/app/services/parametros/municipio.service';
 
@@ -8,6 +9,9 @@ import { MunicipioService } from 'src/app/services/parametros/municipio.service'
   styleUrls: ['./listar-municipio.component.css']
 })
 export class ListarMunicipioComponent implements OnInit {
+  p: number = 1;
+  pageSize: number = ConfigurationData.PAGE_SIZE_PAGINATION;
+  totalAmount: number = 0;
   recordList: MunicipioModel[] = []
   convocatorias: any;
 

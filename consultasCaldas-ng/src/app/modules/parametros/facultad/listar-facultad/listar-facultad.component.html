@@ -18,13 +18,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let facultad of recordList">
-            <td>{{ facultad.id }}</td>
-            <td>{{ facultad.nombre }}</td>
+        <tr *ngFor="let item of recordList | paginate: { itemsPerPage: pageSize,
+                                                        currentPage: p,
+                                                        totalItems: totalAmount }">
+            <td>{{ item.id }}</td>
+            <td>{{ item.Nombre }}</td>
         </tr>
     </tbody>
 </table>
-
+<!--<td colspan="7">
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+    nextLabel="Siguiente"></pagination-controls>
+</td> -->
 <br>
 <!--<a href="agregar-facultad.html" class="btn">Agregar Nueva Facultad</a>-->
 

@@ -13,6 +13,6 @@ export class ApoyoSocioeconomicoService {
   constructor(private http: HttpClient) { 
   }
   GetRecordList(): Observable<ApoyoSocioeconomicoModel[]> {
-    return this.http.get<ApoyoSocioeconomicoModel[]>(`${this.url}/apoyosocioeconomico`)
+    return this.http.get<ApoyoSocioeconomicoModel[]>(`${this.url}/apoyo-socioeconomicos`)
   }
 }

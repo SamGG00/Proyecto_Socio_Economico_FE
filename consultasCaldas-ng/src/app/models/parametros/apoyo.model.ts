@@ -1,6 +1,6 @@
 export class ApoyoModel{
     id?: number;
-    nombre?: string;
-    interno?: boolean;
-    organizacionId?: number;   
+    Nombre?: string;
+    Interno?: boolean;
+    Id_Organizacion?: number;   
 }

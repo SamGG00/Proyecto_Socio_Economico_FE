@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { EstudianteModel } from 'src/app/models/parametros/estudiante.model';
 import { EstudianteService } from 'src/app/services/parametros/estudiante.service';
 
@@ -9,6 +10,9 @@ import { EstudianteService } from 'src/app/services/parametros/estudiante.servic
   styleUrls: ['./listar.component.css']
 })
 export class ListarComponent implements OnInit {
+  p: number = 1;
+  pageSize: number = ConfigurationData.PAGE_SIZE_PAGINATION;
+  totalAmount: number = 0;
   recordList: EstudianteModel[] = []
   convocatorias: any;
 

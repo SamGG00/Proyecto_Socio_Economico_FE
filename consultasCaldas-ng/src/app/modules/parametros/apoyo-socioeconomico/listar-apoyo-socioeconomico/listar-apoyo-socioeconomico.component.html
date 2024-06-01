@@ -22,14 +22,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of recordList">
+        <tr *ngFor="let item of recordList | paginate: { itemsPerPage: pageSize,
+                                                        currentPage: p,
+                                                        totalItems: totalAmount }">
             <td>{{ item.id }}</td>
-            <td>{{ item.semestre }}</td>
-            <td>{{ item.ano }}</td>
-            <td>{{ item.estudiantes_aprobados }}</td>
-            <td>{{ item.cede_apoyo }}</td>
-            <td>{{ item.autor }}</td>
-            <td>{{ item.id_apoyo }}</td>
+            <td>{{ item.Semestre }}</td>
+            <td>{{ item.Ano }}</td>
+            <td>{{ item.Estudiantes_Aprobados }}</td>
+            <td>{{ item.Sede_Apoyo }}</td>
+            <td>{{ item.Autor }}</td>
+            <td>{{ item.Id_Apoyo }}</td>
             <td>
                 <a href="detalle-apoyo.html?apoyoId=456" class="btn">Ver Detalles</a>
                 <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
@@ -37,6 +39,10 @@
         </tr>
     </tbody>
 </table>
+<td colspan="7">
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+    nextLabel="Siguiente"></pagination-controls>
+</td>
 
 
 <br>

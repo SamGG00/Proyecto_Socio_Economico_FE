@@ -24,19 +24,24 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of recordList">
+        <tr *ngFor="let item of recordList | paginate: { itemsPerPage: pageSize,
+                                                        currentPage: p,
+                                                        totalItems: totalAmount }">
             <td>{{ item.id }}</td>
-            <td>{{ item.ano }}</td>
-            <td>{{ item.semestre }}</td>
-            <td>{{ item.total_estudiantes_presentados }}</td>
-            <td>{{ item.autor }}</td>
-            <td>{{ item.fecha_inicio }}</td>
-            <td>{{ item.fecha_fin }}</td>
-            <td>{{ item.id_apoyo_socio_economico }}</td>
+            <td>{{ item.Ano }}</td>
+            <td>{{ item.Semestre }}</td>
+            <td>{{ item.Total_Estudiantes_Presentados }}</td>
+            <td>{{ item.Autor }}</td>
+            <td>{{ item.Fecha_Inicio }}</td>
+            <td>{{ item.Fecha_Fin }}</td>
+            <td>{{ item.Id_Apoyo_Socio_Economico }}</td>
         </tr>
     </tbody>
 </table>
-
+<td colspan="7">
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+    nextLabel="Siguiente"></pagination-controls>
+</td>
 
 <br>
 <!--<a href="formulario-convocatoria.html" class="btn">Agregar Nueva Convocatoria</a>-->

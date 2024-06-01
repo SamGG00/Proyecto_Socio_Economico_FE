@@ -7,34 +7,37 @@
     <link rel="stylesheet" href="">
 </head>
 <body>
+    
+    <h1>Lista de Apoyos</h1>
+    <a href="formulario-apoyo.html" class="btn">Agregar Nuevo Apoyo</a>
+    <table class="styled-table responsive-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Interno</th>
+                <th>Organización ID</th>
+                <th>Acciones</th> <!-- Added header for action buttons -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of recordList | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalAmount }">
+                <td>{{ item.id }}</td>
+                <td>{{ item.Nombre }}</td>
+                <td>{{ item.Interno }}</td>
+                <td>{{ item.Id_Organizacion }}</td>
+                <td>
+                    <a href="detalle-apoyo.html?apoyoId=456" class="btn">Ver Detalles</a>
+                    <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <td colspan="7">
+        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+        nextLabel="Siguiente"></pagination-controls>
+    </td>
 
-<h1>Lista de Apoyos</h1>
-<table class="styled-table responsive-table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Interno</th>
-            <th>Organización ID</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of recordList">
-            <td>{{ item.id }}</td>
-            <td>{{ item.nombre }}</td>
-            <td>{{ item.interno }}</td>
-            <td>{{ item.organizacionId }}</td>
-            <td>
-                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Ver Detalles</a>
-                <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-<br>
-<a href="formulario-apoyo.html" class="btn">Agregar Nuevo Apoyo</a>
 
 </body>
 </html>

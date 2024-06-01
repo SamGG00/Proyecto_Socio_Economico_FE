@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { ConvacatoriaModel } from 'src/app/models/parametros/convacatoria.model';
 import { ConvacatoriasService } from 'src/app/services/parametros/convacatorias.service';
 
@@ -8,6 +9,9 @@ import { ConvacatoriasService } from 'src/app/services/parametros/convacatorias.
   styleUrls: ['./listar-convacatoria.component.css']
 })
 export class ListarConvacatoriaComponent implements OnInit {
+  p: number = 1;
+  pageSize: number = ConfigurationData.PAGE_SIZE_PAGINATION;
+  totalAmount: number = 0;
   recordList: ConvacatoriaModel[] = []
   convocatorias: any;
 
@@ -22,6 +26,7 @@ export class ListarConvacatoriaComponent implements OnInit {
   ShowRecordList(){
     this.service.GetRecordList().subscribe({
       next: (data: ConvacatoriaModel[]) => {
+        console.log(data)
         this.recordList = data;
       },
     });

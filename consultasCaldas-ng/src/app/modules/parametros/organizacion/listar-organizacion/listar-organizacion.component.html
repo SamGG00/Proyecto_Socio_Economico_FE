@@ -20,7 +20,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of recordList">
+        <tr *ngFor="let item of recordList | paginate: { itemsPerPage: pageSize,
+                                                        currentPage: p,
+                                                        totalItems: totalAmount }">
             <td>{{ item.id }}</td>
             <td>{{ item.Nombre }}</td>
             <td>{{ item.Correo }}</td>
@@ -28,7 +30,10 @@
         </tr>
     </tbody>
 </table>
-
+<td colspan="7">
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+    nextLabel="Siguiente"></pagination-controls>
+</td>
 
 <br>
 <!--<a href="formulario-convocatoria.html" class="btn">Agregar Nueva Convocatoria</a>-->

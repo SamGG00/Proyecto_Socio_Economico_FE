@@ -18,9 +18,10 @@
                 <th>Nombre del Estudiante</th>
                 <th>Género</th>
                 <th>Edad</th>
+                <th>Estado</th>
                 <th>Numero de Identificación</th>
                 <th>PBM</th>
-                <th>Email</th>
+                <th>Correo</th>
                 <th>Celular</th>
                 <th>Estrato</th>
                 <th>Promedio de Notas</th>
@@ -33,6 +34,7 @@
                 <th>Id Programa Acedemico</th>
                 <th>Retiros Bajo Rendimiento</th>
                 <th>Sanciones Disiplinarias</th>
+                <th>Semestre Bajo Rendimiento </th>
                 <th>Semestre Sancion</th>
                 <th>Aspirante Especial</th>
                 <th>Tipo de Aspirante</th>
@@ -40,50 +42,43 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of recordList">
-                <td>{{ item.codigo_estudiante }}</td>
-                <td>{{ item.nombre }}</td>
-                <td>{{ item.genero }}</td>
-                <td>{{ item.edad }}</td>
-                <td>{{ item.numero_de_identificacion }}</td>
-                <td>{{ item.pbm }}</td>
-                <td>{{ item.correo }}</td>
-                <td>{{ item.celular }}</td>
-                <td>{{ item.estrato }}</td>
-                <td>{{ item.promedio_notas }}</td>
-                <td>{{ item.puntaje_de_apoyos }}</td>
-                <td>{{ item.estado }}</td>
-                <td>{{ item.ultimo_semestre_cursado }}</td>
-                <td>{{ item.hijos }}</td>
-                <td>{{ item.id_municipio_nacimiento }}</td>
-                <td>{{ item.id_municipio_vivienda }}</td>
-                <td>{{ item.id_contacto }}</td>
-                <td>{{ item.id_programa_academico }}</td>
-                <td>{{ item.retiros_bajo_rendimiento }}</td>
-                <td>{{ item.semestre_bajo_rendimiento }}</td>
-                <td>{{ item.sanciones_disciplinarias }}</td>
-                <td>{{ item.semetre_sancion }}</td>
-                <td>{{ item.aspirante_especial }}</td>
-                <td>{{ item.tipo_de_aspirante }}</td>
-                <td>{{ item.autor }}</td>
+            <tr *ngFor="let item of recordList | paginate: { itemsPerPage: pageSize,
+                                                        currentPage: p,
+                                                        totalItems: totalAmount }">
+                <td>{{ item.Codigo_Estudiante }}</td>
+                <td>{{ item.Nombre }}</td>
+                <td>{{ item.Genero }}</td>
+                <td>{{ item.Edad }}</td>
+                <td>{{ item.Estado }}</td>
+                <td>{{ item.Numero_De_Identificacion }}</td>
+                <td>{{ item.PBM }}</td>
+                <td>{{ item.Correo }}</td>
+                <td>{{ item.Celular }}</td>
+                <td>{{ item.Estrato }}</td>
+                <td>{{ item.Promedio_Notas }}</td>
+                <td>{{ item.Puntaje_De_Apoyos }}</td>
+                <td>{{ item.Ultimo_Semestre_Cursado }}</td>
+                <td>{{ item.Hijos }}</td>
+                <td>{{ item.Id_Municipio_Nacimiento }}</td>
+                <td>{{ item.Id_Municipio_Vivienda }}</td>
+                <td>{{ item.Id_Contacto }}</td>
+                <td>{{ item.Id_Programa_Academico }}</td>
+                <td>{{ item.Retiros_Bajo_Rendimiento }}</td>
+                <td>{{ item.Sanciones_Disciplinarias }}</td>
+                <td>{{ item.Semestre_Bajo_Rendimiento }}</td>
+                <td>{{ item.Semetre_Sancion }}</td>
+                <td>{{ item.Aspirante_Especial }}</td>
+                <td>{{ item.Tipo_De_Aspirante }}</td>
+                <td>{{ item.Autor }}</td>
             </tr>
         </tbody>
     </table>
 </div>
 
-<!-- Centered Pagination -->
-<div style="text-align: center;">
-    <ul class="pagination">
-        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-        <li class="active"><a href="#!">1</a></li>
-        <li class="waves-effect"><a href="#!">2</a></li>
-        <li class="waves-effect"><a href="#!">3</a></li>
-        <li class="waves-effect"><a href="#!">4</a></li>
-        <li class="waves-effect"><a href="#!">5</a></li>
-        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-    </ul>
-</div>
-
+<td colspan="7">
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+    nextLabel="Siguiente"></pagination-controls>
+</td>
 <br>
 <div style="text-align: center;">
     <a href="formulario-estudiante.html" class="btn">Agregar Nuevo Estudiante</a>

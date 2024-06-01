@@ -1,34 +1,68 @@
 /* Custom styles for the navigation bar */
-.nav-wrapper.blue {
-    background-color: #1565c0; /* Custom shade of blue */
+.nav-wrapper.dark-blue {
+  background: linear-gradient(135deg, #1565c0, #0d47a1); /* Gradient background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+  transform: perspective(500px) rotateX(2deg); /* 3D perspective */
+}
+
+/* Ensuring the logo has sufficient space and visibility */
+.logo {
+  height: 65px;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Custom colors for the navigation links for better visibility and design coherence */
+.nav-wrapper .right li a {
+  color: #fff; /* White color for text */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-wrapper .right li a:hover {
+  background-color: #0d47a1; /* A darker shade of blue on hover */
+  transform: perspective(500px) rotateY(5deg); /* Slight 3D rotation on hover */
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+  background: linear-gradient(135deg, #1565c0, #0d47a1); /* Gradient background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+}
+
+.dropdown-content li a {
+  color: #fff; /* White color for text */
+}
+
+.dropdown-content li a:hover {
+  background-color: #0d47a1; /* A darker shade of blue on hover */
+}
+
+/* Styles for the mobile side navigation */
+.sidenav {
+  background-color: #e3f2fd; /* Lighter blue for the mobile sidenav */
+}
+
+.sidenav a {
+  color: #0277bd; /* Darker text color for contrast */
+}
+
+.sidenav a:hover {
+  background-color: #b3e5fc; /* Slight highlight on hover */
+}
+
+/* Adding some animation to the navbar */
+.nav-wrapper {
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
   }
-  
-  /* Ensuring the logo has sufficient space and visibility */
-  .brand-logo {
-    margin-left: 20px;
+  to {
+    transform: translateY(0);
   }
-  
-  /* Custom colors for the navigation links for better visibility and design coherence */
-  .nav-wrapper .right li a {
-    color: #fff; /* White color for text */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-  }
-  
-  /* Hover effect for navigation links */
-  .nav-wrapper .right li a:hover {
-    background-color: #0d47a1; /* A darker shade of blue on hover */
-  }
-  
-  /* Styles for the mobile side navigation */
-  .sidenav {
-    background-color: #e3f2fd; /* Lighter blue for the mobile sidenav */
-  }
-  
-  .sidenav a {
-    color: #0277bd; /* Darker text color for contrast */
-  }
-  
-  .sidenav a:hover {
-    background-color: #b3e5fc; /* Slight highlight on hover */
-  }
-  
+}

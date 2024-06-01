@@ -39,6 +39,7 @@ import { CrearProgramaComponent } from './programa/crear-programa/crear-programa
 import { EditarProgramaComponent } from './programa/editar-programa/editar-programa.component';
 import { ListarProgramaComponent } from './programa/listar-programa/listar-programa.component';
 import { RemoverProgramaComponent } from './programa/remover-programa/remover-programa.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { RemoverProgramaComponent } from './programa/remover-programa/remover-pr
     CommonModule,
     ParametrosRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class ParametrosModule { }
