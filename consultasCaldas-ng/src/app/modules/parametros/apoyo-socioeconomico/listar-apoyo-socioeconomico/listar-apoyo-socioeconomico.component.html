@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="">
 </head>
 <body>
-
-<h1>Lista de Apoyos Socio Economicos</h1>
+    
+    <h1>Lista de Apoyos Socio Economicos</h1>
+    <a routerLink="/parametros/crear-apoyo-socioeconomico" class="btn btn-succes">Agregar Registro</a>
 <table class="styled-table responsive-table">
     <thead>
         <tr>
@@ -19,6 +20,8 @@
             <th>Cede de Apoyo</th>
             <th>Autor</th>
             <th>Id Apoyo</th>
+            <th>Acciones</th> 
+
         </tr>
     </thead>
     <tbody>
@@ -33,7 +36,7 @@
             <td>{{ item.Autor }}</td>
             <td>{{ item.Id_Apoyo }}</td>
             <td>
-                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Ver Detalles</a>
+                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Eliminar</a>
                 <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
             </td>
         </tr>
@@ -46,7 +49,6 @@
 
 
 <br>
-<a href="formulario-apoyo.html" class="btn">Agregar Nuevo Apoyo</a>
 
 </body>
 </html>

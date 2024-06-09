@@ -9,12 +9,14 @@
 <body>
 
 <h1>Lista de Municipios</h1>
+<a routerLink="/parametros/crear-municipio" class="btn btn-succes">Agregar Registro</a>
 
 <table class="styled-table responsive-table">
     <thead>
         <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +25,10 @@
                                                         totalItems: totalAmount }">
             <td>{{ item.id }}</td>
             <td>{{ item.Nombre }}</td>
+            <td>
+                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Eliminar</a>
+                <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+            </td>
         </tr>
     </tbody>
 </table>

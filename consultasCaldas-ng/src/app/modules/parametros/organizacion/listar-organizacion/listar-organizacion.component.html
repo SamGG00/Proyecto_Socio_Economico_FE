@@ -9,6 +9,7 @@
 <body>
 
 <h1>Lista de Organizaciones</h1>
+<a routerLink="/parametros/crear-organizacion" class="btn btn-succes">Agregar Registro</a>
 
 <table class="styled-table responsive-table">
     <thead>
@@ -17,6 +18,7 @@
             <th>Nombre</th>
             <th>Correo</th>
             <th>Celular</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +29,10 @@
             <td>{{ item.Nombre }}</td>
             <td>{{ item.Correo }}</td>
             <td>{{ item.Celular }}</td>
+            <td>
+                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Eliminar</a>
+                <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+            </td>
         </tr>
     </tbody>
 </table>

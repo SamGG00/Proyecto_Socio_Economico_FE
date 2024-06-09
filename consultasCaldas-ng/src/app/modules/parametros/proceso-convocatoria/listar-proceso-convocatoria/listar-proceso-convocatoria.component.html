@@ -9,6 +9,7 @@
 <body>
 
 <h1>Lista de Proceso Convocatoria</h1>
+<a routerLink="/parametros/crear-proceso-convocatoria" class="btn btn-succes">Agregar Registro</a>
 
 <table class="styled-table responsive-table">
     <thead>
@@ -18,6 +19,7 @@
             <th>Año</th>
             <th>Semestre</th>
             <th>Id Convocatoria</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -29,6 +31,10 @@
             <td>{{ item.Ano }}</td>
             <td>{{ item.Semestre }}</td>
             <td>{{ item.Id_Convocatoria }}</td>
+            <td>
+                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Eliminar</a>
+                <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+            </td>
         </tr>
     </tbody>
 </table>

@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="">
 </head>
 <body>
+    
+    <h1>Lista de Contactos</h1>
+    <a routerLink="/parametros/crear-contacto" class="btn btn-succes">Agregar Registro</a>
 
-<h1>Lista de Contactos</h1>
-
+    
 <table class="styled-table responsive-table">
     <thead>
         <tr>
@@ -19,6 +21,7 @@
             <th>Celular</th>
             <th>Procedencia</th>
             <th>Correo</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -31,6 +34,10 @@
             <td>{{ item.Celular }}</td>
             <td>{{ item.Procedencia }}</td>
             <td>{{ item.Correo }}</td>
+            <td>
+                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Eliminar</a>
+                <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+            </td>
         </tr>
     </tbody>
 </table>
@@ -40,7 +47,6 @@
 </td>
 
 <br>
-<!--<a href="formulario-convocatoria.html" class="btn">Agregar Nueva Convocatoria</a>-->
 
 </body>
 </html>

@@ -8,7 +8,8 @@
 </head>
 <body>
 
-<h1>Lista de Convocatorias</h1>
+    <h1>Lista de Convocatorias</h1>
+    <a routerLink="/parametros/crear-convacatoria" class="btn btn-succes">Agregar Registro</a>
 
 <table class="styled-table responsive-table">
     <thead>
@@ -21,6 +22,7 @@
             <th>Fecha Inicio</th>
             <th>Fecha Fin</th>
             <th>ID de Apoyo Socio Economico</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -35,6 +37,10 @@
             <td>{{ item.Fecha_Inicio }}</td>
             <td>{{ item.Fecha_Fin }}</td>
             <td>{{ item.Id_Apoyo_Socio_Economico }}</td>
+            <td>
+                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Eliminar</a>
+                <a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+            </td>
         </tr>
     </tbody>
 </table>
@@ -44,7 +50,6 @@
 </td>
 
 <br>
-<!--<a href="formulario-convocatoria.html" class="btn">Agregar Nueva Convocatoria</a>-->
 
 </body>
 </html>
