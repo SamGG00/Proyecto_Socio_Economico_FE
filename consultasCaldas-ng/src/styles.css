@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+/* General modal styling */
+.modal {
+  width: 30%;  /* Smaller width */
+  max-height: 40%;  /* Limit the height */
+  border-radius: 15px;  /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.25);  /* Enhanced 3D shadow effect */
+  transform: translateY(-50px) scale(0.95);  /* Slightly lifted and scaled effect */
+  transition: all 0.3s ease-in-out;  /* Smooth transition */
+  background-color: #e3f2fd;  /* Light blue background */
+}
+
+.modal-content {
+  padding: 20px;  /* Add some padding */
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);  /* Blue gradient background */
+  color: #fff;  /* White text color */
+  border-radius: 15px 15px 0 0;  /* Rounded corners for the top */
+  text-align: center;
+  font-family: 'Arial', sans-serif;  /* Change font */
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);  /* Inner shadow for 3D effect */
+}
+
+/* Adding some animation on modal open */
+.modal.open {
+  transform: translateY(0) scale(1);  /* Reset transform on open */
+}

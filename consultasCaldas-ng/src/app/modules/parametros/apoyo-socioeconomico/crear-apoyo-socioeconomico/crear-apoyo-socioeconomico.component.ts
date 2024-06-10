@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { ApoyoSocioeconomicoModel } from 'src/app/models/parametros/apoyo-socioeconomico.model';
 import { ApoyoSocioeconomicoService } from 'src/app/services/parametros/apoyo-socioeconomico.service';
+
+declare const ShowGeneralMessage:any;
 
 @Component({
   selector: 'app-crear-apoyo-socioeconomico',
@@ -49,10 +52,11 @@ export class CrearApoyoSocioeconomicoComponent implements OnInit {
 
     this.service.SaveRecord(model).subscribe({
       next: (data: ApoyoSocioeconomicoModel) => {
-        // ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
+        ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE)
         this.router.navigate(["/parametros/listar-apoyo-socioeconomico"])
       },
       error: (err) => {
+        ShowGeneralMessage(ConfigurationData.INVALID_FORM_MESSAGE)
         console.error(err);
       }
     });
