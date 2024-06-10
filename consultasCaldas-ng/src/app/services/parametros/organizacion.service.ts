@@ -11,22 +11,29 @@ import { OrganizacionModel } from 'src/app/models/parametros/organizacion.modelo
 export class OrganizacionService {
   url: string = ConfigurationData.BUSSINESS_MS_URL;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) { }
+
+  GetRecordList(): Observable<OrganizacionModel[]> {
+    return this.http.get<OrganizacionModel[]>(`${this.url}/organizaciones`);
   }
-  GetRecordList(): Observable<MunicipioModel[]> {
-    return this.http.get<MunicipioModel[]>(`${this.url}/organizaciones`)
+
+  SearchRecord(id: number): Observable<OrganizacionModel> {
+    return this.http.get<OrganizacionModel>(`${this.url}/organizaciones/${id}`);
   }
 
   SaveRecord(data: OrganizacionModel): Observable<OrganizacionModel> {
-    return this.http.post<OrganizacionModel>(`${this.url}/organizaciones`,
-      {
-        Nombre: data.Nombre,
-        Correo: data.Correo,
-        Celular: data.Celular
-      },
-      {
-        // Additional HTTP options can be specified here if needed
-      }
-    );
+    return this.http.post<OrganizacionModel>(`${this.url}/organizaciones`, {
+      Nombre: data.Nombre,
+      Correo: data.Correo,
+      Celular: data.Celular
+    });
+  }
+
+  EditRecord(data: OrganizacionModel): Observable<OrganizacionModel> {
+    return this.http.put<OrganizacionModel>(`${this.url}/organizaciones/${data.id}`, {
+      Nombre: data.Nombre,
+      Correo: data.Correo,
+      Celular: data.Celular
+    });
   }
 }
