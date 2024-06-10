@@ -75,8 +75,8 @@
                 <td>{{ item.Id_Contacto }}</td>
                 <td>{{ item.Id_Programa_Academico }}</td>
                 <td>
-                    <a href="detalle-estudiante.html?estudianteId={{item.Codigo_Estudiante}}" class="btn">Eliminar</a>
-                    &nbsp;<a href="formulario-estudiante.html?estudianteId={{item.Codigo_Estudiante}}" class="btn btn-edit">Editar</a>
+                    <a routerLink="/parametros/editar/{{item.Codigo_Estudiante}}" class="btn btn-warning orange">Editar</a>
+                    &nbsp;<a routerLink="/parametros/remover/{{item.Codigo_Estudiante}}" class="btn btn-warning red">Eliminar</a>
                 </td>
             </tr>
         </tbody>
