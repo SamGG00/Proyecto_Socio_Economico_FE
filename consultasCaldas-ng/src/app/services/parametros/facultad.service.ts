@@ -15,4 +15,15 @@ export class FacultadService {
   GetRecordList(): Observable<FacultadModel[]> {
     return this.http.get<FacultadModel[]>(`${this.url}/facultades`)
   }
+
+  SaveRecord(data: FacultadModel): Observable<FacultadModel> {
+    return this.http.post<FacultadModel>(`${this.url}/facultades`,
+      {
+        Nombre: data.Nombre
+      },
+      {
+        // Additional HTTP options can be specified here if needed
+      }
+    );
+  }
 }

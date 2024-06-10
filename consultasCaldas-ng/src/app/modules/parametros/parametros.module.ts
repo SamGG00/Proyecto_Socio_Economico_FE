@@ -40,6 +40,10 @@ import { EditarProgramaComponent } from './programa/editar-programa/editar-progr
 import { ListarProgramaComponent } from './programa/listar-programa/listar-programa.component';
 import { RemoverProgramaComponent } from './programa/remover-programa/remover-programa.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ListarFacultadComponent } from './facultad/listar-facultad/listar-facultad.component';
+import { CrearFacultadComponent } from './facultad/crear-facultad/crear-facultad.component';
+import { EditarFacultadComponent } from './facultad/editar-facultad/editar-facultad.component';
+import { RemoverFacultadComponent } from './facultad/remover-facultad/remover-facultad.component';
 
 
 @NgModule({
@@ -60,6 +64,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
     EditarApoyoSocioeconomicoComponent,
     ListarApoyoSocioeconomicoComponent,
     RemoverApoyoSocioeconomicoComponent,
+    CrearFacultadComponent,
+    ListarFacultadComponent,
+    EditarFacultadComponent,
+    RemoverFacultadComponent,
     CrearContactoComponent,
     ListarContactoComponent,
     EditarContactoComponent,
