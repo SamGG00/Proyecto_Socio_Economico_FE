@@ -34,7 +34,7 @@ export class ApoyoSocioeconomicoService {
   }
 
   EditRecord(data: ApoyoSocioeconomicoModel): Observable<ApoyoSocioeconomicoModel> {
-    return this.http.put<ApoyoSocioeconomicoModel>(`${this.url}/apoyos-socioeconomicos/${data.id}`, {
+    return this.http.put<ApoyoSocioeconomicoModel>(`${this.url}/apoyo-socioeconomicos/${data.id}`, {
         Semestre: data.Semestre,
         Ano: data.Ano,
         Estudiantes_Aprobados: data.Estudiantes_Aprobados,
