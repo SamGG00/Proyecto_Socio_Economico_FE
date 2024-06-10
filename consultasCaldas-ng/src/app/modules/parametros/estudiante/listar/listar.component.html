@@ -16,31 +16,32 @@
         <thead>
             <tr>
                 <th>Codigo Estudiante</th>
-                <th>Nombre del Estudiante</th>
-                <th>Género</th>
+                <th>Nombre</th>
+                <th>Genero</th>
                 <th>Edad</th>
-                <th>Estado</th>
-                <th>Numero de Identificación</th>
+                <th>Tipo de Identificación</th>
+                <th>Número de Identificación</th>
                 <th>PBM</th>
                 <th>Correo</th>
                 <th>Celular</th>
                 <th>Estrato</th>
-                <th>Promedio de Notas</th>
-                <th>Puntade de Apoyo</th>
-                <th>Ultimo Semestre Cursado</th>
+                <th>Promedio Notas</th>
+                <th>Puntaje De Apoyos</th>
+                <th>Estado</th>
+                <th>Último Semestre Cursado</th>
                 <th>Hijos</th>
-                <th>Id Municpio Nacimiento</th>
-                <th>Id Municpio Vivienda</th>
-                <th>Id Contacto</th>
-                <th>Id Programa Acedemico</th>
+                <th>Autor</th>
                 <th>Retiros Bajo Rendimiento</th>
-                <th>Sanciones Disiplinarias</th>
-                <th>Semestre Bajo Rendimiento </th>
-                <th>Semestre Sancion</th>
+                <th>Sanciones Disciplinarias</th>
                 <th>Aspirante Especial</th>
+                <th>Semestre Bajo Rendimiento</th>
+                <th>Semestre Sanción</th>
                 <th>Tipo de Aspirante</th>
-                <th>Autor</th> 
-                <th>Acciones</th> 
+                <th>ID Municipio Nacimiento</th>
+                <th>ID Municipio Vivienda</th>
+                <th>ID Contacto</th>
+                <th>ID Programa Académico</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -51,7 +52,7 @@
                 <td>{{ item.Nombre }}</td>
                 <td>{{ item.Genero }}</td>
                 <td>{{ item.Edad }}</td>
-                <td>{{ item.Estado }}</td>
+                <td>{{ item.Tipo_Identificacion }}</td>
                 <td>{{ item.Numero_De_Identificacion }}</td>
                 <td>{{ item.PBM }}</td>
                 <td>{{ item.Correo }}</td>
@@ -59,22 +60,23 @@
                 <td>{{ item.Estrato }}</td>
                 <td>{{ item.Promedio_Notas }}</td>
                 <td>{{ item.Puntaje_De_Apoyos }}</td>
+                <td>{{ item.Estado }}</td>
                 <td>{{ item.Ultimo_Semestre_Cursado }}</td>
                 <td>{{ item.Hijos }}</td>
+                <td>{{ item.Autor }}</td>
+                <td>{{ item.Retiros_Bajo_Rendimiento }}</td>
+                <td>{{ item.Sanciones_Disciplinarias }}</td>
+                <td>{{ item.Aspirante_Especial }}</td>
+                <td>{{ item.Semestre_Bajo_Rendimiento }}</td>
+                <td>{{ item.Semestre_Sancion }}</td>
+                <td>{{ item.Tipo_De_Aspirante }}</td>
                 <td>{{ item.Id_Municipio_Nacimiento }}</td>
                 <td>{{ item.Id_Municipio_Vivienda }}</td>
                 <td>{{ item.Id_Contacto }}</td>
                 <td>{{ item.Id_Programa_Academico }}</td>
-                <td>{{ item.Retiros_Bajo_Rendimiento }}</td>
-                <td>{{ item.Sanciones_Disciplinarias }}</td>
-                <td>{{ item.Semestre_Bajo_Rendimiento }}</td>
-                <td>{{ item.Semetre_Sancion }}</td>
-                <td>{{ item.Aspirante_Especial }}</td>
-                <td>{{ item.Tipo_De_Aspirante }}</td>
-                <td>{{ item.Autor }}</td>
                 <td>
-                    <a href="detalle-apoyo.html?apoyoId=456" class="btn">Eliminar</a>
-                    &nbsp;<a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+                    <a href="detalle-estudiante.html?estudianteId={{item.Codigo_Estudiante}}" class="btn">Eliminar</a>
+                    &nbsp;<a href="formulario-estudiante.html?estudianteId={{item.Codigo_Estudiante}}" class="btn btn-edit">Editar</a>
                 </td>
             </tr>
         </tbody>

@@ -23,6 +23,7 @@ export class EstudianteService {
         Nombre: data.Nombre,
         Genero: data.Genero,
         Edad: data.Edad,
+        Tipo_Identificacion: data.Tipo_Identificacion,
         Numero_De_Identificacion: data.Numero_De_Identificacion,
         PBM: data.PBM,
         Correo: data.Correo,
@@ -33,17 +34,17 @@ export class EstudianteService {
         Estado: data.Estado,
         Ultimo_Semestre_Cursado: data.Ultimo_Semestre_Cursado,
         Hijos: data.Hijos,
+        Autor: data.Autor,
+        Retiros_Bajo_Rendimiento: data.Retiros_Bajo_Rendimiento,
+        Sanciones_Disciplinarias: data.Sanciones_Disciplinarias,
+        Aspirante_Especial: data.Aspirante_Especial,
+        Semestre_Bajo_Rendimiento: data.Semestre_Bajo_Rendimiento,
+        Semestre_Sancion: data.Semestre_Sancion,
+        Tipo_De_Aspirante: data.Tipo_De_Aspirante,
         Id_Municipio_Nacimiento: data.Id_Municipio_Nacimiento,
         Id_Municipio_Vivienda: data.Id_Municipio_Vivienda,
         Id_Contacto: data.Id_Contacto,
-        Id_Programa_Academico: data.Id_Programa_Academico,
-        Retiros_Bajo_Rendimiento: data.Retiros_Bajo_Rendimiento,
-        Semestre_Bajo_Rendimiento: data.Semestre_Bajo_Rendimiento,
-        Sanciones_Disciplinarias: data.Sanciones_Disciplinarias,
-        Semetre_Sancion: data.Semetre_Sancion,
-        Aspirante_Especial: data.Aspirante_Especial,
-        Tipo_De_Aspirante: data.Tipo_De_Aspirante,
-        Autor: data.Autor
+        Id_Programa_Academico: data.Id_Programa_Academico
       },
       {
         // Additional HTTP options can be specified here if needed
