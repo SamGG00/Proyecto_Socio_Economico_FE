@@ -1,1 +1,24 @@
-<p>crear-apoyo works!</p>
+<div class="row">
+    <form [formGroup]="dataForm" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="Nombre" id="txtName" type="text" class="validate">
+          <label for="txtName">Nombre</label>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="Interno" id="txtInterno" type="text" class="validate">
+          <label for="txtInterno">Interno</label>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="Id_Organizacion" id="txtID" type="text" class="validate">
+          <label for="txtID">Organizacion ID</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+            <button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+            &nbsp;<a class="btn btn-warning organge" routerLink="/parametros/listar-apoyo">Cancelar</a>
+          </div>
+      </div>
+    </form>
+  </div>

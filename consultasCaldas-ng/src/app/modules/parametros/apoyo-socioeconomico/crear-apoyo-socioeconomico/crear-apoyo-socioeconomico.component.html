@@ -1,1 +1,37 @@
-<p>crear-apoyo-socioeconomico works!</p>
+<div class="row">
+    <form [formGroup]="dataForm" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="Semestre" id="txtSemestre" type="number" class="validate">
+          <label for="txtSemestre">Semestre</label>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="Ano" id="txtAno" type="date" class="validate">
+          <label for="txtAno">Año</label>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="Estudiantes_Aprobados" id="txtEstudiantesAprobados" type="number" class="validate">
+          <label for="txtEstudiantesAprobados">Estudiantes Aprobados</label>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="Sede_Apoyo" id="txtSedeApoyo" type="text" class="validate">
+          <label for="txtSedeApoyo">Sede Apoyo</label>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="Autor" id="txtAutor" type="text" class="validate">
+          <label for="txtAutor">Autor</label>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="Id_Apoyo" id="txtIdApoyo" type="number" class="validate">
+          <label for="txtIdApoyo">ID Apoyo</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+          &nbsp;<a class="btn btn-warning organge" routerLink="/parametros/listar-apoyo-socioeconomico">Cancelar</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  

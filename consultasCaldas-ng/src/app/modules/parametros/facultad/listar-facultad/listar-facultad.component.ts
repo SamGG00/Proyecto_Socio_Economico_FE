@@ -12,6 +12,7 @@ export class ListarFacultadComponent implements OnInit {
   p: number = 1;
   pageSize: number = ConfigurationData.PAGE_SIZE_PAGINATION;
   totalAmount: number = 0;
+
   recordList: FacultadModel[] = []
   convocatorias: any;
 

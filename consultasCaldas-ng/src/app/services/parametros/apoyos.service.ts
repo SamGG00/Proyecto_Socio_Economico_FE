@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
@@ -16,4 +16,16 @@ export class ApoyosService {
     return this.http.get<ApoyoModel[]>(`${this.url}/apoyos`)
   }
   
+  SaveRecord(data: ApoyoModel): Observable<ApoyoModel> {
+    return this.http.post<ApoyoModel>(`${this.url}/apoyos`,
+      {
+        Nombre: data.Nombre,
+        Interno: data.Interno,
+        Id_Organizacion: data.Id_Organizacion
+      },
+      {
+        
+      }
+    );
+  }
 }

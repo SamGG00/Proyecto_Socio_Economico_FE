@@ -15,4 +15,17 @@ export class ApoyoSocioeconomicoService {
   GetRecordList(): Observable<ApoyoSocioeconomicoModel[]> {
     return this.http.get<ApoyoSocioeconomicoModel[]>(`${this.url}/apoyo-socioeconomicos`)
   }
+
+  SaveRecord(data: ApoyoSocioeconomicoModel): Observable<ApoyoSocioeconomicoModel> {
+    return this.http.post<ApoyoSocioeconomicoModel>(`${this.url}/apoyo-socioeconomicos`,
+      {
+        Semestre: data.Semestre,
+        Ano: data.Ano,
+        Estudiantes_Aprobados: data.Estudiantes_Aprobados,
+        Sede_Apoyo: data.Sede_Apoyo,
+        Autor: data.Autor,
+        Id_Apoyo: data.Id_Apoyo
+      }
+    );
+  }
 }
