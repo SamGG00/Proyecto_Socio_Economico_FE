@@ -10,20 +10,25 @@ import { FacultadModel } from 'src/app/models/parametros/facultad.model';
 export class FacultadService {
   url: string = ConfigurationData.BUSSINESS_MS_URL;
 
-  constructor(private http: HttpClient) { 
-  }
+  constructor(private http: HttpClient) { }
+
   GetRecordList(): Observable<FacultadModel[]> {
-    return this.http.get<FacultadModel[]>(`${this.url}/facultades`)
+    return this.http.get<FacultadModel[]>(`${this.url}/facultades`);
+  }
+
+  SearchRecord(id: number): Observable<FacultadModel> {
+    return this.http.get<FacultadModel>(`${this.url}/facultades/${id}`);
   }
 
   SaveRecord(data: FacultadModel): Observable<FacultadModel> {
-    return this.http.post<FacultadModel>(`${this.url}/facultades`,
-      {
-        Nombre: data.Nombre
-      },
-      {
-        // Additional HTTP options can be specified here if needed
-      }
-    );
+    return this.http.post<FacultadModel>(`${this.url}/facultades`, {
+      Nombre: data.Nombre
+    });
+  }
+
+  EditRecord(data: FacultadModel): Observable<FacultadModel> {
+    return this.http.put<FacultadModel>(`${this.url}/facultades/${data.id}`, {
+      Nombre: data.Nombre
+    });
   }
 }
