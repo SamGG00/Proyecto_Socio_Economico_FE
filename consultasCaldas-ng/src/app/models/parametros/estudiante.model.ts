@@ -11,7 +11,7 @@ export class EstudianteModel {
     Promedio_Notas?: number;
     Puntaje_De_Apoyos?: number;
     Estado?: string;
-    Ultimo_Semestre_Cursado?: number;
+    Ultimo_Semestre_Cursado?: string;
     Hijos?: boolean;
     Id_Municipio_Nacimiento?: number;
     Id_Municipio_Vivienda?: number;
@@ -21,7 +21,8 @@ export class EstudianteModel {
     Semestre_Bajo_Rendimiento?: string;
     Sanciones_Disciplinarias?: number;
     Semetre_Sancion?: string;
-    Aspirante_Especial?: number;
+    Aspirante_Especial?: boolean;
+    Tipo_Identificacion?: string;
     Tipo_De_Aspirante?: string;
     Autor?: string;
   }

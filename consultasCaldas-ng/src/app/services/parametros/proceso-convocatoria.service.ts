@@ -15,4 +15,18 @@ export class ProcesoConvocatoriaService {
   GetRecordList(): Observable<ProcesoConvocatoriaModel[]> {
     return this.http.get<ProcesoConvocatoriaModel[]>(`${this.url}/proceso-convocatorias`)
   }
+
+  SaveRecord(data: ProcesoConvocatoriaModel): Observable<ProcesoConvocatoriaModel> {
+    return this.http.post<ProcesoConvocatoriaModel>(`${this.url}/proceso-convocatorias`,
+      {
+        Aprobado: data.Aprobado,
+        Ano: data.Ano,
+        Semestre: data.Semestre,
+        Id_Convocatoria: data.Id_Convocatoria
+      },
+      {
+        // Additional HTTP options can be specified here if needed
+      }
+    );
+  }
 }

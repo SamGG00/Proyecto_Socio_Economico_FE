@@ -15,4 +15,15 @@ export class MunicipioService {
   GetRecordList(): Observable<MunicipioModel[]> {
     return this.http.get<MunicipioModel[]>(`${this.url}/municipios`)
   }
+
+  SaveRecord(data: MunicipioModel): Observable<MunicipioModel> {
+    return this.http.post<MunicipioModel>(`${this.url}/municipios`,
+      {
+        Nombre: data.Nombre
+      },
+      {
+        // Additional HTTP options can be specified here if needed
+      }
+    );
+  }
 }

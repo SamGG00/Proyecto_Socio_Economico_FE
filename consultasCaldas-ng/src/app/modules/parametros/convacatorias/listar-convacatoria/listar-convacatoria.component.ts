@@ -26,7 +26,6 @@ export class ListarConvacatoriaComponent implements OnInit {
   ShowRecordList(){
     this.service.GetRecordList().subscribe({
       next: (data: ConvacatoriaModel[]) => {
-        console.log(data)
         this.recordList = data;
       },
     });

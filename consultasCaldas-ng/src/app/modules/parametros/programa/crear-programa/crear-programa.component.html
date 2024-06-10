@@ -1,1 +1,49 @@
-<p>crear-programa works!</p>
+<div class="row">
+    <form [formGroup]="dataForm" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="Nombre" id="txtNombre" type="text" class="validate">
+          <label for="txtNombre">Nombre</label>
+          <div class="errorValidation">
+            <label *ngIf="dataForm.controls['Nombre'].errors && (dataForm.controls['Nombre'].dirty || dataForm.controls['Nombre'].touched)">
+                El nombre no cumple con los requisitos
+            </label>
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="Codigo_SNIES" id="txtCodigoSNIES" type="text" class="validate">
+          <label for="txtCodigoSNIES">Código SNIES</label>
+          <div class="errorValidation">
+            <label *ngIf="dataForm.controls['Codigo_SNIES'].errors && (dataForm.controls['Codigo_SNIES'].dirty || dataForm.controls['Codigo_SNIES'].touched)">
+                El código SNIES no cumple con los requisitos
+            </label>
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="Duracion_Semestres" id="txtDuracionSemestres" type="number" class="validate">
+          <label for="txtDuracionSemestres">Duración Semestres</label>
+          <div class="errorValidation">
+            <label *ngIf="dataForm.controls['Duracion_Semestres'].errors && (dataForm.controls['Duracion_Semestres'].dirty || dataForm.controls['Duracion_Semestres'].touched)">
+                La duración en semestres no cumple con los requisitos
+            </label>
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="Id_Facultad" id="txtIdFacultad" type="number" class="validate">
+          <label for="txtIdFacultad">ID Facultad</label>
+          <div class="errorValidation">
+            <label *ngIf="dataForm.controls['Id_Facultad'].errors && (dataForm.controls['Id_Facultad'].dirty || dataForm.controls['Id_Facultad'].touched)">
+                El ID de la facultad no cumple con los requisitos
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button [disabled]="dataForm.invalid" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+          &nbsp;<a class="btn btn-warning organge" routerLink="/parametros/listar-programa">Cancelar</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  
