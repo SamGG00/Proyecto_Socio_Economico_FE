@@ -26,8 +26,8 @@
             <td>{{ item.id }}</td>
             <td>{{ item.Nombre }}</td>
             <td>
-                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Eliminar</a>
-                &nbsp;<a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+                <a href="/parametros/editar-municipio/{{item.id}}" class="btn btn-warning orange">Editar</a>
+                &nbsp;<a href="/parametros/remover-municipio/{{item.id}}" class="btn btn-warning red">Eliminar</a>
             </td>
         </tr>
     </tbody>
@@ -36,9 +36,6 @@
     <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
     nextLabel="Siguiente"></pagination-controls>
 </td>
-
 <br>
-<!--<a href="formulario-convocatoria.html" class="btn">Agregar Nueva Convocatoria</a>-->
-
 </body>
 </html>
