@@ -26,8 +26,8 @@
             <td>{{ item.id }}</td>
             <td>{{ item.Nombre }}</td>
             <td>
-                <a href="/parametros/editar-municipio/{{item.id}}" class="btn btn-warning orange">Editar</a>
-                &nbsp;<a href="/parametros/remover-municipio/{{item.id}}" class="btn btn-warning red">Eliminar</a>
+                <a routerLink="/parametros/editar-municipio/{{item.id}}" class="btn btn-warning orange">Editar</a>
+                &nbsp;<a routerLink="/parametros/remover-municipio/{{item.id}}" class="btn btn-warning red">Eliminar</a>
             </td>
         </tr>
     </tbody>

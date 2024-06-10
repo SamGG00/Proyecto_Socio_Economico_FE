@@ -16,17 +16,25 @@ export class ProcesoConvocatoriaService {
     return this.http.get<ProcesoConvocatoriaModel[]>(`${this.url}/proceso-convocatorias`)
   }
 
+  SearchRecord(id: number): Observable<ProcesoConvocatoriaModel> {
+    return this.http.get<ProcesoConvocatoriaModel>(`${this.url}/proceso-convocatorias/${id}`);
+  }
+
   SaveRecord(data: ProcesoConvocatoriaModel): Observable<ProcesoConvocatoriaModel> {
-    return this.http.post<ProcesoConvocatoriaModel>(`${this.url}/proceso-convocatorias`,
-      {
-        Aprobado: data.Aprobado,
-        Ano: data.Ano,
-        Semestre: data.Semestre,
-        Id_Convocatoria: data.Id_Convocatoria
-      },
-      {
-        // Additional HTTP options can be specified here if needed
-      }
-    );
+    return this.http.post<ProcesoConvocatoriaModel>(`${this.url}/proceso-convocatorias`, {
+      Aprobado: data.Aprobado,
+      Ano: data.Ano,
+      Semestre: data.Semestre,
+      Id_Convocatoria: data.Id_Convocatoria
+    });
+  }
+
+  EditRecord(data: ProcesoConvocatoriaModel): Observable<ProcesoConvocatoriaModel> {
+    return this.http.put<ProcesoConvocatoriaModel>(`${this.url}/proceso-convocatorias/${data.id}`, {
+      Aprobado: data.Aprobado,
+      Ano: data.Ano,
+      Semestre: data.Semestre,
+      Id_Convocatoria: data.Id_Convocatoria
+    });
   }
 }
