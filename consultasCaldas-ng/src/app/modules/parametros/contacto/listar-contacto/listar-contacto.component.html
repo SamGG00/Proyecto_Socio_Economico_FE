@@ -35,8 +35,8 @@
             <td>{{ item.Procedencia }}</td>
             <td>{{ item.Correo }}</td>
             <td>
-                <a href="detalle-apoyo.html?apoyoId=456" class="btn">Eliminar</a>
-                &nbsp;<a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+                <a href="/parametros/editar-contacto/{{item.id}}" class="btn btn-warning orange">Editar</a>
+                &nbsp;<a href="/parametros/remover-contacto/{{item.id}}" class="btn btn-warning red">Eliminar</a>
             </td>
         </tr>
     </tbody>

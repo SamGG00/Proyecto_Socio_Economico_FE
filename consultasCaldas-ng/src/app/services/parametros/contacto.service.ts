@@ -16,18 +16,27 @@ export class ContactoService {
     return this.http.get<ContactoModel[]>(`${this.url}/contactos`);
   }
 
+  SearchRecord(id: number): Observable<ContactoModel> {
+    return this.http.get<ContactoModel>(`${this.url}/contactos/${id}`);
+  }
+
   SaveRecord(data: ContactoModel): Observable<ContactoModel> {
-    return this.http.post<ContactoModel>(`${this.url}/contactos`,
-      {
-        Nombre: data.Nombre,
-        Parentesco: data.Parentesco,
-        Celular: data.Celular,
-        Procedencia: data.Procedencia,
-        Correo: data.Correo
-      },
-      {
-        // Additional HTTP options can be specified here if needed
-      }
-    );
+    return this.http.post<ContactoModel>(`${this.url}/contactos`, {
+      Nombre: data.Nombre,
+      Parentesco: data.Parentesco,
+      Celular: data.Celular,
+      Procedencia: data.Procedencia,
+      Correo: data.Correo
+    });
+  }
+
+  EditRecord(data: ContactoModel): Observable<ContactoModel> {
+    return this.http.put<ContactoModel>(`${this.url}/contactos/${data.id}`, {
+      Nombre: data.Nombre,
+      Parentesco: data.Parentesco,
+      Celular: data.Celular,
+      Procedencia: data.Procedencia,
+      Correo: data.Correo
+    });
   }
 }
