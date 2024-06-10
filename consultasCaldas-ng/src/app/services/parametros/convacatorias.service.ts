@@ -10,28 +10,37 @@ import { ConvacatoriaModel } from 'src/app/models/parametros/convacatoria.model'
 export class ConvacatoriasService {
   url: string = ConfigurationData.BUSSINESS_MS_URL;
 
-  constructor(private http: HttpClient) {
-    
-  }
+  constructor(private http: HttpClient) { }
 
   GetRecordList(): Observable<ConvacatoriaModel[]> {
-    return this.http.get<ConvacatoriaModel[]>(`${this.url}/convocatorias`)
+    return this.http.get<ConvacatoriaModel[]>(`${this.url}/convocatorias`);
+  }
+
+  SearchRecord(id: number): Observable<ConvacatoriaModel> {
+    return this.http.get<ConvacatoriaModel>(`${this.url}/convocatorias/${id}`);
   }
 
   SaveRecord(data: ConvacatoriaModel): Observable<ConvacatoriaModel> {
-    return this.http.post<ConvacatoriaModel>(`${this.url}/convocatorias`,
-      {
-        Ano: data.Ano,
-        Semestre: data.Semestre,
-        Total_Estudiantes_Presentados: data.Total_Estudiantes_Presentados,
-        Autor: data.Autor,
-        Fecha_Inicio: data.Fecha_Inicio,
-        Fecha_Fin: data.Fecha_Fin,
-        Id_Apoyo_Socio_Economico: data.Id_Apoyo_Socio_Economico
-      },
-      {
-        // Additional HTTP options can be specified here if needed
-      }
-    );
+    return this.http.post<ConvacatoriaModel>(`${this.url}/convocatorias`, {
+      Ano: data.Ano,
+      Semestre: data.Semestre,
+      Total_Estudiantes_Presentados: data.Total_Estudiantes_Presentados,
+      Autor: data.Autor,
+      Fecha_Inicio: data.Fecha_Inicio,
+      Fecha_Fin: data.Fecha_Fin,
+      Id_Apoyo_Socio_Economico: data.Id_Apoyo_Socio_Economico
+    });
+  }
+
+  EditRecord(data: ConvacatoriaModel): Observable<ConvacatoriaModel> {
+    return this.http.put<ConvacatoriaModel>(`${this.url}/convocatorias/${data.id}`, {
+      Ano: data.Ano,
+      Semestre: data.Semestre,
+      Total_Estudiantes_Presentados: data.Total_Estudiantes_Presentados,
+      Autor: data.Autor,
+      Fecha_Inicio: data.Fecha_Inicio,
+      Fecha_Fin: data.Fecha_Fin,
+      Id_Apoyo_Socio_Economico: data.Id_Apoyo_Socio_Economico
+    });
   }
 }
