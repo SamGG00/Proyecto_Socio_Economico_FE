@@ -29,8 +29,8 @@ export class CrearApoyoComponent implements OnInit {
   FormBuilding(){
     this.dataForm = this.fb.group({
       Nombre: ["", [Validators.required]],
-      Interno: [false, Validators.required], 
-      Id_Organizacion: [0, [Validators.required, Validators.pattern("^[0-9]*$")]] 
+      Interno: ["", Validators.required], 
+      Id_Organizacion: ["", [Validators.required, Validators.pattern("^[0-9]*$")]] 
     })
   }
 

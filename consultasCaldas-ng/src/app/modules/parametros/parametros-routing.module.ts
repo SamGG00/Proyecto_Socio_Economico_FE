@@ -46,7 +46,7 @@ const routes: Routes = [
     component: CrearComponent
   },
   {
-    path: 'editar',
+    path: 'editar/:id',
     component: EditarComponent
   },
   {
@@ -62,7 +62,7 @@ const routes: Routes = [
     component:CrearApoyoComponent
   },
   {
-    path: 'editar-apoyo',
+    path: 'editar-apoyo/:id',
     component:EditarApoyoComponent
   },
   {
@@ -78,7 +78,7 @@ const routes: Routes = [
     component: CrearConvacatoriaComponent
   },
   {
-    path: 'editar-convacatoria',
+    path: 'editar-convacatoria/:id',
     component:EditarConvacatoriaComponent
   },
   {
@@ -95,7 +95,7 @@ const routes: Routes = [
     component: CrearFacultadComponent
   },
   {
-    path: 'editar-facultad',
+    path: 'editar-facultad/:id',
     component:EditarFacultadComponent
   },
   {
@@ -112,7 +112,7 @@ const routes: Routes = [
     component: CrearApoyoSocioeconomicoComponent
   },
   {
-    path: 'editar-apoyo-socioeconomico',
+    path: 'editar-apoyo-socioeconomico/:id',
     component: EditarApoyoSocioeconomicoComponent
   },
   {
@@ -129,7 +129,7 @@ const routes: Routes = [
     component: CrearContactoComponent
   },
   {
-    path: 'editar-contacto',
+    path: 'editar-contacto/:id',
     component: EditarContactoComponent
   },
   {
@@ -146,7 +146,7 @@ const routes: Routes = [
     component: CrearMunicipioComponent
   },
   {
-    path: 'editar-municipio',
+    path: 'editar-municipio/:id',
     component: EditarMunicipioComponent
   },
   {
@@ -163,7 +163,7 @@ const routes: Routes = [
     component: CrearOrganizacionComponent
   },
   {
-    path: 'editar-organizacion',
+    path: 'editar-organizacion/:id',
     component: EditarOrganizacionComponent
   },
   {
@@ -180,7 +180,7 @@ const routes: Routes = [
     component: CrearProcesoConvocatoriaComponent
   },
   {
-    path: 'editar-proceso-convocatoria',
+    path: 'editar-proceso-convocatoria/:id',
     component: EditarProcesoConvocatoriaComponent
   },
   {
@@ -197,7 +197,7 @@ const routes: Routes = [
     component: CrearProgramaComponent
   },
   {
-    path: 'editar-programa',
+    path: 'editar-programa/:id',
     component: EditarProgramaComponent
   },
   {

@@ -27,8 +27,8 @@
                 <td>{{ item.Interno }}</td>
                 <td>{{ item.Id_Organizacion }}</td>
                 <td>
-                    <a href="detalle-apoyo.html?apoyoId=456" class="btn">Eliminar</a>
-                    &nbsp;<a href="formulario-apoyo.html?apoyoId=456" class="btn btn-edit">Editar</a>
+                    <a routerLink="/parametros/editar-apoyo/{{item.id}}" class="btn btn-warning orange">Editar</a>
+                    &nbsp;<a routerLink="/parametros/remover-apoyo/{{item.id}}" class="btn btn-warning red">Eliminar</a>
                 </td>
             </tr>
         </tbody>

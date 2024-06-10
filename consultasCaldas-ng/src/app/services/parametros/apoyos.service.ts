@@ -12,12 +12,30 @@ export class ApoyosService {
 
   constructor(private http: HttpClient) { 
   }
+
   GetRecordList(): Observable<ApoyoModel[]> {
     return this.http.get<ApoyoModel[]>(`${this.url}/apoyos`)
+  }
+
+  SearchRecord(id: number): Observable<ApoyoModel> {
+    return this.http.get<ApoyoModel>(`${this.url}/apoyos/${id}`)
   }
   
   SaveRecord(data: ApoyoModel): Observable<ApoyoModel> {
     return this.http.post<ApoyoModel>(`${this.url}/apoyos`,
+      {
+        Nombre: data.Nombre,
+        Interno: data.Interno,
+        Id_Organizacion: data.Id_Organizacion
+      },
+      {
+        
+      }
+    );
+  }
+
+  EditRecord(data: ApoyoModel): Observable<ApoyoModel> {
+    return this.http.put<ApoyoModel>(`${this.url}/apoyos/${data.id}`,
       {
         Nombre: data.Nombre,
         Interno: data.Interno,
