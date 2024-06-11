@@ -37,4 +37,8 @@ export class ProgramaService {
       Id_Facultad: data.Id_Facultad
     });
   }
+
+  RemoveRecord(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/programas/${id}`);
+  }
 }
