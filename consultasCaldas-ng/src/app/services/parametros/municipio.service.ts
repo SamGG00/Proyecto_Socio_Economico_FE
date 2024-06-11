@@ -31,4 +31,8 @@ export class MunicipioService {
       Nombre: data.Nombre
     });
   }
+
+  RemoveRecord(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/municipios/${id}`);
+  }
 }
