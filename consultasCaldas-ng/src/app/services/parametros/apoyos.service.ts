@@ -46,4 +46,8 @@ export class ApoyosService {
       }
     );
   }
+
+  RemoveRecord(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/apoyos/${id}`)
+  }
 }

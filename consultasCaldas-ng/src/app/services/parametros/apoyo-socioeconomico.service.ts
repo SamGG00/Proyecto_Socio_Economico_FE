@@ -42,5 +42,9 @@ export class ApoyoSocioeconomicoService {
         Autor: data.Autor,
         Id_Apoyo: data.Id_Apoyo
     });
-}
+  }
+
+  RemoveRecord(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/apoyo-socioeconomicos/${id}`);
+  }
 }

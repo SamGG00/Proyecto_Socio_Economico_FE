@@ -39,6 +39,7 @@ import { CrearProgramaComponent } from './programa/crear-programa/crear-programa
 import { EditarProgramaComponent } from './programa/editar-programa/editar-programa.component';
 import { ListarProgramaComponent } from './programa/listar-programa/listar-programa.component';
 import { RemoverProgramaComponent } from './programa/remover-programa/remover-programa.component';
+import { RemoverApoyoComponent } from './apoyos/remover-apoyo/remover-apoyo.component';
 
 const routes: Routes = [
   { //estudiantes
@@ -54,7 +55,7 @@ const routes: Routes = [
     component: ListarComponent
   },
   {
-    path: 'remover',
+    path: 'remover/:id',
     component: RemoverComponent
   },
   {
@@ -70,8 +71,8 @@ const routes: Routes = [
     component:ListarApoyoComponent
   },
   {
-    path: 'remover-apoyo',
-    component:RemoverComponent
+    path: 'remover-apoyo/:id',
+    component:RemoverApoyoComponent
   },
   {
     path: 'crear-convacatoria',
@@ -86,7 +87,7 @@ const routes: Routes = [
     component:ListarConvacatoriaComponent
   },
   {
-    path: 'remover-convacatoria',
+    path: 'remover-convacatoria/:id',
     component:RemoverConvacatoriaComponent
   },
   
@@ -103,7 +104,7 @@ const routes: Routes = [
     component:ListarFacultadComponent
   },
   {
-    path: 'remover-facultad',
+    path: 'remover-facultad/:id',
     component:RemoverFacultadComponent
   },
 
@@ -120,7 +121,7 @@ const routes: Routes = [
     component: ListarApoyoSocioeconomicoComponent
   },
   {
-    path: 'remover-apoyo-socioeconomico',
+    path: 'remover-apoyo-socioeconomico/:id',
     component: RemoverApoyoSocioeconomicoComponent
   },
 
@@ -137,7 +138,7 @@ const routes: Routes = [
     component: ListarContactoComponent
   },
   {
-    path: 'remover-contacto',
+    path: 'remover-contacto/:id',
     component: RemoverContactoComponent
   },
 
@@ -154,7 +155,7 @@ const routes: Routes = [
     component: ListarMunicipioComponent
   },
   {
-    path: 'remover-municipio',
+    path: 'remover-municipio/:id',
     component: RemoverMunicipioComponent
   },
 
@@ -171,7 +172,7 @@ const routes: Routes = [
     component: ListarOrganizacionComponent
   },
   {
-    path: 'remover-organizacion',
+    path: 'remover-organizacion/:id',
     component: RemoverOrganizacionComponent
   },
 
@@ -188,7 +189,7 @@ const routes: Routes = [
     component: ListarProcesoConvocatoriaComponent
   },
   {
-    path: 'remover-proceso-convocatoria',
+    path: 'remover-proceso-convocatoria/:id',
     component: RemoverProcesoConvocatoriaComponent
   },
 
@@ -205,7 +206,7 @@ const routes: Routes = [
     component: ListarProgramaComponent
   },
   {
-    path: 'remover-programa',
+    path: 'remover-programa/:id',
     component: RemoverProgramaComponent
   },
 

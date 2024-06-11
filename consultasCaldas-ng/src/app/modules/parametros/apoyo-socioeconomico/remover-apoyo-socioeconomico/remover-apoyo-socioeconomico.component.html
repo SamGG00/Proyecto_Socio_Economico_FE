@@ -1,1 +1,23 @@
-<p>remover-apoyo-socioeconomico works!</p>
+<div class="delete-confirmation row">
+    <div class="input-field col s12">
+        <div class="confirmation-text">
+            <strong>¿Está seguro(a) de eliminar el registro con la siguiente información?</strong>
+            <br/>
+            <ul>
+                <li>id: {{id}}</li>
+                <li>Semestre: {{Semestre}}</li>
+                <li>Año: {{Ano | date:'yyyy-MM-dd'}}</li>
+                <li>Estudiantes Aprobados: {{Estudiantes_Aprobados}}</li>
+                <li>Sede de Apoyo: {{Sede_Apoyo}}</li>
+                <li>Autor: {{Autor}}</li>
+                <li>Id de Apoyo: {{Id_Apoyo}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12 buttons">
+            <button type="button" class="btn btn-danger" (click)="RemoveRecord()">Eliminar</button>
+            &nbsp;<a class="btn btn-secondary" routerLink="/parametros/listar-apoyo-socioeconomico">Cancelar</a>
+        </div>
+    </div>
+</div>
