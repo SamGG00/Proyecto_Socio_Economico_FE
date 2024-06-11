@@ -43,4 +43,8 @@ export class ConvacatoriasService {
       Id_Apoyo_Socio_Economico: data.Id_Apoyo_Socio_Economico
     });
   }
+
+  RemoveRecord(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/convocatorias/${id}`);
+  }
 }

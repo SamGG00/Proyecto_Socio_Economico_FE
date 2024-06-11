@@ -1,1 +1,24 @@
-<p>remover-convacatoria works!</p>
+<div class="delete-confirmation row">
+    <div class="input-field col s12">
+        <div class="confirmation-text">
+            <strong>¿Está seguro(a) de eliminar el registro con la siguiente información?</strong>
+            <br/>
+            <ul>
+                <li>id: {{id}}</li>
+                <li>Año: {{Ano}}</li>
+                <li>Semestre: {{Semestre}}</li>
+                <li>Total Estudiantes Presentados: {{Total_Estudiantes_Presentados}}</li>
+                <li>Autor: {{Autor}}</li>
+                <li>Fecha Inicio: {{Fecha_Inicio | date:'yyyy-MM-dd'}}</li>
+                <li>Fecha Fin: {{Fecha_Fin | date:'yyyy-MM-dd'}}</li>
+                <li>Id de Apoyo Socio Económico: {{Id_Apoyo_Socio_Economico}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12 buttons">
+            <button type="button" class="btn btn-danger" (click)="RemoveRecord()">Eliminar</button>
+            &nbsp;<a class="btn btn-secondary" routerLink="/parametros/listar-convacatoria">Cancelar</a>
+        </div>
+    </div>
+</div>
