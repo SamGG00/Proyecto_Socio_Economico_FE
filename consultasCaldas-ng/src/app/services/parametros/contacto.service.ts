@@ -39,4 +39,8 @@ export class ContactoService {
       Correo: data.Correo
     });
   }
+
+  RemoveRecord(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/contactos/${id}`);
+  }
 }
