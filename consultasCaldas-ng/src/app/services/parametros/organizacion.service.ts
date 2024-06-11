@@ -36,4 +36,8 @@ export class OrganizacionService {
       Celular: data.Celular
     });
   }
+
+  RemoveRecord(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/organizaciones/${id}`);
+  }
 }
