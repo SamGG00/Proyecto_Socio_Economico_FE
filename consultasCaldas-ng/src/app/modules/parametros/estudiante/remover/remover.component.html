@@ -1,1 +1,28 @@
-<p>remover hola works!</p>
+<div class="delete-confirmation row">
+    <div class="input-field col s12">
+        <div class="confirmation-text">
+            <strong>¿Está seguro(a) de eliminar el registro con la siguiente información?</strong>
+            <br/>
+            <ul>
+                <li>Código Estudiante: {{Codigo_Estudiante}}</li>
+                <li>Nombre: {{Nombre}}</li>
+                <li>Género: {{Genero}}</li>
+                <li>Edad: {{Edad}}</li>
+                <li>PBM: {{PBM}}</li>
+                <li>Correo: {{Correo}}</li>
+                <li>Celular: {{Celular}}</li>
+                <li>Estrato: {{Estrato}}</li>
+                <li>Promedio de Notas: {{Promedio_Notas}}</li>
+                <li>Puntaje de Apoyos: {{Puntaje_De_Apoyos}}</li>
+                <li>Estado: {{Estado}}</li>
+                <li>Autor: {{Autor}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12 buttons">
+            <button type="button" class="btn btn-danger" (click)="RemoveRecord()">Eliminar</button>
+            &nbsp;<a class="btn btn-secondary" routerLink="/parametros/listar">Cancelar</a>
+        </div>
+    </div>
+</div>

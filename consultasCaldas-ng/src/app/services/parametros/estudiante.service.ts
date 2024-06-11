@@ -27,4 +27,8 @@ export class EstudianteService {
   EditRecord(data: EstudianteModel): Observable<EstudianteModel> {
     return this.http.put<EstudianteModel>(`${this.url}/estudiantes/${data.Codigo_Estudiante}`, data);
   }
+
+  RemoveRecord(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.url}/estudiantes/${id}`);
+  }
 }
