@@ -37,4 +37,8 @@ export class ProcesoConvocatoriaService {
       Id_Convocatoria: data.Id_Convocatoria
     });
   }
+
+  RemoveRecord(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/proceso-convocatorias/${id}`);
+  }
 }
