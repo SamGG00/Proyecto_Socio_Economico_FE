@@ -16,12 +16,12 @@ h1 {
 }
 
 .table-wrapper {
-    width: 100%;
+    width: 140%;
     overflow-x: auto;
 }
 
 table.styled-table {
-    width: 100%;
+    width: 160%;
     margin: 25px 0; /* Maintain margin for consistency */
     font-size: 1em;
     text-align: left;

@@ -6,5 +6,5 @@ export namespace ConfigurationData{
     export const SAVED_MESSAGE = "Registro Almacenado"
     export const REMOVED_MESSAGE = "Registro Eliminado"
     export const ERROR_MESSAGE = "Error en el backend"
-    export const PAGE_SIZE_PAGINATION = 3;
+    export const PAGE_SIZE_PAGINATION = 5;
 }

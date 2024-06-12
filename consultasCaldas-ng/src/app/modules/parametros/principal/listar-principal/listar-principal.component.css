@@ -16,11 +16,11 @@ h1 {
 }
 
 .table-wrapper {
-    width: 140%;
+    width: 100%;
     padding: 0 10px;
     overflow-x: auto;
-    overflow-y: auto; /* Add vertical scroll */
-    max-height: 70vh; /* Set maximum height to allow vertical scrolling */
+    overflow-y: auto; /* Agregar scroll vertical */
+    max-height: 70vh; /* Establecer altura máxima para permitir el scroll vertical */
 }
 
 .styled-table {
@@ -103,33 +103,33 @@ h1 {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: 10px; /* Reduced margin between action bar and table */
+    margin-bottom: 10px; /* Espacio reducido entre la barra de acciones y la tabla */
     padding: 0 10px;
 }
 
 .action-bar .btn {
-    margin-right: 10px; /* Add some space between the buttons */
+    margin-right: 10px; /* Espacio entre los botones */
 }
 
 .search-section {
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Take up remaining space */
+    flex-grow: 1; /* Ocupar el espacio restante */
 }
 
 .search-section input[type="text"],
 .search-section select {
-    padding: 5px 10px; /* Adjust the padding for the input field */
+    padding: 5px 10px; /* Ajustar el padding para el campo de entrada */
     border: 1px solid #ccc;
     border-radius: 4px;
-    height: 30px; /* Adjust the height */
-    flex-grow: 1; /* Allow the input to grow */
-    margin-right: 10px; /* Space between input and button */
+    height: 30px; /* Ajustar la altura */
+    flex-grow: 1; /* Permitir que el input crezca */
+    margin-right: 10px; /* Espacio entre el input y el botón */
 }
 
 .btn-small {
-    padding: 2px 5px; /* Smaller padding for smaller buttons */
-    font-size: 0.8em; /* Smaller font size */
+    padding: 2px 5px; /* Padding más pequeño para botones más pequeños */
+    font-size: 0.8em; /* Tamaño de fuente más pequeño */
 }
 
 .btn-refresh {
@@ -159,17 +159,17 @@ h1 {
     font-size: 0.9em;
 }
 
-/* Highlight selected filter */
+/* Resaltar filtro seleccionado */
 .selected {
     font-weight: bold;
     background-color: #cceeff;
 }
 
-/* Responsive styles */
+/* Estilos responsivos */
 @media (max-width: 768px) {
     .table-wrapper {
         padding: 0 5px;
-        max-height: 60vh; /* Adjust max height for smaller screens */
+        max-height: 60vh; /* Ajustar altura máxima para pantallas más pequeñas */
     }
 
     .styled-table th,

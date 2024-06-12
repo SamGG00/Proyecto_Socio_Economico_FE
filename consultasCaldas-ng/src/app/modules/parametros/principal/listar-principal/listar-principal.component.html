@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal Data</title>
+    <title>Datos Principales</title>
     <link rel="stylesheet">
 </head>
 <body>
 
-<h1>Principal Data</h1>
+<h1>Datos Principales</h1>
 <div class="action-bar">
-    <button class="btn btn-refresh" (click)="loadPrincipalData()">Refresh Data</button>
+    <button class="btn btn-refresh" (click)="loadPrincipalData()">Actualizar Datos</button>
     <a class='dropdown-trigger column-filter btn btn-success btn-small blue' href='#' data-target='dropdown-column-filter'>Seleccionar Filtro</a>
-    <!-- Dropdown Structure with unique identifier -->
+    <!-- Estructura del Dropdown con identificador único -->
     <ul id='dropdown-column-filter' class='dropdown-content'>
         <li *ngFor="let column of columns">
             <a href="#!" (click)="onColumnChanged($event, column)" [class.selected]="column === selectedColumn">{{ column }}</a>
@@ -21,6 +21,21 @@
 
     <section class="search-section">
         <input type="text" [(ngModel)]="searchText" name="searchText" class="form-control" placeholder="Buscar" (ngModelChange)="onSearchTextChanged()">
+        <a class='dropdown-trigger btn btn-small blue' href='#' data-target='dropdown-filter1'>Filtro 1</a>
+        <ul id='dropdown-filter1' class='dropdown-content'>
+            <li *ngFor="let column of columns">
+                <a href="#!" (click)="onFilter1ColumnChanged($event, column)">{{ column }}</a>
+            </li>
+        </ul>
+        <input type="text" [(ngModel)]="filter1Text" name="filter1Text" class="form-control" placeholder="Buscar en Filtro 1" (ngModelChange)="onFilterTextChanged()">
+        <a class='dropdown-trigger btn btn-small blue' href='#' data-target='dropdown-filter2'>Filtro 2</a>
+        <ul id='dropdown-filter2' class='dropdown-content'>
+            <li *ngFor="let column of columns">
+                <a href="#!" (click)="onFilter2ColumnChanged($event, column)">{{ column }}</a>
+            </li>
+        </ul>
+        <input type="text" [(ngModel)]="filter2Text" name="filter2Text" class="form-control" placeholder="Buscar en Filtro 2" (ngModelChange)="onFilterTextChanged()">
+        <!-- Añadir más filtros según sea necesario -->
     </section>
 </div>
 

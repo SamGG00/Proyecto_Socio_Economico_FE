@@ -14,7 +14,11 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
   pageSize: number = ConfigurationData.PAGE_SIZE_PAGINATION;
   totalAmount: number = 0;
   searchText: string = "";
-  selectedColumn: string = 'nombrecompleto'; // Default filter column
+  filter1: string = ""; // Filtro adicional 1
+  filter2: string = ""; // Filtro adicional 2
+  filter1Text: string = ""; // Texto de búsqueda para filtro 1
+  filter2Text: string = ""; // Texto de búsqueda para filtro 2
+  selectedColumn: string = 'nombrecompleto'; // Columna de filtro por defecto
   columns: string[] = [
     "nombrecompleto",
     "sexo",
@@ -47,7 +51,7 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
     "contactonumero",
     "contactoprocedencia",
     "contactocorreo"
-  ]; // List of columns to filter by
+  ]; // Lista de columnas para filtrar
   principalData: any[] = [];
   filteredRecordList: any[] = [];
 
@@ -58,9 +62,13 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // Initialize the Materialize CSS dropdown with a unique identifier
+    // Inicializar el dropdown de Materialize CSS con un identificador único
     const dropdownElems = document.querySelectorAll('.dropdown-trigger.column-filter');
     M.Dropdown.init(dropdownElems, {});
+
+    // Inicializar los dropdowns adicionales de filtro
+    const filterElems = document.querySelectorAll('.dropdown-trigger.btn');
+    M.Dropdown.init(filterElems, {});
   }
 
   loadPrincipalData() {
@@ -72,7 +80,7 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
         this.filterRecords();
       },
       error: (err) => {
-        console.error('Error fetching principal data', err);
+        console.error('Error al obtener los datos principales', err);
       }
     });
   }
@@ -83,8 +91,13 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
 
   filterRecords() {
     this.filteredRecordList = this.principalData.filter(record => {
-      const valueToFilter = record[this.selectedColumn]?.toString().toLowerCase() || '';
-      return valueToFilter.includes(this.searchText.toLowerCase());
+      const mainFilterValue = record[this.selectedColumn]?.toString().toLowerCase() || '';
+      const filter1Value = record[this.filter1]?.toString().toLowerCase() || '';
+      const filter2Value = record[this.filter2]?.toString().toLowerCase() || '';
+
+      return mainFilterValue.includes(this.searchText.toLowerCase()) &&
+             filter1Value.includes(this.filter1Text.toLowerCase()) &&
+             filter2Value.includes(this.filter2Text.toLowerCase());
     });
   }
 
@@ -92,8 +105,24 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
     this.filterRecords();
   }
 
+  onFilterTextChanged() {
+    this.filterRecords();
+  }
+
+  onFilter1ColumnChanged(event: Event, column: string) {
+    event.preventDefault(); // Prevenir el comportamiento predeterminado del anchor
+    this.filter1 = column;
+    this.filterRecords();
+  }
+
+  onFilter2ColumnChanged(event: Event, column: string) {
+    event.preventDefault(); // Prevenir el comportamiento predeterminado del anchor
+    this.filter2 = column;
+    this.filterRecords();
+  }
+
   onColumnChanged(event: Event, column: string) {
-    event.preventDefault(); // Prevent the default anchor tag behavior
+    event.preventDefault(); // Prevenir el comportamiento predeterminado del anchor
     this.selectedColumn = column;
     this.filterRecords();
   }
