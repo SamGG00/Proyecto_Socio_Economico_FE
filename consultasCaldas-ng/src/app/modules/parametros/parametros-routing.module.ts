@@ -40,6 +40,10 @@ import { EditarProgramaComponent } from './programa/editar-programa/editar-progr
 import { ListarProgramaComponent } from './programa/listar-programa/listar-programa.component';
 import { RemoverProgramaComponent } from './programa/remover-programa/remover-programa.component';
 import { RemoverApoyoComponent } from './apoyos/remover-apoyo/remover-apoyo.component';
+import { CrearPrincipalComponent } from './principal/crear-principal/crear-principal.component';
+import { EditarPrincipalComponent } from './principal/editar-principal/editar-principal.component';
+import { ListarPrincipalComponent } from './principal/listar-principal/listar-principal.component';
+import { RemoverPrincipalComponent } from './principal/remover-principal/remover-principal.component';
 
 const routes: Routes = [
   { //estudiantes
@@ -208,6 +212,22 @@ const routes: Routes = [
   {
     path: 'remover-programa/:id',
     component: RemoverProgramaComponent
+  },
+  {
+    path: 'crear-principal',
+    component: CrearPrincipalComponent
+  },
+  {
+    path: 'editar-principal/:id',
+    component: EditarPrincipalComponent
+  },
+  {
+    path: 'listar-principal',
+    component: ListarPrincipalComponent
+  },
+  {
+    path: 'remover-principal/:id',
+    component: RemoverPrincipalComponent
   },
 
 ];

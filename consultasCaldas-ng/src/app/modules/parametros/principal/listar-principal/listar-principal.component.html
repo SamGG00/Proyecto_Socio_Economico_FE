@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal Data</title>
+    <link rel="stylesheet">
+</head>
+<body>
+
+<h1>Principal Data</h1>
+<div class="action-bar">
+    <button class="btn btn-refresh" (click)="loadPrincipalData()">Refresh Data</button>
+    <a class='dropdown-trigger column-filter btn btn-success btn-small blue' href='#' data-target='dropdown-column-filter'>Seleccionar Filtro</a>
+    <!-- Dropdown Structure with unique identifier -->
+    <ul id='dropdown-column-filter' class='dropdown-content'>
+        <li *ngFor="let column of columns">
+            <a href="#!" (click)="onColumnChanged($event, column)" [class.selected]="column === selectedColumn">{{ column }}</a>
+        </li>
+    </ul>
+
+    <section class="search-section">
+        <input type="text" [(ngModel)]="searchText" name="searchText" class="form-control" placeholder="Buscar" (ngModelChange)="onSearchTextChanged()">
+    </section>
+</div>
+
+<div class="table-wrapper">
+    <table class="styled-table responsive-table">
+        <thead>
+            <tr>
+                <th *ngFor="let key of columns">{{ key }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of filteredRecordList | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalAmount }">
+                <td *ngFor="let key of columns">{{ item[key] }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<td colspan="3">
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+</td>
+<br>
+</body>
+</html>

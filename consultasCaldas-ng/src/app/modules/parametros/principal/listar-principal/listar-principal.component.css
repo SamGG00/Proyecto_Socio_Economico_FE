@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.table-wrapper {
+    width: 140%;
+    padding: 0 10px;
+    overflow-x: auto;
+    overflow-y: auto; /* Add vertical scroll */
+    max-height: 70vh; /* Set maximum height to allow vertical scrolling */
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.styled-table thead tr {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: left;
+    height: 50px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #003366;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #009879;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #007f65;
+}
+
+.btn-edit {
+    background-color: #f39c12;
+}
+
+.btn-edit:hover {
+    background-color: #d27805;
+}
+
+.btn-filter {
+    background-color: #0066cc;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-filter:hover {
+    background-color: #005bb5;
+}
+
+.action-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px; /* Reduced margin between action bar and table */
+    padding: 0 10px;
+}
+
+.action-bar .btn {
+    margin-right: 10px; /* Add some space between the buttons */
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Take up remaining space */
+}
+
+.search-section input[type="text"],
+.search-section select {
+    padding: 5px 10px; /* Adjust the padding for the input field */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 30px; /* Adjust the height */
+    flex-grow: 1; /* Allow the input to grow */
+    margin-right: 10px; /* Space between input and button */
+}
+
+.btn-small {
+    padding: 2px 5px; /* Smaller padding for smaller buttons */
+    font-size: 0.8em; /* Smaller font size */
+}
+
+.btn-refresh {
+    background-color: #0066cc;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-refresh:hover {
+    background-color: #005bb5;
+}
+
+.file-input {
+    margin-right: 10px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+/* Highlight selected filter */
+.selected {
+    font-weight: bold;
+    background-color: #cceeff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .table-wrapper {
+        padding: 0 5px;
+        max-height: 60vh; /* Adjust max height for smaller screens */
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+
+    .btn-refresh {
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+
+    .action-bar {
+        padding: 0 5px;
+    }
+
+    .search-section input[type="text"],
+    .search-section select {
+        padding: 4px 8px;
+        height: 28px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}

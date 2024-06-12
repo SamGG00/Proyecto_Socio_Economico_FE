@@ -44,6 +44,10 @@ import { ListarFacultadComponent } from './facultad/listar-facultad/listar-facul
 import { CrearFacultadComponent } from './facultad/crear-facultad/crear-facultad.component';
 import { EditarFacultadComponent } from './facultad/editar-facultad/editar-facultad.component';
 import { RemoverFacultadComponent } from './facultad/remover-facultad/remover-facultad.component';
+import { ListarPrincipalComponent } from './principal/listar-principal/listar-principal.component';
+import { CrearPrincipalComponent } from './principal/crear-principal/crear-principal.component';
+import { EditarPrincipalComponent } from './principal/editar-principal/editar-principal.component';
+import { RemoverPrincipalComponent } from './principal/remover-principal/remover-principal.component';
 
 
 @NgModule({
@@ -88,6 +92,10 @@ import { RemoverFacultadComponent } from './facultad/remover-facultad/remover-fa
     EditarProgramaComponent,
     ListarProgramaComponent,
     RemoverProgramaComponent,
+    ListarPrincipalComponent,
+    CrearPrincipalComponent,
+    EditarPrincipalComponent,
+    RemoverPrincipalComponent,
   ],
   imports: [
     CommonModule,
