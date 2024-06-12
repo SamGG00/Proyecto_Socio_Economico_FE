@@ -14,25 +14,17 @@
         <div class="input-field col s12">
           <input formControlName="Interno" id="txtInterno" type="text" class="validate">
           <label class="active" for="txtInterno">Interno</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Interno'].errors && (dataForm.controls['Interno'].dirty || dataForm.controls['Interno'].touched)">
-                El Interno no cumple con los requisitos
-            </label>
-          </div>
+          
         </div>
         <div class="input-field col s12">
           <input formControlName="Id_Organizacion" id="txtID" type="text" class="validate">
           <label class="active" for="txtID">Organizacion ID</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Id_Organizacion'].errors && (dataForm.controls['Id_Organizacion'].dirty || dataForm.controls['Id_Organizacion'].touched)">
-                El Id_Organizacion no cumple con los requisitos
-            </label>
-          </div>
+          
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-            <button [disabled]="dataForm.controls['Nombre'].errors || dataForm.controls['Interno'].errors || dataForm.controls['Id_Organizacion'].errors" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+            <button [disabled]="dataForm.controls['Nombre'].errors" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
             &nbsp;<a class="btn btn-warning organge" routerLink="/parametros/listar-apoyo">Cancelar</a>
           </div>
       </div>

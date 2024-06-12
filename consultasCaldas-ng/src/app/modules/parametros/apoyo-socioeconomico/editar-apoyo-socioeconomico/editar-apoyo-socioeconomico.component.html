@@ -5,61 +5,37 @@
             <div class="input-field col s12">
                 <input formControlName="Semestre" id="txtSemestre" type="text" class="validate">
                 <label class="active" for="txtSemestre">Semestre</label>
-                <div class="errorValidation">
-                    <label *ngIf="dataForm.controls['Semestre'].errors && (dataForm.controls['Semestre'].dirty || dataForm.controls['Semestre'].touched)">
-                        El Semestre no cumple con los requisitos
-                    </label>
-                </div>
+                
             </div>
             <div class="input-field col s12">
                 <input formControlName="Ano" id="txtAno" type="date" class="validate">
                 <label class="active" for="txtAno">Año</label>
-                <div class="errorValidation">
-                    <label *ngIf="dataForm.controls['Ano'].errors && (dataForm.controls['Ano'].dirty || dataForm.controls['Ano'].touched)">
-                        El Año no cumple con los requisitos
-                    </label>
-                </div>
+                
             </div>
             <div class="input-field col s12">
                 <input formControlName="Estudiantes_Aprobados" id="txtEstudiantesAprobados" type="text" class="validate">
                 <label class="active" for="txtEstudiantesAprobados">Estudiantes Aprobados</label>
-                <div class="errorValidation">
-                    <label *ngIf="dataForm.controls['Estudiantes_Aprobados'].errors && (dataForm.controls['Estudiantes_Aprobados'].dirty || dataForm.controls['Estudiantes_Aprobados'].touched)">
-                        Los Estudiantes Aprobados no cumplen con los requisitos
-                    </label>
-                </div>
+                
             </div>
             <div class="input-field col s12">
                 <input formControlName="Sede_Apoyo" id="txtSedeApoyo" type="text" class="validate">
                 <label class="active" for="txtSedeApoyo">Sede de Apoyo</label>
-                <div class="errorValidation">
-                    <label *ngIf="dataForm.controls['Sede_Apoyo'].errors && (dataForm.controls['Sede_Apoyo'].dirty || dataForm.controls['Sede_Apoyo'].touched)">
-                        La Sede de Apoyo no cumple con los requisitos
-                    </label>
-                </div>
+                
             </div>
             <div class="input-field col s12">
                 <input formControlName="Autor" id="txtAutor" type="text" class="validate">
                 <label class="active" for="txtAutor">Autor</label>
-                <div class="errorValidation">
-                    <label *ngIf="dataForm.controls['Autor'].errors && (dataForm.controls['Autor'].dirty || dataForm.controls['Autor'].touched)">
-                        El Autor no cumple con los requisitos
-                    </label>
-                </div>
+                
             </div>
             <div class="input-field col s12">
                 <input formControlName="Id_Apoyo" id="txtIdApoyo" type="text" class="validate">
                 <label class="active" for="txtIdApoyo">ID de Apoyo</label>
-                <div class="errorValidation">
-                    <label *ngIf="dataForm.controls['Id_Apoyo'].errors && (dataForm.controls['Id_Apoyo'].dirty || dataForm.controls['Id_Apoyo'].touched)">
-                        El ID de Apoyo no cumple con los requisitos
-                    </label>
-                </div>
+                
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <button [disabled]="dataForm.controls['Semestre'].errors || dataForm.controls['Ano'].errors || dataForm.controls['Estudiantes_Aprobados'].errors || dataForm.controls['Sede_Apoyo'].errors || dataForm.controls['Autor'].errors || dataForm.controls['Id_Apoyo'].errors" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+                <button  type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
                 &nbsp;<a class="btn btn-warning orange" routerLink="/parametros/listar-apoyo-socioeconomico">Cancelar</a>
             </div>
         </div>
