@@ -87,14 +87,14 @@ import { RemoverFacultadComponent } from './facultad/remover-facultad/remover-fa
     CrearProgramaComponent,
     EditarProgramaComponent,
     ListarProgramaComponent,
-    RemoverProgramaComponent
+    RemoverProgramaComponent,
   ],
   imports: [
     CommonModule,
     ParametrosRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ]
 })
 export class ParametrosModule { }

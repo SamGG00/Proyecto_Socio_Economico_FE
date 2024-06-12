@@ -9,7 +9,19 @@
 <body>
 
 <h1 style="text-align: center;">Lista de Estudiantes</h1>
-<a routerLink="/parametros/crear" class="btn btn-succes">Agregar Registro</a>
+<div class="action-bar">
+    <a routerLink="/parametros/crear" class="btn btn-success">Agregar Registro</a>
+    <a class='dropdown-trigger column-filter btn btn-success blue' href='#' data-target='dropdown-column-filter'>Seleccionar Filtro</a>
+
+    <!-- Dropdown Structure with unique identifier -->
+    <ul id='dropdown-column-filter' class='dropdown-content'>
+        <li *ngFor="let column of columns"><a href="#!" (click)="onColumnChanged($event, column)">{{ column }}</a></li>
+    </ul>
+
+    <section class="search-section">
+        <input type="text" [(ngModel)]="searchText" name="searchText" class="form-control" placeholder="Buscar" (ngModelChange)="onSearchTextChanged()">
+    </section>
+</div>
 
 <div class="table-wrapper">
     <table class="styled-table">
@@ -45,9 +57,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of recordList | paginate: { itemsPerPage: pageSize,
-                                                        currentPage: p,
-                                                        totalItems: totalAmount }">
+            <tr *ngFor="let item of filteredRecordList | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalAmount }">
                 <td>{{ item.Codigo_Estudiante }}</td>
                 <td>{{ item.Nombre }}</td>
                 <td>{{ item.Genero }}</td>
@@ -84,8 +94,7 @@
 </div>
 
 <td colspan="7">
-    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
-    nextLabel="Siguiente"></pagination-controls>
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
 </td>
 <br>
 

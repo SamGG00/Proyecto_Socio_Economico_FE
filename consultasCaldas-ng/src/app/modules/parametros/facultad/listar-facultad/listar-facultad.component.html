@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Facultades</title>
-    <link rel="stylesheet">
+    <link rel="stylesheet" href="">
 </head>
 <body>
 
 <h1>Lista de Facultades</h1>
+<div class="action-bar">
+    <a routerLink="/parametros/crear-facultad" class="btn btn-success">Agregar Registro</a>
+    <a class='dropdown-trigger column-filter btn btn-success blue' href='#' data-target='dropdown-column-filter'>Seleccionar Filtro</a>
 
-<a routerLink="/parametros/crear-facultad" class="btn btn-succes">Agregar Registro</a>
+    <!-- Dropdown Structure with unique identifier -->
+    <ul id='dropdown-column-filter' class='dropdown-content'>
+        <li *ngFor="let column of columns"><a href="#!" (click)="onColumnChanged($event, column)">{{ column }}</a></li>
+    </ul>
+
+    <section class="search-section">
+        <input type="text" [(ngModel)]="searchText" name="searchText" class="form-control" placeholder="Buscar" (ngModelChange)="onSearchTextChanged()">
+    </section>
+</div>
+
 <table class="styled-table">
     <thead>
         <tr>
@@ -20,22 +32,19 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of recordList | paginate: { itemsPerPage: pageSize,
-                                                        currentPage: p,
-                                                        totalItems: totalAmount }">
+        <tr *ngFor="let item of filteredRecordList | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalAmount }">
             <td>{{ item.id }}</td>
             <td>{{ item.Nombre }}</td>
             <td>
                 <a routerLink="/parametros/editar-facultad/{{item.id}}" class="btn btn-warning orange">Editar</a>
                 &nbsp;<a routerLink="/parametros/remover-facultad/{{item.id}}" class="btn btn-warning red">Eliminar</a>
             </td>
-            </tr>
+        </tr>
     </tbody>
-    </table>
-    <td colspan="7">
-        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
-        nextLabel="Siguiente"></pagination-controls>
-    </td>
+</table>
+<td colspan="7">
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+</td>
 <br>
 
 </body>

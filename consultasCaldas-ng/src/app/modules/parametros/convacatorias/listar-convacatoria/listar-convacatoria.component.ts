@@ -1,19 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { ConvacatoriaModel } from 'src/app/models/parametros/convacatoria.model';
 import { ConvacatoriasService } from 'src/app/services/parametros/convacatorias.service';
+
+declare const M: any;
 
 @Component({
   selector: 'app-listar-convacatoria',
   templateUrl: './listar-convacatoria.component.html',
   styleUrls: ['./listar-convacatoria.component.css']
 })
-export class ListarConvacatoriaComponent implements OnInit {
+export class ListarConvacatoriaComponent implements OnInit, AfterViewInit {
   p: number = 1;
   pageSize: number = ConfigurationData.PAGE_SIZE_PAGINATION;
   totalAmount: number = 0;
-  recordList: ConvacatoriaModel[] = []
-  convocatorias: any;
+  searchText: string = "";
+  selectedColumn: string = "Ano"; // Default filter column
+  columns: string[] = ["id", "Ano", "Semestre", "Total_Estudiantes_Presentados", "Autor", "Fecha_Inicio", "Fecha_Fin", "Id_Apoyo_Socio_Economico"]; // List of columns to filter by
+  recordList: ConvacatoriaModel[] = [];
+  filteredRecordList: ConvacatoriaModel[] = [];
 
   constructor(
     private service: ConvacatoriasService
@@ -23,12 +28,36 @@ export class ListarConvacatoriaComponent implements OnInit {
     this.ShowRecordList();
   }
 
-  ShowRecordList(){
+  ngAfterViewInit() {
+    // Initialize the Materialize CSS dropdown with a unique identifier
+    const dropdownElems = document.querySelectorAll('.dropdown-trigger.column-filter');
+    M.Dropdown.init(dropdownElems, {});
+  }
+
+  ShowRecordList() {
     this.service.GetRecordList().subscribe({
       next: (data: ConvacatoriaModel[]) => {
         this.recordList = data;
+        this.filterRecords();
+        this.totalAmount = this.recordList.length;
       },
     });
   }
 
+  filterRecords() {
+    this.filteredRecordList = this.recordList.filter(record => {
+      const valueToFilter = (record as any)[this.selectedColumn]?.toString().toLowerCase() || '';
+      return valueToFilter.includes(this.searchText.toLowerCase());
+    });
+  }
+
+  onSearchTextChanged() {
+    this.filterRecords();
+  }
+
+  onColumnChanged(event: Event, column: string) {
+    event.preventDefault(); // Prevent the default anchor tag behavior
+    this.selectedColumn = column;
+    this.filterRecords();
+  }
 }

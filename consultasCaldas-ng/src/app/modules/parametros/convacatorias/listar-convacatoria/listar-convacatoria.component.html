@@ -8,8 +8,20 @@
 </head>
 <body>
 
-    <h1>Lista de Convocatorias</h1>
-    <a routerLink="/parametros/crear-convacatoria" class="btn btn-succes">Agregar Registro</a>
+<h1>Lista de Convocatorias</h1>
+<div class="action-bar">
+    <a routerLink="/parametros/crear-convacatoria" class="btn btn-success">Agregar Registro</a>
+    <a class='dropdown-trigger column-filter btn btn-success blue' href='#' data-target='dropdown-column-filter'>Seleccionar Filtro</a>
+
+    <!-- Dropdown Structure with unique identifier -->
+    <ul id='dropdown-column-filter' class='dropdown-content'>
+        <li *ngFor="let column of columns"><a href="#!" (click)="onColumnChanged($event, column)">{{ column }}</a></li>
+    </ul>
+
+    <section class="search-section">
+        <input type="text" [(ngModel)]="searchText" name="searchText" class="form-control" placeholder="Buscar" (ngModelChange)="onSearchTextChanged()">
+    </section>
+</div>
 
 <table class="styled-table responsive-table">
     <thead>
@@ -26,9 +38,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of recordList | paginate: { itemsPerPage: pageSize,
-                                                        currentPage: p,
-                                                        totalItems: totalAmount }">
+        <tr *ngFor="let item of filteredRecordList | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalAmount }">
             <td>{{ item.id }}</td>
             <td>{{ item.Ano }}</td>
             <td>{{ item.Semestre }}</td>
@@ -38,15 +48,14 @@
             <td>{{ item.Fecha_Fin }}</td>
             <td>{{ item.Id_Apoyo_Socio_Economico }}</td>
             <td>
-                <a href="/parametros/editar-convacatoria/{{item.id}}" class="btn btn-warning orange">Editar</a>
-                &nbsp;<a href="/parametros/remover-convacatoria/{{item.id}}" class="btn btn-warning red">Eliminar</a>
+                <a routerLink="/parametros/editar-convacatoria/{{item.id}}" class="btn btn-warning orange">Editar</a>
+                &nbsp;<a routerLink="/parametros/remover-convacatoria/{{item.id}}" class="btn btn-warning red">Eliminar</a>
             </td>
         </tr>
     </tbody>
 </table>
 <td colspan="7">
-    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
-    nextLabel="Siguiente"></pagination-controls>
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
 </td>
 
 <br>

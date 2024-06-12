@@ -17,7 +17,7 @@ h1 {
 
 table.styled-table {
     width: 90%;
-    margin: 25px 0;
+    margin: 10px 0; /* Reduced margin between table and search bar */
     font-size: 1em;
     text-align: left;
     border-collapse: collapse;
@@ -73,4 +73,30 @@ table.styled-table tbody tr:hover {
 
 .btn-edit:hover {
     background-color: #d27805;
+}
+
+.action-bar {
+    display: flex;
+    align-items: center;
+    width: 90%; /* Same width as the table for alignment */
+    margin-bottom: 10px; /* Reduced margin between action bar and table */
+}
+
+.action-bar .btn {
+    margin-right: 10px; /* Add some space between the buttons */
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Take up remaining space */
+}
+
+.search-section input[type="text"] {
+    padding: 5px 10px; /* Adjust the padding for the input field */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 30px; /* Adjust the height */
+    flex-grow: 1; /* Allow the input to grow */
+    margin-right: 10px; /* Space between input and button */
 }

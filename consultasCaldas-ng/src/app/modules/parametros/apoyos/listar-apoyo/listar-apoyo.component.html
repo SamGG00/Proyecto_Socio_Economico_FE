@@ -8,36 +8,47 @@
 </head>
 <body>
     
-    <h1>Lista de Apoyos</h1>
-    <a routerLink="/parametros/crear-apoyo" class="btn btn-succes">Agregar Registro</a>
-    <table class="styled-table responsive-table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Interno</th>
-                <th>Organización ID</th>
-                <th>Acciones</th> 
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of recordList | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalAmount }">
-                <td>{{ item.id }}</td>
-                <td>{{ item.Nombre }}</td>
-                <td>{{ item.Interno }}</td>
-                <td>{{ item.Id_Organizacion }}</td>
-                <td>
-                    <a routerLink="/parametros/editar-apoyo/{{item.id}}" class="btn btn-warning orange">Editar</a>
-                    &nbsp;<a routerLink="/parametros/remover-apoyo/{{item.id}}" class="btn btn-warning red">Eliminar</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <td colspan="7">
-        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" 
-        nextLabel="Siguiente"></pagination-controls>
-    </td>
+<h1>Lista de Apoyos</h1>
+<div class="action-bar">
+    <a routerLink="/parametros/crear-apoyo" class="btn btn-success">Agregar Registro</a>
+    <a class='dropdown-trigger column-filter btn btn-success blue' href='#' data-target='dropdown-column-filter'>Seleccionar Filtro</a>
 
+    <!-- Dropdown Structure with unique identifier -->
+    <ul id='dropdown-column-filter' class='dropdown-content'>
+        <li *ngFor="let column of columns"><a href="#!" (click)="onColumnChanged($event, column)">{{ column }}</a></li>
+    </ul>
+
+    <section class="search-section">
+        <input type="text" [(ngModel)]="searchText" name="searchText" class="form-control" placeholder="Buscar" (ngModelChange)="onSearchTextChanged()">
+    </section>
+</div>
+
+<table class="styled-table responsive-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Interno</th>
+            <th>Organización ID</th>
+            <th>Acciones</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of filteredRecordList | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalAmount }">
+            <td>{{ item.id }}</td>
+            <td>{{ item.Nombre }}</td>
+            <td>{{ item.Interno }}</td>
+            <td>{{ item.Id_Organizacion }}</td>
+            <td>
+                <a routerLink="/parametros/editar-apoyo/{{item.id}}" class="btn btn-warning orange">Editar</a>
+                &nbsp;<a routerLink="/parametros/remover-apoyo/{{item.id}}" class="btn btn-warning red">Eliminar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<td colspan="7">
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+</td>
 
 </body>
 </html>
