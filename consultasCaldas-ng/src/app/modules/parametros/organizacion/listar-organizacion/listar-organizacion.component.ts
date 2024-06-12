@@ -15,10 +15,12 @@ export class ListarOrganizacionComponent implements OnInit, AfterViewInit {
   pageSize: number = ConfigurationData.PAGE_SIZE_PAGINATION;
   totalAmount: number = 0;
   searchText: string = "";
-  selectedColumn: string = "Nombre"; // Default filter column
-  columns: string[] = ["id", "Nombre", "Correo", "Celular"]; // List of columns to filter by
+  selectedColumn: keyof OrganizacionModel = "Nombre"; // Default filter column
+  columns: (keyof OrganizacionModel)[] = ["id", "Nombre", "Correo", "Celular"]; // List of columns to filter by
   recordList: OrganizacionModel[] = [];
   filteredRecordList: OrganizacionModel[] = [];
+  selectedFile: File | null = null; // Add a property to hold the selected file
+  uploadError: string = ''; // Add a property to hold the upload error message
 
   constructor(
     private service: OrganizacionService
@@ -46,7 +48,7 @@ export class ListarOrganizacionComponent implements OnInit, AfterViewInit {
 
   filterRecords() {
     this.filteredRecordList = this.recordList.filter(record => {
-      const valueToFilter = (record as any)[this.selectedColumn]?.toString().toLowerCase() || '';
+      const valueToFilter = record[this.selectedColumn]?.toString().toLowerCase() || '';
       return valueToFilter.includes(this.searchText.toLowerCase());
     });
   }
@@ -55,9 +57,36 @@ export class ListarOrganizacionComponent implements OnInit, AfterViewInit {
     this.filterRecords();
   }
 
-  onColumnChanged(event: Event, column: string) {
+  onColumnChanged(event: Event, column: keyof OrganizacionModel) {
     event.preventDefault(); // Prevent the default anchor tag behavior
     this.selectedColumn = column;
     this.filterRecords();
+  }
+
+  // Method to handle file selection
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+    }
+  }
+
+  // Method to upload the selected file
+  onUpload() {
+    if (this.selectedFile) {
+      this.uploadError = ''; // Reset the error message
+      this.service.uploadExcel(this.selectedFile).subscribe({
+        next: (response) => {
+          console.log('File uploaded successfully', response);
+          this.ShowRecordList(); // Refresh the list after upload
+        },
+        error: (err) => {
+          console.error('Error uploading file', err);
+          this.uploadError = 'Error uploading file. Please ensure it is the correct format.';
+        }
+      });
+    } else {
+      this.uploadError = 'Please select a file to upload.';
+    }
   }
 }

@@ -10,8 +10,8 @@
 
 <h1>Lista de Facultades</h1>
 <div class="action-bar">
-    <a routerLink="/parametros/crear-facultad" class="btn btn-success">Agregar Registro</a>
-    <a class='dropdown-trigger column-filter btn btn-success blue' href='#' data-target='dropdown-column-filter'>Seleccionar Filtro</a>
+    <a routerLink="/parametros/crear-facultad" class="btn btn-success btn-small">Agregar Registro</a>
+    <a class='dropdown-trigger column-filter btn btn-success btn-small blue' href='#' data-target='dropdown-column-filter'>Seleccionar Filtro</a>
 
     <!-- Dropdown Structure with unique identifier -->
     <ul id='dropdown-column-filter' class='dropdown-content'>
@@ -21,6 +21,11 @@
     <section class="search-section">
         <input type="text" [(ngModel)]="searchText" name="searchText" class="form-control" placeholder="Buscar" (ngModelChange)="onSearchTextChanged()">
     </section>
+    
+    <!-- File upload section -->
+    <input type="file" (change)="onFileSelected($event)" accept=".xlsx, .xls" class="file-input">
+    <button (click)="onUpload()" class="btn btn-upload">Upload Excel</button>
+    <p *ngIf="uploadError" class="error-message">{{ uploadError }}</p>
 </div>
 
 <table class="styled-table">
@@ -36,13 +41,13 @@
             <td>{{ item.id }}</td>
             <td>{{ item.Nombre }}</td>
             <td>
-                <a routerLink="/parametros/editar-facultad/{{item.id}}" class="btn btn-warning orange">Editar</a>
-                &nbsp;<a routerLink="/parametros/remover-facultad/{{item.id}}" class="btn btn-warning red">Eliminar</a>
+                <a routerLink="/parametros/editar-facultad/{{item.id}}" class="btn btn-warning btn-small orange">Editar</a>
+                &nbsp;<a routerLink="/parametros/remover-facultad/{{item.id}}" class="btn btn-warning btn-small red">Eliminar</a>
             </td>
         </tr>
     </tbody>
 </table>
-<td colspan="7">
+<td colspan="3">
     <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
 </td>
 <br>

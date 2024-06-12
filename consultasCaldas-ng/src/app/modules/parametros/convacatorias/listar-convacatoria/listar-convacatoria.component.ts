@@ -19,6 +19,9 @@ export class ListarConvacatoriaComponent implements OnInit, AfterViewInit {
   columns: string[] = ["id", "Ano", "Semestre", "Total_Estudiantes_Presentados", "Autor", "Fecha_Inicio", "Fecha_Fin", "Id_Apoyo_Socio_Economico"]; // List of columns to filter by
   recordList: ConvacatoriaModel[] = [];
   filteredRecordList: ConvacatoriaModel[] = [];
+  selectedFile: File | null = null; // Add a property to hold the selected file
+  uploadError: string = ''; // Add a property to hold the upload error message
+
 
   constructor(
     private service: ConvacatoriasService
@@ -59,5 +62,32 @@ export class ListarConvacatoriaComponent implements OnInit, AfterViewInit {
     event.preventDefault(); // Prevent the default anchor tag behavior
     this.selectedColumn = column;
     this.filterRecords();
+  }
+  
+  // Method to handle file selection
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+    }
+  }
+
+  // Method to upload the selected file
+  onUpload() {
+    if (this.selectedFile) {
+      this.uploadError = ''; // Reset the error message
+      this.service.uploadExcel(this.selectedFile).subscribe({
+        next: (response) => {
+          console.log('File uploaded successfully', response);
+          this.ShowRecordList(); // Refresh the list after upload
+        },
+        error: (err) => {
+          console.error('Error uploading file', err);
+          this.uploadError = 'Error uploading file. Please ensure it is the correct format.';
+        }
+      });
+    } else {
+      this.uploadError = 'Please select a file to upload.';
+    }
   }
 }

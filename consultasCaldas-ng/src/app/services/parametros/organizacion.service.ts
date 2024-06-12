@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
-import { MunicipioModel } from 'src/app/models/parametros/municipio.model';
 import { OrganizacionModel } from 'src/app/models/parametros/organizacion.modelo';
 
 @Injectable({
@@ -39,5 +38,17 @@ export class OrganizacionService {
 
   RemoveRecord(id: number): Observable<any> {
     return this.http.delete<any>(`${this.url}/organizaciones/${id}`);
+  }
+
+  // New method to upload Excel file
+  uploadExcel(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    return this.http.post(`${this.url}/upload/OrganizacionModel`, formData, {
+      headers: new HttpHeaders({
+        // 'Content-Type': 'multipart/form-data' // No need to set this header explicitly, Angular will do it automatically
+      })
+    });
   }
 }

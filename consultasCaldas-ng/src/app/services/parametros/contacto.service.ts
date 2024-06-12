@@ -1,8 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ContactoModel } from 'src/app/models/parametros/contacto.model';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
+import { ContactoModel } from 'src/app/models/parametros/contacto.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,8 @@ import { ConfigurationData } from 'src/app/config/ConfigurationData';
 export class ContactoService {
   url: string = ConfigurationData.BUSSINESS_MS_URL;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+  }
 
   GetRecordList(): Observable<ContactoModel[]> {
     return this.http.get<ContactoModel[]>(`${this.url}/contactos`);
@@ -42,5 +43,17 @@ export class ContactoService {
 
   RemoveRecord(id: number): Observable<any> {
     return this.http.delete<any>(`${this.url}/contactos/${id}`);
+  }
+
+  // New method to upload Excel file
+  uploadExcel(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    return this.http.post(`${this.url}/upload/ContactoModel`, formData, {
+      headers: new HttpHeaders({
+        // 'Content-Type': 'multipart/form-data' // No need to set this header explicitly, Angular will do it automatically
+      })
+    });
   }
 }

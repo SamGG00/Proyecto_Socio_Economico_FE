@@ -50,4 +50,16 @@ export class ApoyosService {
   RemoveRecord(id: number): Observable<any> {
     return this.http.delete<any>(`${this.url}/apoyos/${id}`)
   }
+
+  // New method to upload Excel file
+  uploadExcel(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    return this.http.post(`${this.url}/upload/ApoyoModel`, formData, {
+      headers: new HttpHeaders({
+        // 'Content-Type': 'multipart/form-data' // No need to set this header explicitly, Angular will do it automatically
+      })
+    });
+  }
 }

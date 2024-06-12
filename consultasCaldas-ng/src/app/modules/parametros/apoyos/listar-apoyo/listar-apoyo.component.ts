@@ -19,6 +19,8 @@ export class ListarApoyoComponent implements OnInit, AfterViewInit {
   columns: string[] = ["id", "Nombre", "Interno", "Id_Organizacion"]; // List of columns to filter by
   recordList: ApoyoModel[] = [];
   filteredRecordList: ApoyoModel[] = [];
+  selectedFile: File | null = null; // Add a property to hold the selected file
+  uploadError: string = ''; // Add a property to hold the upload error message
 
   constructor(
     private service: ApoyosService
@@ -58,5 +60,32 @@ export class ListarApoyoComponent implements OnInit, AfterViewInit {
     event.preventDefault(); // Prevent the default anchor tag behavior
     this.selectedColumn = column;
     this.filterRecords();
+  }
+
+  // Method to handle file selection
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+    }
+  }
+
+  // Method to upload the selected file
+  onUpload() {
+    if (this.selectedFile) {
+      this.uploadError = ''; // Reset the error message
+      this.service.uploadExcel(this.selectedFile).subscribe({
+        next: (response) => {
+          console.log('Archivo subido excitosamente', response);
+          this.ShowRecordList(); // Refresh the list after upload
+        },
+        error: (err) => {
+          console.error('Error cargando archivo', err);
+          this.uploadError = 'Error subiendo archivo. Asegurate que es el formato correcto.';
+        }
+      });
+    } else {
+      this.uploadError = 'Agregue un archivo de apoyo para subir.';
+    }
   }
 }

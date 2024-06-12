@@ -16,13 +16,13 @@ h1 {
 }
 
 .table-wrapper {
-    width: 90%;
+    width: 100%;
     overflow-x: auto;
-    margin: 25px 0;
 }
 
 table.styled-table {
     width: 100%;
+    margin: 25px 0; /* Maintain margin for consistency */
     font-size: 1em;
     text-align: left;
     border-collapse: collapse;
@@ -83,8 +83,9 @@ table.styled-table tbody tr:hover {
 .action-bar {
     display: flex;
     align-items: center;
-    width: 90%; /* Same width as the table for alignment */
+    width: 100%;
     margin-bottom: 10px; /* Reduced margin between action bar and table */
+    overflow-x: auto;
 }
 
 .action-bar .btn {
@@ -106,33 +107,34 @@ table.styled-table tbody tr:hover {
     margin-right: 10px; /* Space between input and button */
 }
 
-.pagination {
-    display: inline-block;
-    padding-left: 0;
-    margin: 20px 0;
-    border-radius: 4px;
+.btn-small {
+    padding: 2px 5px; /* Smaller padding for smaller buttons */
+    font-size: 0.8em; /* Smaller font size */
 }
 
-.pagination li {
-    display: inline;
-}
-
-.pagination li a {
-    color: #333;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    border: 1px solid #ddd;
-    margin-left: -1px;
-}
-
-.pagination li a.active {
-    background-color: #333;
+.btn-upload {
+    background-color: #0066cc;
+    border: none;
     color: white;
-    border: 1px solid #333;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.pagination li a:hover:not(.active) {
-    background-color: #ddd;
+.btn-upload:hover {
+    background-color: #005bb5;
+}
+
+.file-input {
+    margin-right: 10px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
 }
