@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { ApoyoModel } from 'src/app/models/parametros/apoyo.model';
 import { ApoyosService } from 'src/app/services/parametros/apoyos.service';
+import { PrincipalService } from 'src/app/services/parametros/principal.service';
 
 declare const M: any;
 
@@ -16,24 +17,40 @@ export class ListarApoyoComponent implements OnInit, AfterViewInit {
   totalAmount: number = 0;
   searchText: string = "";
   selectedColumn: string = "Nombre"; // Default filter column
-  columns: string[] = ["id", "Nombre", "Interno", "Id_Organizacion"]; // List of columns to filter by
+  columns: string[] = ["id", "Nombre", "Interno", "Id_Organizacion", "Nombre_Organizacion"]; // List of columns to filter by
   recordList: ApoyoModel[] = [];
   filteredRecordList: ApoyoModel[] = [];
   selectedFile: File | null = null; // Add a property to hold the selected file
   uploadError: string = ''; // Add a property to hold the upload error message
 
   constructor(
-    private service: ApoyosService
+    private service: ApoyosService,
+    private principalService: PrincipalService
   ) { }
 
   ngOnInit(): void {
     this.ShowRecordList();
+    this.loadApoyosWithOrganizacionNames();
   }
 
   ngAfterViewInit() {
     // Initialize the Materialize CSS dropdown with a unique identifier
     const dropdownElems = document.querySelectorAll('.dropdown-trigger.column-filter');
     M.Dropdown.init(dropdownElems, {});
+  }
+
+  loadApoyosWithOrganizacionNames() {
+    this.principalService.GetApoyosWithOrganizacionNames().subscribe({
+      next: (data) => {
+        this.recordList = data;
+        this.filteredRecordList = data;
+        this.totalAmount = this.recordList.length;
+        this.filterRecords();
+      },
+      error: (err) => {
+        console.error('Error fetching apoyos with organizacion names', err);
+      }
+    });
   }
 
   ShowRecordList() {

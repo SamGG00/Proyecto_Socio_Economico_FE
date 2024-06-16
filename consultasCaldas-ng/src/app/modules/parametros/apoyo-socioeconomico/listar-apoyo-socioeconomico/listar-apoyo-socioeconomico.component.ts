@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { ApoyoSocioeconomicoModel } from 'src/app/models/parametros/apoyo-socioeconomico.model';
 import { ApoyoSocioeconomicoService } from 'src/app/services/parametros/apoyo-socioeconomico.service';
+import { PrincipalService } from 'src/app/services/parametros/principal.service';
 
 declare const M: any;
 
@@ -16,24 +17,40 @@ export class ListarApoyoSocioeconomicoComponent implements OnInit, AfterViewInit
   totalAmount: number = 0;
   searchText: string = "";
   selectedColumn: string = "Semestre"; // Default filter column
-  columns: string[] = ["id", "Semestre", "Ano", "Estudiantes_Aprobados", "Sede_Apoyo", "Autor", "Id_Apoyo"]; // List of columns to filter by
+  columns: string[] = ["id", "Semestre", "Ano", "Estudiantes_Aprobados", "Sede_Apoyo", "Autor", "Id_Apoyo", "Nombre_Apoyo"]; // List of columns to filter by
   recordList: ApoyoSocioeconomicoModel[] = [];
   filteredRecordList: ApoyoSocioeconomicoModel[] = [];
   selectedFile: File | null = null; // Add a property to hold the selected file
   uploadError: string = ''; // Add a property to hold the upload error message
 
   constructor(
-    private service: ApoyoSocioeconomicoService
+    private service: ApoyoSocioeconomicoService,
+    private principalService: PrincipalService
   ) { }
 
   ngOnInit(): void {
     this.ShowRecordList();
+    this.loadApoyoSocioeconomicosWithApoyoNames();
   }
 
   ngAfterViewInit() {
     // Initialize the Materialize CSS dropdown with a unique identifier
     const dropdownElems = document.querySelectorAll('.dropdown-trigger.column-filter');
     M.Dropdown.init(dropdownElems, {});
+  }
+
+  loadApoyoSocioeconomicosWithApoyoNames() {
+    this.principalService.GetApoyoSocioeconomicosWithApoyoNames().subscribe({
+      next: (data) => {
+        this.recordList = data;
+        this.filteredRecordList = data;
+        this.totalAmount = this.recordList.length;
+        this.filterRecords();
+      },
+      error: (err) => {
+        console.error('Error fetching apoyo socioeconomicos with apoyo names', err);
+      }
+    });
   }
 
   ShowRecordList() {

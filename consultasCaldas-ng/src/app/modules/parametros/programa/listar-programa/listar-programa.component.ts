@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { ProgramaModel } from 'src/app/models/parametros/programa.modelo';
 import { ProgramaService } from 'src/app/services/parametros/programa.service';
+import { PrincipalService } from 'src/app/services/parametros/principal.service';
 
 declare const M: any;
 
@@ -16,24 +17,40 @@ export class ListarProgramaComponent implements OnInit, AfterViewInit {
   totalAmount: number = 0;
   searchText: string = "";
   selectedColumn: keyof ProgramaModel = "Nombre"; // Default filter column
-  columns: (keyof ProgramaModel)[] = ["id", "Nombre", "Codigo_SNIES", "Duracion_Semestres", "Id_Facultad"]; // List of columns to filter by
+  columns: (keyof ProgramaModel)[] = ["id", "Nombre", "Codigo_SNIES", "Duracion_Semestres", "Id_Facultad", "Nombre_Facultad"]; // List of columns to filter by
   recordList: ProgramaModel[] = [];
   filteredRecordList: ProgramaModel[] = [];
   selectedFile: File | null = null; // Add a property to hold the selected file
   uploadError: string = ''; // Add a property to hold the upload error message
 
   constructor(
-    private service: ProgramaService
+    private service: ProgramaService,
+    private principalService: PrincipalService
   ) { }
 
   ngOnInit(): void {
     this.ShowRecordList();
+    this.loadProgramasWithFacultadNames();
   }
 
   ngAfterViewInit() {
     // Initialize the Materialize CSS dropdown with a unique identifier
     const dropdownElems = document.querySelectorAll('.dropdown-trigger.column-filter');
     M.Dropdown.init(dropdownElems, {});
+  }
+
+  loadProgramasWithFacultadNames() {
+    this.principalService.GetProgramasWithFacultadNames().subscribe({
+      next: (data) => {
+        this.recordList = data;
+        this.filteredRecordList = data;
+        this.totalAmount = this.recordList.length;
+        this.filterRecords();
+      },
+      error: (err) => {
+        console.error('Error fetching programas with facultad names', err);
+      }
+    });
   }
 
   ShowRecordList() {

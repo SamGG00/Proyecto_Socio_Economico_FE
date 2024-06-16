@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { ProcesoConvocatoriaModel } from 'src/app/models/parametros/proceso-convocatoria.modelo';
 import { ProcesoConvocatoriaService } from 'src/app/services/parametros/proceso-convocatoria.service';
+import { PrincipalService } from 'src/app/services/parametros/principal.service';
 
 declare const M: any;
 
@@ -23,17 +24,33 @@ export class ListarProcesoConvocatoriaComponent implements OnInit, AfterViewInit
   uploadError: string = ''; // Add a property to hold the upload error message
 
   constructor(
-    private service: ProcesoConvocatoriaService
+    private service: ProcesoConvocatoriaService,
+    private principalService: PrincipalService
   ) { }
 
   ngOnInit(): void {
     this.ShowRecordList();
+    this.loadProcesoConvocatoriasWithConvocatoriaNames();
   }
 
   ngAfterViewInit() {
     // Initialize the Materialize CSS dropdown with a unique identifier
     const dropdownElems = document.querySelectorAll('.dropdown-trigger.column-filter');
     M.Dropdown.init(dropdownElems, {});
+  }
+
+  loadProcesoConvocatoriasWithConvocatoriaNames() {
+    this.principalService.GetProcesoConvocatoriasWithConvocatoriaNames().subscribe({
+      next: (data) => {
+        this.recordList = data;
+        this.filteredRecordList = data;
+        this.totalAmount = this.recordList.length;
+        this.filterRecords();
+      },
+      error: (err) => {
+        console.error('Error fetching proceso convocatorias with convocatoria names', err);
+      }
+    });
   }
 
   ShowRecordList() {

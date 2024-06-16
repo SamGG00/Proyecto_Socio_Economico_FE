@@ -25,4 +25,8 @@ export class EstudianteModel {
   Id_Municipio_Vivienda?: number;
   Id_Contacto?: number;
   Id_Programa_Academico?: number;
+  Nombre_Programa_Academico?: number;
+  Nombre_Contacto?: number;
+  Nombre_Municipio_Vivienda?: number;
+  Nombre_Municipio_Nacimiento?: number;
 }

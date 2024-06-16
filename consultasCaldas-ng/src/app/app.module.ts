@@ -9,7 +9,7 @@ import { HeaderComponent } from './public/template/header/header.component';
 import { NotFoundComponent } from './public/error/not-found/not-found.component';
 import { InternalServerErrorComponent } from './public/error/internal-server-error/internal-server-error.component';
 import { HomeComponent } from './public/general/home/home.component';
-import {HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ParametrosModule } from './modules/parametros/parametros.module';
 import { FormsModule } from '@angular/forms';

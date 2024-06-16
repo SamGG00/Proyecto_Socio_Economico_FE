@@ -4,5 +4,6 @@ export class ProgramaModel {
     Codigo_SNIES?: string;
     Duracion_Semestres?: number;
     Id_Facultad?: number;
+    Nombre_Facultad?: string;
   }
   

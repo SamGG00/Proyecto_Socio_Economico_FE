@@ -40,9 +40,6 @@ export class ApoyosService {
         Nombre: data.Nombre,
         Interno: data.Interno,
         Id_Organizacion: data.Id_Organizacion
-      },
-      {
-        
       }
     );
   }
@@ -61,5 +58,9 @@ export class ApoyosService {
         // 'Content-Type': 'multipart/form-data' // No need to set this header explicitly, Angular will do it automatically
       })
     });
+  }
+
+  GetApoyoNameById(id: number): Observable<string> {
+    return this.http.get<string>(`${this.url}/apoyos/name/${id}`);
   }
 }

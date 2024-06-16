@@ -34,7 +34,7 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Interno</th>
-            <th>Organización ID</th>
+            <th>Nombre Organización</th>
             <th>Acciones</th> 
         </tr>
     </thead>
@@ -43,7 +43,7 @@
             <td>{{ item.id }}</td>
             <td>{{ item.Nombre }}</td>
             <td>{{ item.Interno }}</td>
-            <td>{{ item.Id_Organizacion }}</td>
+            <td>{{ item.Nombre_Organizacion }}</td>
             <td>
                 <a routerLink="/parametros/editar-apoyo/{{item.id}}" class="btn btn-warning btn-small orange">Editar</a>
                 &nbsp;<a routerLink="/parametros/remover-apoyo/{{item.id}}" class="btn btn-warning btn-small red">Eliminar</a>

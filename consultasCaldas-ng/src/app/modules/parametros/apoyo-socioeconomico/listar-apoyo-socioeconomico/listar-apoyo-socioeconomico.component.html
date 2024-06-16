@@ -37,7 +37,7 @@
             <th>Estudiantes Aprobados</th>
             <th>Sede de Apoyo</th>
             <th>Autor</th>
-            <th>Id Apoyo</th>
+            <th>Nombre Apoyo</th>
             <th>Acciones</th> 
         </tr>
     </thead>
@@ -49,7 +49,7 @@
             <td>{{ item.Estudiantes_Aprobados }}</td>
             <td>{{ item.Sede_Apoyo }}</td>
             <td>{{ item.Autor }}</td>
-            <td>{{ item.Id_Apoyo }}</td>
+            <td>{{ item.Nombre_Apoyo }}</td>
             <td>
                 <a routerLink="/parametros/editar-apoyo-socioeconomico/{{item.id}}" class="btn btn-warning btn-small orange">Editar</a>
                 &nbsp;<a routerLink="/parametros/remover-apoyo-socioeconomico/{{item.id}}" class="btn btn-warning btn-small red">Eliminar</a>

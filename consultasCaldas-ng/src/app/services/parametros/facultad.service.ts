@@ -47,4 +47,9 @@ export class FacultadService {
       })
     });
   }
+
+  // Method to get Facultad name by ID
+  GetFacultadNameById(id: number): Observable<string> {
+    return this.http.get<string>(`${this.url}/facultades/nombre/${id}`);
+  }
 }

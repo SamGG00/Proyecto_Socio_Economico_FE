@@ -38,7 +38,7 @@
             <th>Autor</th>
             <th>Fecha Inicio</th>
             <th>Fecha Fin</th>
-            <th>ID de Apoyo Socio Economico</th>
+            <th>Año de Apoyo Socio Economico</th>
             <th>Acciones</th> 
         </tr>
     </thead>
@@ -51,7 +51,7 @@
             <td>{{ item.Autor }}</td>
             <td>{{ item.Fecha_Inicio }}</td>
             <td>{{ item.Fecha_Fin }}</td>
-            <td>{{ item.Id_Apoyo_Socio_Economico }}</td>
+            <td>{{ item.Ano }}</td>
             <td>
                 <a routerLink="/parametros/editar-convocatoria/{{item.id}}" class="btn btn-warning btn-small orange">Editar</a>
                 &nbsp;<a routerLink="/parametros/remover-convocatoria/{{item.id}}" class="btn btn-warning btn-small red">Eliminar</a>

@@ -54,10 +54,10 @@
                 <th>Semestre Bajo Rendimiento</th>
                 <th>Semestre Sanción</th>
                 <th>Tipo de Aspirante</th>
-                <th>ID Municipio Nacimiento</th>
-                <th>ID Municipio Vivienda</th>
-                <th>ID Contacto</th>
-                <th>ID Programa Académico</th>
+                <th>Nombre Municipio Nacimiento</th>
+                <th>Nombre Municipio Vivienda</th>
+                <th>Nombre Contacto</th>
+                <th>Nombre Programa Académico</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -85,10 +85,10 @@
                 <td>{{ item.Semestre_Bajo_Rendimiento }}</td>
                 <td>{{ item.Semestre_Sancion }}</td>
                 <td>{{ item.Tipo_De_Aspirante }}</td>
-                <td>{{ item.Id_Municipio_Nacimiento }}</td>
-                <td>{{ item.Id_Municipio_Vivienda }}</td>
-                <td>{{ item.Id_Contacto }}</td>
-                <td>{{ item.Id_Programa_Academico }}</td>
+                <td>{{ item.Nombre_Municipio_Nacimiento }}</td>
+                <td>{{ item.Nombre_Municipio_Vivienda }}</td>
+                <td>{{ item.Nombre_Contacto }}</td>
+                <td>{{ item.Nombre_Programa_Academico }}</td>
                 <td>
                     <a routerLink="/parametros/editar/{{item.Codigo_Estudiante}}" class="btn btn-warning btn-small orange">Editar</a>
                     &nbsp;<a routerLink="/parametros/remover/{{item.Codigo_Estudiante}}" class="btn btn-warning btn-small red">Eliminar</a>
