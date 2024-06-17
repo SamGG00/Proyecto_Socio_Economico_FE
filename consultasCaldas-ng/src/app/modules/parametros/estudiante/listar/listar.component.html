@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Estudiantes</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
 
@@ -103,5 +103,36 @@
 </td>
 <br>
 
+<div class="chart-controls">
+    <label for="x-axis">Select X-Axis:</label>
+    <a class='dropdown-trigger btn' href='#' data-target='dropdown-x-axis'>{{ xLabel }}</a>
+    <ul id='dropdown-x-axis' class='dropdown-content'>
+        <li *ngFor="let column of columns">
+            <a href="#!" (click)="onXAxisChanged($event, column)">{{ column }}</a>
+        </li>
+    </ul>
+
+    <label for="y-axis">Select Y-Axis:</label>
+    <a class='dropdown-trigger btn' href='#' data-target='dropdown-y-axis'>{{ yLabel }}</a>
+    <ul id='dropdown-y-axis' class='dropdown-content'>
+        <li *ngFor="let column of columns">
+            <a href="#!" (click)="onYAxisChanged($event, column)">{{ column }}</a>
+        </li>
+    </ul>
+</div>
+
+<ejs-chart [primaryXAxis]="xAxis" [primaryYAxis]="yAxis" [title]="chartTitle" [legendSettings]="legend">
+    <e-series-collection>
+        <e-series type="Line" [dataSource]="filteredRecordList" [xName]="selectedXAxis" [yName]="selectedYAxis" name="Data" [marker]="markerSettings"></e-series>
+    </e-series-collection>
+</ejs-chart>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownElems = document.querySelectorAll('.dropdown-trigger');
+    M.Dropdown.init(dropdownElems, {});
+});
+</script>
 </body>
 </html>

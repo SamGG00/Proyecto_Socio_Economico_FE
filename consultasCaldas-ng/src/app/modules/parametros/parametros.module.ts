@@ -48,6 +48,7 @@ import { ListarPrincipalComponent } from './principal/listar-principal/listar-pr
 import { CrearPrincipalComponent } from './principal/crear-principal/crear-principal.component';
 import { EditarPrincipalComponent } from './principal/editar-principal/editar-principal.component';
 import { RemoverPrincipalComponent } from './principal/remover-principal/remover-principal.component';
+import { ChartModule, LineSeriesService, CategoryService, LegendService, DataLabelService, TooltipService } from '@syncfusion/ej2-angular-charts';
 
 
 @NgModule({
@@ -103,6 +104,7 @@ import { RemoverPrincipalComponent } from './principal/remover-principal/remover
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    ChartModule
   ]
 })
 export class ParametrosModule { }

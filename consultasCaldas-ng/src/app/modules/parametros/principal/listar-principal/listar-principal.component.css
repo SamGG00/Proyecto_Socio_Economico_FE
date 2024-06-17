@@ -165,7 +165,45 @@ h1 {
     background-color: #cceeff;
 }
 
-/* Estilos responsivos */
+/* Estilos responsivos para pantallas medianas */
+@media (max-width: 1024px) {
+    .table-wrapper {
+        padding: 0 5px;
+        max-height: 65vh; /* Ajustar altura máxima para pantallas más pequeñas */
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 12px;
+    }
+
+    .btn {
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+
+    .btn-refresh {
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+
+    .action-bar {
+        padding: 0 5px;
+        flex-direction: column; /* Cambiar a columna para pantallas medianas */
+    }
+
+    .search-section input[type="text"],
+    .search-section select {
+        padding: 4px 8px;
+        height: 28px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* Estilos responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
     .table-wrapper {
         padding: 0 5px;
@@ -189,15 +227,43 @@ h1 {
 
     .action-bar {
         padding: 0 5px;
+        flex-direction: column; /* Cambiar a columna para pantallas pequeñas */
+        align-items: flex-start; /* Alinear a la izquierda */
+    }
+
+    .search-section {
+        width: 100%;
+        margin-top: 10px; /* Espacio entre los elementos */
     }
 
     .search-section input[type="text"],
     .search-section select {
         padding: 4px 8px;
         height: 28px;
+        width: 100%; /* Ocupa el ancho completo */
     }
 
     h1 {
         font-size: 1.5em;
+    }
+
+    .btn-small {
+        padding: 3px 6px;
+        font-size: 0.75em;
+    }
+
+    .btn-filter,
+    .btn-refresh {
+        width: 100%; /* Ocupa el ancho completo */
+        text-align: center;
+        margin-top: 5px; /* Espacio entre los botones */
+    }
+
+    .file-input {
+        margin-top: 10px; /* Espacio entre el input y otros elementos */
+    }
+
+    .error-message {
+        font-size: 0.8em;
     }
 }

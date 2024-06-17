@@ -5,7 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
     background-color: #ffffff; /* Fondo blanco */
 }
@@ -16,46 +16,47 @@ h1 {
 }
 
 .table-wrapper {
-    width: 140%;
+    width: 100%;
+    padding: 0 10px;
     overflow-x: auto;
+    overflow-y: auto; /* Agregar scroll vertical */
+    max-height: 70vh; /* Establecer altura máxima para permitir el scroll vertical */
 }
 
-table.styled-table {
-    width: 160%;
-    margin: 25px 0; /* Maintain margin for consistency */
-    font-size: 1em;
-    text-align: left;
+.styled-table {
+    width: 100%;
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
 }
 
-table.styled-table th,
-table.styled-table td {
-    padding: 15px 15px; /* Más espacio para el cabecero */
+.styled-table th,
+.styled-table td {
+    padding: 15px;
     border: 1px solid #ddd;
 }
 
-table.styled-table thead tr {
-    background-color: #003366; /* Azul oscuro */
+.styled-table thead tr {
+    background-color: #003366;
     color: #ffffff;
     text-align: left;
-    height: 50px; /* Incrementar la altura del cabecero */
+    height: 50px;
 }
 
-table.styled-table tbody tr {
+.styled-table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
-table.styled-table tbody tr:nth-of-type(even) {
+.styled-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
 
-table.styled-table tbody tr:last-of-type {
+.styled-table tbody tr:last-of-type {
     border-bottom: 2px solid #003366;
 }
 
-table.styled-table tbody tr:hover {
+.styled-table tbody tr:hover {
     background-color: #f1f1f1;
 }
 
@@ -80,39 +81,7 @@ table.styled-table tbody tr:hover {
     background-color: #d27805;
 }
 
-.action-bar {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 10px; /* Reduced margin between action bar and table */
-    overflow-x: auto;
-}
-
-.action-bar .btn {
-    margin-right: 10px; /* Add some space between the buttons */
-}
-
-.search-section {
-    display: flex;
-    align-items: center;
-    flex-grow: 1; /* Take up remaining space */
-}
-
-.search-section input[type="text"] {
-    padding: 5px 10px; /* Adjust the padding for the input field */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    height: 30px; /* Adjust the height */
-    flex-grow: 1; /* Allow the input to grow */
-    margin-right: 10px; /* Space between input and button */
-}
-
-.btn-small {
-    padding: 2px 5px; /* Smaller padding for smaller buttons */
-    font-size: 0.8em; /* Smaller font size */
-}
-
-.btn-upload {
+.btn-filter {
     background-color: #0066cc;
     border: none;
     color: white;
@@ -126,7 +95,58 @@ table.styled-table tbody tr:hover {
     border-radius: 5px;
 }
 
-.btn-upload:hover {
+.btn-filter:hover {
+    background-color: #005bb5;
+}
+
+.action-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px; /* Espacio reducido entre la barra de acciones y la tabla */
+    padding: 0 10px;
+}
+
+.action-bar .btn {
+    margin-right: 10px; /* Espacio entre los botones */
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Ocupar el espacio restante */
+}
+
+.search-section input[type="text"],
+.search-section select {
+    padding: 5px 10px; /* Ajustar el padding para el campo de entrada */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 30px; /* Ajustar la altura */
+    flex-grow: 1; /* Permitir que el input crezca */
+    margin-right: 10px; /* Espacio entre el input y el botón */
+}
+
+.btn-small {
+    padding: 2px 5px; /* Padding más pequeño para botones más pequeños */
+    font-size: 0.8em; /* Tamaño de fuente más pequeño */
+}
+
+.btn-refresh {
+    background-color: #0066cc;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-refresh:hover {
     background-color: #005bb5;
 }
 
@@ -137,4 +157,113 @@ table.styled-table tbody tr:hover {
 .error-message {
     color: red;
     font-size: 0.9em;
+}
+
+/* Resaltar filtro seleccionado */
+.selected {
+    font-weight: bold;
+    background-color: #cceeff;
+}
+
+/* Estilos responsivos para pantallas medianas */
+@media (max-width: 1024px) {
+    .table-wrapper {
+        padding: 0 5px;
+        max-height: 65vh; /* Ajustar altura máxima para pantallas más pequeñas */
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 12px;
+    }
+
+    .btn {
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+
+    .btn-refresh {
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+
+    .action-bar {
+        padding: 0 5px;
+        flex-direction: column; /* Cambiar a columna para pantallas medianas */
+    }
+
+    .search-section input[type="text"],
+    .search-section select {
+        padding: 4px 8px;
+        height: 28px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .table-wrapper {
+        padding: 0 5px;
+        max-height: 60vh; /* Ajustar altura máxima para pantallas más pequeñas */
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+
+    .btn-refresh {
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+
+    .action-bar {
+        padding: 0 5px;
+        flex-direction: column; /* Cambiar a columna para pantallas pequeñas */
+        align-items: flex-start; /* Alinear a la izquierda */
+    }
+
+    .search-section {
+        width: 100%;
+        margin-top: 10px; /* Espacio entre los elementos */
+    }
+
+    .search-section input[type="text"],
+    .search-section select {
+        padding: 4px 8px;
+        height: 28px;
+        width: 100%; /* Ocupa el ancho completo */
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .btn-small {
+        padding: 3px 6px;
+        font-size: 0.75em;
+    }
+
+    .btn-filter,
+    .btn-refresh {
+        width: 100%; /* Ocupa el ancho completo */
+        text-align: center;
+        margin-top: 5px; /* Espacio entre los botones */
+    }
+
+    .file-input {
+        margin-top: 10px; /* Espacio entre el input y otros elementos */
+    }
+
+    .error-message {
+        font-size: 0.8em;
+    }
 }

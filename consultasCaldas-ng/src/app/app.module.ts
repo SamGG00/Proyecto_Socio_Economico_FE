@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ParametrosModule } from './modules/parametros/parametros.module';
 import { FormsModule } from '@angular/forms';
+import { ChartModule, LineSeriesService, CategoryService, LegendService, DataLabelService, TooltipService } from '@syncfusion/ej2-angular-charts';
+import { BarSeriesService, StackingBarSeriesService } from '@syncfusion/ej2-angular-charts';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     NgxPaginationModule,
     FormsModule,
-    ParametrosModule
+    ParametrosModule,
+    ChartModule
   ],
-  providers: [],
+  providers: [LineSeriesService, CategoryService, LegendService, DataLabelService, TooltipService, BarSeriesService, StackingBarSeriesService, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

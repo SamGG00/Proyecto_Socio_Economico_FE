@@ -1,37 +1,41 @@
-.dashboard-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    overflow-y: auto;
+body {
+    background-color: white;
+    color: #0d47a1; /* Dark Blue */
 }
 
-.card {
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 80%; /* Adjust the width as necessary */
-    margin-bottom: 20px;
-    padding: 20px;
+h1 {
+    color: #0d47a1; /* Dark Blue */
+    font-weight: bold;
+}
+
+.chart-controls {
+    margin: 20px 0;
+}
+
+.axis-label {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.dropdown-trigger.btn {
+    margin: 0 10px;
+}
+
+.chart-container {
+    margin-top: 20px;
+}
+
+.btn.dark-blue {
+    background-color: #0d47a1 !important; /* Dark Blue */
+    color: white !important;
+}
+
+.btn.blue {
+    background-color: #2196f3 !important; /* Blue */
+    color: white !important;
+}
+
+.center-align {
     text-align: center;
-}
-
-.chart-placeholder {
-    margin: 10px 0;
-    padding: 10px;
-    background: #f0f0f0;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-
-.chart-placeholder svg {
-    width: 80%; /* Adjust based on preference */
-    height: auto;
-}
-
-.circular-chart {
-    display: block;
-    margin: 10px auto;
-    max-width: 100%;
-    max-height: 250px;
 }

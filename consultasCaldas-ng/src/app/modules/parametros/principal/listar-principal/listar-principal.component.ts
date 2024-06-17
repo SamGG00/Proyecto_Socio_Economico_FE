@@ -54,6 +54,17 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
   ]; // Lista de columnas para filtrar
   principalData: any[] = [];
   filteredRecordList: any[] = [];
+  selectedXAxis: string = 'nombrecompleto';
+  selectedYAxis: string = 'Edad';
+  xLabel: string = 'nombrecompleto';
+  yLabel: string = 'Edad';
+
+  public xAxis: Object = { valueType: 'Category', title: this.xLabel };
+  public yAxis: Object = { title: 'Value' };
+  public chartTitle: string = 'Principal Data Chart';
+  public legend: Object = { visible: true };
+  public markerSettings: Object = { visible: true, dataLabel: { visible: true } };
+  public tooltipSettings: Object = { enable: true };
 
   constructor(private principalService: PrincipalService) { }
 
@@ -125,5 +136,26 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
     event.preventDefault(); // Prevenir el comportamiento predeterminado del anchor
     this.selectedColumn = column;
     this.filterRecords();
+  }
+
+  onXAxisChanged(event: Event, column: string) {
+    event.preventDefault();
+    this.selectedXAxis = column;
+    this.xLabel = column;
+    this.onAxisChange();
+  }
+
+  onYAxisChanged(event: Event, column: string) {
+    event.preventDefault();
+    this.selectedYAxis = column;
+    this.yLabel = column;
+    this.onAxisChange();
+  }
+
+  onAxisChange() {
+    // Trigger chart update by changing reference to dataSource and labels
+    this.filteredRecordList = [...this.filteredRecordList];
+    this.xAxis = { ...this.xAxis, title: this.xLabel };
+    this.yAxis = { ...this.yAxis, title: this.yLabel };
   }
 }
