@@ -1,4 +1,141 @@
-.errorValidation label{
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    width: 100%;
+    max-width: 800px;
+}
+
+.input-field {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-field label {
+    font-weight: bold;
+    color: #333;
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    transition: all 0.3s ease;
+    background-color: white;
+    padding: 0 5px;
+    pointer-events: none;
+}
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.checkbox-field {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.checkbox-field label {
+    position: static;
+    font-weight: normal;
+    color: #333;
+}
+
+.checkbox-field input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.errorValidation label {
     color: red;
     font-weight: bold;
+    margin-top: 5px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.col {
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.col.s12 {
+    width: 100%;
+}
+
+.col.s6 {
+    width: 50%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+button, .btn-warning {
+    flex: 1;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 5px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
 }

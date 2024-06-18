@@ -1,43 +1,54 @@
-<div class="row">
-    <form [formGroup]="dataForm" class="col s12">
-        <input type="hidden" formControlName="id" />
-        <div class="row">
-            <div class="input-field col s12">
-                <input formControlName="Semestre" id="txtSemestre" type="text" class="validate">
-                <label class="active" for="txtSemestre">Semestre</label>
-                
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+</head>
+<body>
+    <div class="row">
+        <form [formGroup]="dataForm" class="col s12">
+            <input type="hidden" formControlName="id" />
+            <h2>Registro de Apoyo Socioeconómico</h2>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="Semestre" id="txtSemestre" type="text" class="validate" required>
+                    <label class="active" for="txtSemestre">Semestre</label>
+                </div>
+                <div class="input-field col s6">
+                    <input formControlName="Ano" id="txtAno" type="number" min="1900" max="2100" class="validate" required placeholder="YYYY">
+                    <label class="active" for="txtAno">Año</label>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <input formControlName="Ano" id="txtAno" type="date" class="validate">
-                <label class="active" for="txtAno">Año</label>
-                
+            <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="Estudiantes_Aprobados" id="txtEstudiantesAprobados" type="text" class="validate" required>
+                    <label class="active" for="txtEstudiantesAprobados">Estudiantes Aprobados</label>
+                </div>
+                <div class="input-field col s6">
+                    <input formControlName="Sede_Apoyo" id="txtSedeApoyo" type="text" class="validate" required>
+                    <label class="active" for="txtSedeApoyo">Sede de Apoyo</label>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <input formControlName="Estudiantes_Aprobados" id="txtEstudiantesAprobados" type="text" class="validate">
-                <label class="active" for="txtEstudiantesAprobados">Estudiantes Aprobados</label>
-                
+            <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="Autor" id="txtAutor" type="text" class="validate" required>
+                    <label class="active" for="txtAutor">Autor</label>
+                </div>
+                <div class="input-field col s6">
+                    <input formControlName="Id_Apoyo" id="txtIdApoyo" type="text" class="validate" required>
+                    <label class="active" for="txtIdApoyo">ID de Apoyo</label>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <input formControlName="Sede_Apoyo" id="txtSedeApoyo" type="text" class="validate">
-                <label class="active" for="txtSedeApoyo">Sede de Apoyo</label>
-                
+            <div class="row">
+                <div class="input-field col s6">
+                    <button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+                </div>
+                <div class="input-field col s6">
+                    <a class="btn btn-warning orange" routerLink="/parametros/listar-apoyo-socioeconomico">Cancelar</a>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <input formControlName="Autor" id="txtAutor" type="text" class="validate">
-                <label class="active" for="txtAutor">Autor</label>
-                
-            </div>
-            <div class="input-field col s12">
-                <input formControlName="Id_Apoyo" id="txtIdApoyo" type="text" class="validate">
-                <label class="active" for="txtIdApoyo">ID de Apoyo</label>
-                
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <button  type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
-                &nbsp;<a class="btn btn-warning orange" routerLink="/parametros/listar-apoyo-socioeconomico">Cancelar</a>
-            </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
+</body>
+</html>

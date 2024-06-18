@@ -1,76 +1,63 @@
-<div class="row">
-    <form [formGroup]="dataForm" class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input formControlName="Ano" id="txtAno" type="number" class="validate">
-          <label for="txtAno">Año</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Ano'].errors && (dataForm.controls['Ano'].dirty || dataForm.controls['Ano'].touched)">
-                El año no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Semestre" id="txtSemestre" type="text" class="validate">
-          <label for="txtSemestre">Semestre</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Semestre'].errors && (dataForm.controls['Semestre'].dirty || dataForm.controls['Semestre'].touched)">
-                El semestre no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Total_Estudiantes_Presentados" id="txtTotalEstudiantesPresentados" type="number" class="validate">
-          <label for="txtTotalEstudiantesPresentados">Total Estudiantes Presentados</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Total_Estudiantes_Presentados'].errors && (dataForm.controls['Total_Estudiantes_Presentados'].dirty || dataForm.controls['Total_Estudiantes_Presentados'].touched)">
-                El total de estudiantes presentados no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Autor" id="txtAutor" type="text" class="validate">
-          <label for="txtAutor">Autor</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Autor'].errors && (dataForm.controls['Autor'].dirty || dataForm.controls['Autor'].touched)">
-                El autor no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Fecha_Inicio" id="txtFechaInicio" type="date" class="validate">
-          <label for="txtFechaInicio">Fecha Inicio</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Fecha_Inicio'].errors && (dataForm.controls['Fecha_Inicio'].dirty || dataForm.controls['Fecha_Inicio'].touched)">
-                La fecha de inicio no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Fecha_Fin" id="txtFechaFin" type="date" class="validate">
-          <label for="txtFechaFin">Fecha Fin</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Fecha_Fin'].errors && (dataForm.controls['Fecha_Fin'].dirty || dataForm.controls['Fecha_Fin'].touched)">
-                La fecha de fin no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Id_Apoyo_Socio_Economico" id="txtIdApoyoSocioEconomico" type="number" class="validate">
-          <label for="txtIdApoyoSocioEconomico">ID Apoyo Socio Económico</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Id_Apoyo_Socio_Economico'].errors && (dataForm.controls['Id_Apoyo_Socio_Economico'].dirty || dataForm.controls['Id_Apoyo_Socio_Economico'].touched)">
-                El ID Apoyo Socio Económico no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <button [disabled]="dataForm.invalid" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
-          &nbsp;<a class="btn btn-warning organge" routerLink="/parametros/listar-convacatoria">Cancelar</a>
-        </div>
-      </div>
-    </form>
-  </div>
-  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+</head>
+<body>
+    <div class="row">
+        <form [formGroup]="dataForm" class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="Ano" id="txtAno" type="number" class="validate">
+                    <label class="active" for="txtAno">Año</label>
+                    
+                </div>
+                <div class="input-field col s6">
+                    <input formControlName="Semestre" id="txtSemestre" type="text" class="validate">
+                    <label class="active" for="txtSemestre">Semestre</label>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="Total_Estudiantes_Presentados" id="txtTotalEstudiantesPresentados" type="number" class="validate">
+                    <label class="active" for="txtTotalEstudiantesPresentados">Total Estudiantes Presentados</label>
+                    
+                </div>
+                <div class="input-field col s6">
+                    <input formControlName="Autor" id="txtAutor" type="text" class="validate">
+                    <label class="active" for="txtAutor">Autor</label>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="Fecha_Inicio" id="txtFechaInicio" type="date" class="validate">
+                    <label class="active" for="txtFechaInicio">Fecha Inicio</label>
+                    
+                </div>
+                <div class="input-field col s6">
+                    <input formControlName="Fecha_Fin" id="txtFechaFin" type="date" class="validate">
+                    <label class="active" for="txtFechaFin">Fecha Fin</label>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="Id_Apoyo_Socio_Economico" id="txtIdApoyoSocioEconomico" type="number" class="validate">
+                    <label class="active" for="txtIdApoyoSocioEconomico">ID Apoyo Socio Económico</label>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 button-container">
+                    <button  type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+                    <a class="btn btn-warning orange" routerLink="/parametros/listar-convacatoria">Cancelar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

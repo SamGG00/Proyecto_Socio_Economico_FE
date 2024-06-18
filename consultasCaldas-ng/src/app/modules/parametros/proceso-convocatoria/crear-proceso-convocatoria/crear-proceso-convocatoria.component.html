@@ -1,54 +1,57 @@
-<div class="row">
-    <form [formGroup]="dataForm" class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <p>
-            <label>
-              <input type="checkbox" formControlName="Aprobado" id="txtAprobado"/>
-              <span>Aprobado</span>
-            </label>
-          </p>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Aprobado'].errors && (dataForm.controls['Aprobado'].dirty || dataForm.controls['Aprobado'].touched)">
-                El campo Aprobado no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Ano" id="txtAno" type="number" class="validate">
-          <label for="txtAno">Año</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Ano'].errors && (dataForm.controls['Ano'].dirty || dataForm.controls['Ano'].touched)">
-                El año no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Semestre" id="txtSemestre" type="number" class="validate">
-          <label for="txtSemestre">Semestre</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Semestre'].errors && (dataForm.controls['Semestre'].dirty || dataForm.controls['Semestre'].touched)">
-                El semestre no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-        
-        <div class="input-field col s12">
-          <input formControlName="Id_Convocatoria" id="txtIdConvocatoria" type="number" class="validate">
-          <label for="txtIdConvocatoria">ID Convocatoria</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Id_Convocatoria'].errors && (dataForm.controls['Id_Convocatoria'].dirty || dataForm.controls['Id_Convocatoria'].touched)">
-                El ID convocatoria no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <button [disabled]="dataForm.invalid" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
-          &nbsp;<a class="btn btn-warning organge" routerLink="/parametros/listar-proceso-convocatoria">Cancelar</a>
-        </div>
-      </div>
-    </form>
-  </div>
-  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+</head>
+<body>
+    <div class="row">
+        <form [formGroup]="dataForm" class="col s12">
+            <input type="hidden" formControlName="id" />
+            <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="Ano" id="txtAno" type="number" class="validate">
+                    <label for="txtAno">Año</label>
+                    <div class="errorValidation">
+                        <label *ngIf="dataForm.controls['Ano'].errors && (dataForm.controls['Ano'].dirty || dataForm.controls['Ano'].touched)">
+                            El año no cumple con los requisitos
+                        </label>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input formControlName="Semestre" id="txtSemestre" type="number" class="validate">
+                    <label for="txtSemestre">Semestre</label>
+                    
+                </div>
+                <div class="checkbox-field col s6">
+                    <label>
+                        <input type="checkbox" formControlName="Aprobado" id="txtAprobado"/>
+                        <span>Aprobado</span>
+                    </label>
+                    <div class="errorValidation">
+                        <label *ngIf="dataForm.controls['Aprobado'].errors && (dataForm.controls['Aprobado'].dirty || dataForm.controls['Aprobado'].touched)">
+                            El campo Aprobado no cumple con los requisitos
+                        </label>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input formControlName="Id_Convocatoria" id="txtIdConvocatoria" type="number" class="validate">
+                    <label for="txtIdConvocatoria">ID Convocatoria</label>
+                    <div class="errorValidation">
+                        <label *ngIf="dataForm.controls['Id_Convocatoria'].errors && (dataForm.controls['Id_Convocatoria'].dirty || dataForm.controls['Id_Convocatoria'].touched)">
+                            El ID convocatoria no cumple con los requisitos
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 button-container">
+                    <button [disabled]="dataForm.invalid" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+                    <a class="btn btn-warning orange" routerLink="/parametros/listar-proceso-convocatoria">Cancelar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
