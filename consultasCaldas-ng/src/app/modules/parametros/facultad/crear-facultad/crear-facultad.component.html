@@ -1,22 +1,19 @@
-<div class="row">
-    <form [formGroup]="dataForm" class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input formControlName="Nombre" id="txtNombre" type="text" class="validate">
-          <label for="txtNombre">Nombre</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Nombre'].errors && (dataForm.controls['Nombre'].dirty || dataForm.controls['Nombre'].touched)">
-                El nombre no cumple con los requisitos
-            </label>
-          </div>
-        </div>
+<div class="form-container">
+  <form [formGroup]="dataForm" class="form-content">
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="Nombre" id="txtNombre" type="text" class="validate">
+        <label for="txtNombre">Nombre</label>
+      
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <button [disabled]="dataForm.invalid" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
-          &nbsp;<a class="btn btn-warning organge" routerLink="/parametros/listar-facultad">Cancelar</a>
-        </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+        <a class="btn btn-warning" routerLink="/parametros/listar-facultad">Cancelar</a>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
+</div>
+
   

@@ -1,42 +1,41 @@
-<div class="row">
-    <form [formGroup]="dataForm" class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input formControlName="Nombre" id="txtNombre" type="text" class="validate">
-          <label for="txtNombre">Nombre</label>
-          <div class="errorValidation">
-            <label *ngIf="dataForm.controls['Nombre'].errors && (dataForm.controls['Nombre'].dirty || dataForm.controls['Nombre'].touched)">
-                El nombre no cumple con los requisitos
-            </label>
-          </div>
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Parentesco" id="txtParentesco" type="text" class="validate">
-          <label for="txtParentesco">Parentesco</label>
-          
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Celular" id="txtCelular" type="text" class="validate">
-          <label for="txtCelular">Celular</label>
-          
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Procedencia" id="txtProcedencia" type="text" class="validate">
-          <label for="txtProcedencia">Procedencia</label>
-          
-        </div>
-        <div class="input-field col s12">
-          <input formControlName="Correo" id="txtCorreo" type="email" class="validate">
-          <label for="txtCorreo">Correo</label>
-          
+<div class="form-container">
+  <form [formGroup]="dataForm" class="form-content">
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="Nombre" id="txtNombre" type="text" class="validate">
+        <label for="txtNombre">Nombre</label>
+        <div class="errorValidation">
+          <label *ngIf="dataForm.controls['Nombre'].errors && (dataForm.controls['Nombre'].dirty || dataForm.controls['Nombre'].touched)">
+              El nombre no cumple con los requisitos
+          </label>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <button [disabled]="dataForm.controls['Nombre'].errors" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
-          &nbsp;<a class="btn btn-warning organge" routerLink="/parametros/listar-contacto">Cancelar</a>
-        </div>
+      <div class="input-field col s6">
+        <input formControlName="Parentesco" id="txtParentesco" type="text" class="validate">
+        <label for="txtParentesco">Parentesco</label>
       </div>
-    </form>
-  </div>
-  
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="Celular" id="txtCelular" type="text" class="validate">
+        <label for="txtCelular">Celular</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="Procedencia" id="txtProcedencia" type="text" class="validate">
+        <label for="txtProcedencia">Procedencia</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="Correo" id="txtCorreo" type="email" class="validate">
+        <label for="txtCorreo">Correo</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <button [disabled]="dataForm.controls['Nombre'].errors" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+        <a class="btn btn-warning" routerLink="/parametros/listar-contacto">Cancelar</a>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,49 +1,30 @@
-<div class="row">
-    <form [formGroup]="dataForm" class="col s12">
-        <input type="hidden" formControlName="id" />
-        <div class="row">
-            <div class="input-field col s12">
-                <input formControlName="Nombre" id="txtNombre" type="text" class="validate">
-                <label class="active" for="txtNombre">Nombre</label>
-                <div class="errorValidation">
-                    <label *ngIf="dataForm.controls['Nombre'].errors && (dataForm.controls['Nombre'].dirty || dataForm.controls['Nombre'].touched)">
-                        El Nombre no cumple con los requisitos
-                    </label>
-                </div>
-            </div>
-            <div class="input-field col s12">
-                <input formControlName="Codigo_SNIES" id="txtCodigoSNIES" type="text" class="validate">
-                <label class="active" for="txtCodigoSNIES">Código SNIES</label>
-                <div class="errorValidation">
-                    <label *ngIf="dataForm.controls['Codigo_SNIES'].errors && (dataForm.controls['Codigo_SNIES'].dirty || dataForm.controls['Codigo_SNIES'].touched)">
-                        El Código SNIES no cumple con los requisitos
-                    </label>
-                </div>
-            </div>
-            <div class="input-field col s12">
-                <input formControlName="Duracion_Semestres" id="txtDuracionSemestres" type="text" class="validate">
-                <label class="active" for="txtDuracionSemestres">Duración en Semestres</label>
-                <div class="errorValidation">
-                    <label *ngIf="dataForm.controls['Duracion_Semestres'].errors && (dataForm.controls['Duracion_Semestres'].dirty || dataForm.controls['Duracion_Semestres'].touched)">
-                        La Duración en Semestres no cumple con los requisitos
-                    </label>
-                </div>
-            </div>
-            <div class="input-field col s12">
-                <input formControlName="Id_Facultad" id="txtIdFacultad" type="text" class="validate">
-                <label class="active" for="txtIdFacultad">ID de Facultad</label>
-                <div class="errorValidation">
-                    <label *ngIf="dataForm.controls['Id_Facultad'].errors && (dataForm.controls['Id_Facultad'].dirty || dataForm.controls['Id_Facultad'].touched)">
-                        El ID de Facultad no cumple con los requisitos
-                    </label>
-                </div>
-            </div>
+<div class="form-container">
+    <form [formGroup]="dataForm" class="form-content">
+      <input type="hidden" formControlName="id" />
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="Nombre" id="txtNombre" type="text" class="validate">
+          <label class="active" for="txtNombre">Nombre</label>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <button [disabled]="dataForm.invalid" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
-                &nbsp;<a class="btn btn-warning orange" routerLink="/parametros/listar-programa">Cancelar</a>
-            </div>
+        <div class="input-field col s12">
+          <input formControlName="Codigo_SNIES" id="txtCodigoSNIES" type="text" class="validate">
+          <label class="active" for="txtCodigoSNIES">Código SNIES</label>
         </div>
+        <div class="input-field col s12">
+          <input formControlName="Duracion_Semestres" id="txtDuracionSemestres" type="text" class="validate">
+          <label class="active" for="txtDuracionSemestres">Duración en Semestres</label>
+        </div>
+        <div class="input-field col s12">
+          <input formControlName="Id_Facultad" id="txtIdFacultad" type="text" class="validate">
+          <label class="active" for="txtIdFacultad">ID de Facultad</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+          <a class="btn btn-warning" routerLink="/parametros/listar-programa">Cancelar</a>
+        </div>
+      </div>
     </form>
-</div>
+  </div>
+  
