@@ -158,4 +158,22 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
     this.xAxis = { ...this.xAxis, title: this.xLabel };
     this.yAxis = { ...this.yAxis, title: this.yLabel };
   }
+
+  downloadTableData() {
+    const csvData = this.convertToCSV(this.filteredRecordList, this.columns);
+    const blob = new Blob([csvData], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.setAttribute('hidden', '');
+    a.setAttribute('href', url);
+    a.setAttribute('download', 'table_data.csv');
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  convertToCSV(objArray: any[], headerList: string[]): string {
+    const array = [headerList, ...objArray.map(item => headerList.map(key => item[key]))];
+    return array.map(row => row.join(',')).join('\n');
+  }
 }
