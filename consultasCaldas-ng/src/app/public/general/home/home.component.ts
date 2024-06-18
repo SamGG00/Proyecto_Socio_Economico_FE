@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   yLabel: string = 'Edad';
 
   public xAxis: Object = { valueType: 'Category', title: this.xLabel };
-  public yAxis: Object = { title: this.yLabel };
+  public yAxis: Object = { valueType: 'Double', title: this.yLabel }; // Default to 'Double' for numerical data
   public chartTitle: string = 'Principal Data Chart';
   public legend: Object = { visible: true };
   public markerSettings: Object = { visible: true, dataLabel: { visible: true } };
@@ -102,7 +102,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   estudianteYLabel: string = 'Edad';
 
   public estudianteXAxisObj: Object = { valueType: 'Category', title: this.estudianteXLabel };
-  public estudianteYAxisObj: Object = { title: this.estudianteYLabel };
+  public estudianteYAxisObj: Object = { valueType: 'Double', title: this.estudianteYLabel }; // Default to 'Double' for numerical data
   public estudianteChartTitle: string = 'Estudiantes Data Chart';
   public estudianteBarTitle?: string;
   public estudianteBarData?: Object[];
@@ -184,18 +184,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   onAxisChange() {
+    // Determinar el tipo de datos del eje Y
+    const yValueType = this.isNumericColumn(this.selectedYAxis) ? 'Double' : 'Category';
     // Trigger chart update by changing reference to dataSource and labels
     this.filteredRecordList = [...this.filteredRecordList];
     this.xAxis = { ...this.xAxis, title: this.xLabel };
-    this.yAxis = { ...this.yAxis, title: this.yLabel };
+    this.yAxis = { ...this.yAxis, title: this.yLabel, valueType: yValueType };
     this.updateBarChart();
   }
 
   onEstudianteAxisChange() {
+    // Determinar el tipo de datos del eje Y
+    const estudianteYValueType = this.isNumericColumn(this.estudianteYAxis) ? 'Double' : 'Category';
     // Trigger chart update by changing reference to dataSource and labels
     this.estudianteFilteredList = [...this.estudianteFilteredList];
     this.estudianteXAxisObj = { ...this.estudianteXAxisObj, title: this.estudianteXLabel };
-    this.estudianteYAxisObj = { ...this.estudianteYAxisObj, title: this.estudianteYLabel };
+    this.estudianteYAxisObj = { ...this.estudianteYAxisObj, title: this.estudianteYLabel, valueType: estudianteYValueType };
     this.updateEstudianteBarChart();
   }
 
@@ -207,5 +211,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   updateEstudianteBarChart() {
     this.estudianteBarData = this.estudianteData.map(item => ({ x: item[this.estudianteXAxis], y: item[this.estudianteYAxis] }));
     this.estudianteBarTitle = `Estudiantes Bar Chart - ${this.estudianteXAxis} vs ${this.estudianteYAxis}`;
+  }
+
+  isNumericColumn(column: string): boolean {
+    // Define a list of columns that are numeric
+    const numericColumns = ["Edad", "PBM", "Promedio_Notas", "Duracion_programa", "retirosbajorendimiento", "periodoretiro", "semestresancion", "beneficiosies", "semestre", "Ultimo_Semestre_Cursado"];
+    return numericColumns.includes(column);
   }
 }
