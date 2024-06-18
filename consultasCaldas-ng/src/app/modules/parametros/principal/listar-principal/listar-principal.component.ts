@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { PrincipalService } from 'src/app/services/parametros/principal.service';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
+import * as XLSX from 'xlsx';
 
 declare const M: any;
 
@@ -142,6 +143,7 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
     event.preventDefault();
     this.selectedXAxis = column;
     this.xLabel = column;
+    this.updateAxisTypes();
     this.onAxisChange();
   }
 
@@ -149,6 +151,7 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
     event.preventDefault();
     this.selectedYAxis = column;
     this.yLabel = column;
+    this.updateAxisTypes();
     this.onAxisChange();
   }
 
@@ -159,21 +162,37 @@ export class ListarPrincipalComponent implements OnInit, AfterViewInit {
     this.yAxis = { ...this.yAxis, title: this.yLabel };
   }
 
-  downloadTableData() {
-    const csvData = this.convertToCSV(this.filteredRecordList, this.columns);
-    const blob = new Blob([csvData], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.setAttribute('hidden', '');
-    a.setAttribute('href', url);
-    a.setAttribute('download', 'table_data.csv');
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+  updateAxisTypes() {
+    // Update xAxis valueType based on the selected column type
+    const isXAxisNumeric = !isNaN(this.filteredRecordList[0][this.selectedXAxis]);
+    this.xAxis = {
+      ...this.xAxis,
+      valueType: isXAxisNumeric ? 'Double' : 'Category'
+    };
+
+    // Update yAxis valueType based on the selected column type
+    const isYAxisNumeric = !isNaN(this.filteredRecordList[0][this.selectedYAxis]);
+    this.yAxis = {
+      ...this.yAxis,
+      valueType: isYAxisNumeric ? 'Double' : 'Category'
+    };
   }
 
-  convertToCSV(objArray: any[], headerList: string[]): string {
-    const array = [headerList, ...objArray.map(item => headerList.map(key => item[key]))];
-    return array.map(row => row.join(',')).join('\n');
+  downloadTableData() {
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.filteredRecordList);
+    const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    this.saveAsExcelFile(excelBuffer, 'table_data');
+  }
+
+  private saveAsExcelFile(buffer: any, fileName: string): void {
+    const data: Blob = new Blob([buffer], {type: EXCEL_TYPE});
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(data);
+    link.download = fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION;
+    link.click();
   }
 }
+
+const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+const EXCEL_EXTENSION = '.xlsx';
