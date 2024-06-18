@@ -1,261 +1,131 @@
-<div class="row">
-  <form [formGroup]="dataForm" class="col s12">
+<div class="form-container">
+  <form [formGroup]="dataForm" class="form-content">
     <div class="row">
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Codigo_Estudiante" id="txtCodigoEstudiante" type="text" class="validate">
         <label for="txtCodigoEstudiante">Código Estudiante</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Codigo_Estudiante'].errors && (dataForm.controls['Codigo_Estudiante'].dirty || dataForm.controls['Codigo_Estudiante'].touched)">
-              El código estudiante no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Nombre" id="txtNombre" type="text" class="validate">
         <label for="txtNombre">Nombre</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Nombre'].errors && (dataForm.controls['Nombre'].dirty || dataForm.controls['Nombre'].touched)">
-              El nombre no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Genero" id="txtGenero" type="text" class="validate">
         <label for="txtGenero">Género</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Genero'].errors && (dataForm.controls['Genero'].dirty || dataForm.controls['Genero'].touched)">
-              El género no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Edad" id="txtEdad" type="number" class="validate">
         <label for="txtEdad">Edad</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Edad'].errors && (dataForm.controls['Edad'].dirty || dataForm.controls['Edad'].touched)">
-              La edad no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Tipo_Identificacion" id="txtTipoIdentificacion" type="text" class="validate">
         <label for="txtTipoIdentificacion">Tipo de Identificación</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Tipo_Identificacion'].errors && (dataForm.controls['Tipo_Identificacion'].dirty || dataForm.controls['Tipo_Identificacion'].touched)">
-              El tipo de identificación no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Numero_De_Identificacion" id="txtNumeroDeIdentificacion" type="text" class="validate">
         <label for="txtNumeroDeIdentificacion">Número de Identificación</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Numero_De_Identificacion'].errors && (dataForm.controls['Numero_De_Identificacion'].dirty || dataForm.controls['Numero_De_Identificacion'].touched)">
-              El número de identificación no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="PBM" id="txtPBM" type="number" class="validate">
         <label for="txtPBM">PBM</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['PBM'].errors && (dataForm.controls['PBM'].dirty || dataForm.controls['PBM'].touched)">
-              El PBM no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Correo" id="txtCorreo" type="email" class="validate">
         <label for="txtCorreo">Correo</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Correo'].errors && (dataForm.controls['Correo'].dirty || dataForm.controls['Correo'].touched)">
-              El correo no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Celular" id="txtCelular" type="text" class="validate">
         <label for="txtCelular">Celular</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Celular'].errors && (dataForm.controls['Celular'].dirty || dataForm.controls['Celular'].touched)">
-              El celular no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Estrato" id="txtEstrato" type="number" class="validate">
         <label for="txtEstrato">Estrato</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Estrato'].errors && (dataForm.controls['Estrato'].dirty || dataForm.controls['Estrato'].touched)">
-              El estrato no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Promedio_Notas" id="txtPromedioNotas" type="number" class="validate">
         <label for="txtPromedioNotas">Promedio Notas</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Promedio_Notas'].errors && (dataForm.controls['Promedio_Notas'].dirty || dataForm.controls['Promedio_Notas'].touched)">
-              El promedio de notas no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Puntaje_De_Apoyos" id="txtPuntajeDeApoyos" type="number" class="validate">
         <label for="txtPuntajeDeApoyos">Puntaje De Apoyos</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Puntaje_De_Apoyos'].errors && (dataForm.controls['Puntaje_De_Apoyos'].dirty || dataForm.controls['Puntaje_De_Apoyos'].touched)">
-              El puntaje de apoyos no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Estado" id="txtEstado" type="text" class="validate">
         <label for="txtEstado">Estado</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Estado'].errors && (dataForm.controls['Estado'].dirty || dataForm.controls['Estado'].touched)">
-              El estado no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Ultimo_Semestre_Cursado" id="txtUltimoSemestreCursado" type="text" class="validate">
         <label for="txtUltimoSemestreCursado">Último Semestre Cursado</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Ultimo_Semestre_Cursado'].errors && (dataForm.controls['Ultimo_Semestre_Cursado'].dirty || dataForm.controls['Ultimo_Semestre_Cursado'].touched)">
-              El último semestre cursado no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <p>
           <label>
             <input type="checkbox" formControlName="Hijos" id="txtHijos"/>
             <span>Hijos</span>
           </label>
         </p>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Hijos'].errors && (dataForm.controls['Hijos'].dirty || dataForm.controls['Hijos'].touched)">
-              El campo Hijos no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Autor" id="txtAutor" type="text" class="validate">
         <label for="txtAutor">Autor</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Autor'].errors && (dataForm.controls['Autor'].dirty || dataForm.controls['Autor'].touched)">
-              El autor no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <p>
           <label>
             <input type="checkbox" formControlName="Retiros_Bajo_Rendimiento" id="txtRetirosBajoRendimiento"/>
             <span>Retiros Bajo Rendimiento</span>
           </label>
         </p>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Retiros_Bajo_Rendimiento'].errors && (dataForm.controls['Retiros_Bajo_Rendimiento'].dirty || dataForm.controls['Retiros_Bajo_Rendimiento'].touched)">
-              El campo Retiros Bajo Rendimiento no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <p>
           <label>
             <input type="checkbox" formControlName="Sanciones_Disciplinarias" id="txtSancionesDisciplinarias"/>
             <span>Sanciones Disciplinarias</span>
           </label>
         </p>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Sanciones_Disciplinarias'].errors && (dataForm.controls['Sanciones_Disciplinarias'].dirty || dataForm.controls['Sanciones_Disciplinarias'].touched)">
-              El campo Sanciones Disciplinarias no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <p>
           <label>
             <input type="checkbox" formControlName="Aspirante_Especial" id="txtAspiranteEspecial"/>
             <span>Aspirante Especial</span>
           </label>
         </p>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Aspirante_Especial'].errors && (dataForm.controls['Aspirante_Especial'].dirty || dataForm.controls['Aspirante_Especial'].touched)">
-              El campo Aspirante Especial no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Semestre_Bajo_Rendimiento" id="txtSemestreBajoRendimiento" type="text" class="validate">
         <label for="txtSemestreBajoRendimiento">Semestre Bajo Rendimiento</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Semestre_Bajo_Rendimiento'].errors && (dataForm.controls['Semestre_Bajo_Rendimiento'].dirty || dataForm.controls['Semestre_Bajo_Rendimiento'].touched)">
-              El semestre bajo rendimiento no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Semestre_Sancion" id="txtSemestreSancion" type="text" class="validate">
         <label for="txtSemestreSancion">Semestre Sanción</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Semestre_Sancion'].errors && (dataForm.controls['Semestre_Sancion'].dirty || dataForm.controls['Semestre_Sancion'].touched)">
-              El semestre sanción no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Tipo_De_Aspirante" id="txtTipoDeAspirante" type="text" class="validate">
         <label for="txtTipoDeAspirante">Tipo de Aspirante</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Tipo_De_Aspirante'].errors && (dataForm.controls['Tipo_De_Aspirante'].dirty || dataForm.controls['Tipo_De_Aspirante'].touched)">
-              El tipo de aspirante no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Id_Municipio_Nacimiento" id="txtIdMunicipioNacimiento" type="number" class="validate">
         <label for="txtIdMunicipioNacimiento">ID Municipio Nacimiento</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Id_Municipio_Nacimiento'].errors && (dataForm.controls['Id_Municipio_Nacimiento'].dirty || dataForm.controls['Id_Municipio_Nacimiento'].touched)">
-              El ID municipio de nacimiento no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Id_Municipio_Vivienda" id="txtIdMunicipioVivienda" type="number" class="validate">
         <label for="txtIdMunicipioVivienda">ID Municipio Vivienda</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Id_Municipio_Vivienda'].errors && (dataForm.controls['Id_Municipio_Vivienda'].dirty || dataForm.controls['Id_Municipio_Vivienda'].touched)">
-              El ID municipio de vivienda no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Id_Contacto" id="txtIdContacto" type="number" class="validate">
         <label for="txtIdContacto">ID Contacto</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Id_Contacto'].errors && (dataForm.controls['Id_Contacto'].dirty || dataForm.controls['Id_Contacto'].touched)">
-              El ID contacto no cumple con los requisitos
-          </label>
-        </div>
       </div>
-      <div class="input-field col s12">
+      <div class="input-field col s4">
         <input formControlName="Id_Programa_Academico" id="txtIdProgramaAcademico" type="number" class="validate">
         <label for="txtIdProgramaAcademico">ID Programa Académico</label>
-        <div class="errorValidation">
-          <label *ngIf="dataForm.controls['Id_Programa_Academico'].errors && (dataForm.controls['Id_Programa_Academico'].dirty || dataForm.controls['Id_Programa_Academico'].touched)">
-              El ID programa académico no cumple con los requisitos
-          </label>
-        </div>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <button [disabled]="dataForm.invalid" type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
-        &nbsp;<a class="btn btn-warning organge" routerLink="/parametros/listar">Cancelar</a>
+        <button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+        <a class="btn btn-warning" routerLink="/parametros/listar">Cancelar</a>
       </div>
     </div>
   </form>

@@ -29,15 +29,15 @@ export class CrearComponent implements OnInit {
       Codigo_Estudiante: ["", [Validators.required]],
       Nombre: ["", [Validators.required]],
       Genero: ["", [Validators.required]],
-      Edad: [0, [Validators.required, Validators.min(1)]],
+      Edad: ["", [Validators.required, Validators.min(1)]],
       Tipo_Identificacion: ["", [Validators.required]],
       Numero_De_Identificacion: ["", [Validators.required]],
-      PBM: [0, [Validators.required, Validators.min(0)]],
+      PBM: ["", [Validators.required, Validators.min(0)]],
       Correo: ["", [Validators.required, Validators.email]],
       Celular: ["", [Validators.required, Validators.pattern("^[0-9]*$")]],
-      Estrato: [0, [Validators.required, Validators.min(0)]],
-      Promedio_Notas: [0, [Validators.required, Validators.min(0), Validators.max(5)]],
-      Puntaje_De_Apoyos: [0, [Validators.required, Validators.min(0)]],
+      Estrato: ["", [Validators.required, Validators.min(0)]],
+      Promedio_Notas: ["", [Validators.required, Validators.min(0), Validators.max(5)]],
+      Puntaje_De_Apoyos: ["", [Validators.required, Validators.min(0)]],
       Estado: ["", [Validators.required]],
       Ultimo_Semestre_Cursado: ["", [Validators.required]],
       Hijos: [false, Validators.required],
@@ -48,10 +48,10 @@ export class CrearComponent implements OnInit {
       Semestre_Bajo_Rendimiento: ["", [Validators.required]],
       Semestre_Sancion: ["", [Validators.required]],
       Tipo_De_Aspirante: ["", [Validators.required]],
-      Id_Municipio_Nacimiento: [0, [Validators.required, Validators.pattern("^[0-9]*$")]],
-      Id_Municipio_Vivienda: [0, [Validators.required, Validators.pattern("^[0-9]*$")]],
-      Id_Contacto: [0, [Validators.required, Validators.pattern("^[0-9]*$")]],
-      Id_Programa_Academico: [0, [Validators.required, Validators.pattern("^[0-9]*$")]]
+      Id_Municipio_Nacimiento: ["", [Validators.required, Validators.pattern("^[0-9]*$")]],
+      Id_Municipio_Vivienda: ["", [Validators.required, Validators.pattern("^[0-9]*$")]],
+      Id_Contacto: ["", [Validators.required, Validators.pattern("^[0-9]*$")]],
+      Id_Programa_Academico: ["", [Validators.required, Validators.pattern("^[0-9]*$")]]
     });
   }
 
